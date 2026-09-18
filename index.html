@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PUSH CLXN — рекламная площадка</title>
+<meta name="description" content="PUSH CLXN — покупка и размещение рекламы Discord, Minecraft, Telegram и других проектов.">
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#05070b;color:#f7f9fc;font-family:Inter,Arial,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:-30%;z-index:-2;background:radial-gradient(circle at 20% 20%,rgba(75,255,160,.13),transparent 22%),radial-gradient(circle at 80% 15%,rgba(116,82,255,.15),transparent 24%),radial-gradient(circle at 50% 90%,rgba(0,190,255,.08),transparent 25%);filter:blur(12px)}
+body:after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.35;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:42px 42px}
+a{text-decoration:none;color:inherit}.wrap{max-width:1180px;margin:auto;padding:0 22px}
+header{position:sticky;top:0;z-index:50;background:rgba(5,7,11,.72);backdrop-filter:blur(18px);border-bottom:1px solid #171d27}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:1000;letter-spacing:1.5px;font-size:21px}.brand i{font-style:normal;color:#65ffae}.navlinks{display:flex;gap:26px;color:#9ba5b5;font-size:14px}.navlinks a:hover{color:#fff}
+.btn{border:1px solid #293341;background:#0d131b;padding:13px 19px;border-radius:13px;font-weight:850;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.2s}.btn:hover{transform:translateY(-2px);border-color:#65ffae}.primary{background:#65ffae;color:#06100a;border-color:#65ffae;box-shadow:0 8px 28px rgba(101,255,174,.12)}
+.hero{text-align:center;padding:105px 0 75px}.badge{display:inline-flex;gap:8px;align-items:center;border:1px solid #28333f;background:#0b1118;border-radius:999px;padding:8px 13px;color:#b3bfce;font-size:13px}.dot{width:7px;height:7px;background:#65ffae;border-radius:50%;box-shadow:0 0 15px #65ffae}
+h1{font-size:clamp(48px,8vw,94px);line-height:.94;letter-spacing:-5px;margin:23px 0 20px}.grad{background:linear-gradient(100deg,#fff,#65ffae 45%,#9c8cff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:730px;margin:0 auto 31px;color:#9da7b7;font-size:18px;line-height:1.65}.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin:15px 0 55px}.stat{padding:22px;border:1px solid #1a222d;border-radius:18px;background:linear-gradient(145deg,#0b1017,#080b10)}.stat b{font-size:25px}.stat small{display:block;color:#778293;margin-top:6px}
+section{padding:55px 0}.title{margin-bottom:24px}.title h2{font-size:34px;margin:0 0 8px}.title p{margin:0;color:#7e899a}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.card{border:1px solid #1b2430;background:rgba(10,14,20,.86);border-radius:21px;padding:23px;box-shadow:0 18px 55px rgba(0,0,0,.12);transition:.2s}.card:hover{transform:translateY(-4px);border-color:#354253}.icon{width:53px;height:53px;border-radius:16px;background:#141b24;display:grid;place-items:center;font-size:24px;margin-bottom:17px}.card h3{margin:0 0 9px}.card p{color:#8994a4;line-height:1.55;min-height:48px}.price{font-size:31px;font-weight:950;margin:15px 0 5px}.muted{color:#778293}.popular{display:inline-block;background:#65ffae;color:#06100a;border-radius:999px;padding:6px 9px;font-size:10px;font-weight:950;margin-bottom:10px}.card .btn{width:100%;margin-top:10px}
+.feature{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.big{padding:32px;border-radius:24px;border:1px solid #202b37;background:linear-gradient(135deg,rgba(101,255,174,.09),rgba(117,88,255,.08))}.big h2{font-size:38px;margin:0 0 12px}.big p{color:#909bab;line-height:1.65}.steps{display:grid;gap:12px}.step{display:flex;gap:13px;padding:18px;border:1px solid #1b2430;border-radius:17px;background:#0b1016}.num{min-width:33px;height:33px;border-radius:10px;background:#65ffae;color:#06100a;display:grid;place-items:center;font-weight:950}.step b{display:block;margin-bottom:4px}.step span{color:#7f8999;font-size:14px}
+.discord{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:27px;border:1px solid #273244;border-radius:22px;background:linear-gradient(135deg,rgba(88,101,242,.15),rgba(101,255,174,.06))}.discord h3{margin:0 0 6px;font-size:25px}.discord p{margin:0;color:#8d98a9}
+.notice{margin-top:16px;color:#768293;font-size:12px;line-height:1.5}
+footer{border-top:1px solid #171d27;padding:30px 0;color:#687485;font-size:13px;margin-top:60px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.modal{display:none;position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.78);padding:18px;place-items:center}.modal.open{display:grid}.box{width:min(590px,100%);max-height:92vh;overflow:auto;background:#0b1017;border:1px solid #2a3542;border-radius:23px;padding:25px;box-shadow:0 30px 100px #000}.close{float:right;background:none;border:0;color:#8290a2;font-size:28px;cursor:pointer}.box h2{margin:0 0 7px;font-size:27px}.sub{color:#7f8a9a;font-size:14px;line-height:1.5}label{display:block;font-size:13px;color:#aeb8c7;margin-top:12px}input,textarea,select{width:100%;margin-top:7px;background:#070a0f;border:1px solid #25303d;color:#fff;border-radius:12px;padding:13px;font:inherit;outline:none}textarea{min-height:90px;resize:vertical}.order{padding:15px;border:1px dashed #334252;border-radius:14px;background:#080c12;margin:14px 0}.code{font-size:25px;font-weight:950;letter-spacing:2px;color:#65ffae}.pay{display:grid;gap:9px}.hidden{display:none}.ok{padding:13px;border-radius:12px;background:rgba(101,255,174,.09);border:1px solid rgba(101,255,174,.25);color:#b8ffd8}
+@media(max-width:850px){.navlinks{display:none}.stats,.grid,.feature{grid-template-columns:1fr}.hero{padding-top:75px}h1{letter-spacing:-3px}.discord{display:block}.discord .btn{margin-top:16px;width:100%}}
+
+.server-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.server-card{padding:24px;border:1px solid #1d2a35;border-radius:22px;background:linear-gradient(145deg,#0b1218,#080c12);box-shadow:0 20px 65px rgba(0,0,0,.16);transition:.25s}.server-card:hover{transform:translateY(-5px);border-color:#3b514b}.server-top{display:flex;align-items:center;gap:15px;margin-bottom:20px}.server-logo{width:58px;height:58px;border-radius:17px;display:grid;place-items:center;background:linear-gradient(135deg,#65ffae,#8b7cff);color:#06100a;font-size:26px;font-weight:1000}.server-top h3{margin:5px 0 0;font-size:24px}.online{font-size:10px;font-weight:900;color:#65ffae;letter-spacing:1px}.online i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#65ffae;box-shadow:0 0 12px #65ffae;margin-right:5px}.ip,.port{display:flex;align-items:center;gap:10px;padding:13px 14px;background:#070b10;border:1px solid #19232d;border-radius:13px;margin-top:9px}.ip span,.port span{font-size:10px;color:#687587;font-weight:900}.ip b,.port b{flex:1;font-size:14px}.ip button,.port button{border:0;background:#111a22;color:#8d9aaa;border-radius:8px;padding:7px 9px;font-size:10px;font-weight:900;cursor:pointer}.server-card .btn{width:100%;margin-top:14px}.server-note{margin-top:15px;padding:15px 18px;border:1px solid #202b36;border-radius:15px;color:#7f8b9b;background:#090e14;font-size:13px}.promo-box{display:flex;align-items:center;justify-content:space-between;gap:25px;padding:35px;border:1px solid #26363a;border-radius:25px;background:radial-gradient(circle at 80% 30%,rgba(101,255,174,.13),transparent 35%),linear-gradient(135deg,#0b1218,#0a0d13)}.promo-box h2{font-size:34px;margin:15px 0 8px}.promo-box p{color:#8995a5;max-width:650px;line-height:1.6}.promo-box .btn{white-space:nowrap}
+
+.support-grid{display:grid;grid-template-columns:1fr 300px;gap:16px}.support-main{padding:35px;border:1px solid #23342e;border-radius:25px;background:radial-gradient(circle at 80% 10%,rgba(101,255,174,.13),transparent 32%),#0a100e}.support-main h2{font-size:38px;margin:16px 0 10px}.support-main p{color:#89998f;line-height:1.65;max-width:730px}.support-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.support-side{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border:1px solid #23342e;border-radius:25px;background:#0a100e;color:#9aa89f}.support-side b{color:#fff;font-size:20px}.coin{width:76px;height:76px;border-radius:24px;display:grid;place-items:center;font-size:34px;background:rgba(101,255,174,.1);border:1px solid rgba(101,255,174,.25);box-shadow:0 0 45px rgba(101,255,174,.1)}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="#">PUSH <i>CLXN</i></a>
+<nav class="navlinks"><a href="#servers">Сервера</a><a href="#ads">Реклама</a><a href="#prices">Тарифы</a><a href="#donate">Поддержка</a><a href="#how">Как купить</a></nav>
+<a class="btn primary" href="#prices">Купить рекламу</a>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+<div class="badge"><span class="dot"></span> PUSH CLXN • РЕКЛАМНАЯ ПЛОЩАДКА</div>
+<h1>Твоя реклама.<br><span class="grad">Твоя аудитория.</span></h1>
+<p>Размещай Discord-серверы, Minecraft-проекты, Telegram-каналы, сайты и другие проекты. Оплата через DonationAlerts, после подтверждения платежа объявление автоматически попадает на площадку.</p>
+<div class="actions"><a class="btn primary" href="#prices">🚀 Купить рекламу</a><a class="btn" href="https://discord.gg/6y5tMn5raX" target="_blank" rel="noopener">◈ Discord PUSH CLXN</a></div>
+</div></section>
+
+<div class="wrap"><div class="stats">
+<div class="stat"><b>24/7</b><small>приём заказов</small></div>
+<div class="stat"><b>⚡ AUTO</b><small>проверка оплаты</small></div>
+<div class="stat"><b>1 000₽</b><small>вечное размещение</small></div>
+<div class="stat"><b>∞</b><small>активные проекты</small></div>
+</div></div>
+
+<section id="ads"><div class="wrap">
+<div class="title"><h2>🔥 Активные рекламы</h2><p>Здесь появляются оплаченные объявления.</p></div>
+<div id="adsGrid" class="grid">
+<article class="card"><div class="icon">🎮</div><h3>PUSH CLXN</h3><p>Minecraft Bedrock • PvP • кланы • общение.</p><span class="muted">Официальный проект</span><a class="btn" href="https://discord.gg/6y5tMn5raX" target="_blank" rel="noopener">Открыть →</a></article>
+</div>
+</div></section>
+
+<section id="prices"><div class="wrap">
+<div class="title"><h2>💸 Тарифы</h2><p>Оплата — через DonationAlerts. После платежа заявка проверяется автоматически.</p></div>
+<div class="grid">
+<div class="card"><div class="icon">⚡</div><h3>24 ЧАСА</h3><div class="price">150₽</div><p>Быстрый тест рекламы в витрине.</p><button class="btn primary" onclick="openOrder('day',150,'24 часа')">Купить</button></div>
+<div class="card"><div class="icon">🚀</div><h3>3 ДНЯ</h3><div class="price">250₽</div><p>Размещение проекта на 3 дня.</p><button class="btn primary" onclick="openOrder('3days',250,'3 дня')">Купить</button></div>
+<div class="card"><div class="popular">🔥 ХИТ</div><div class="icon">🔥</div><h3>7 ДНЕЙ</h3><div class="price">400₽</div><p>Неделя в рекламной витрине.</p><button class="btn primary" onclick="openOrder('week',400,'7 дней')">Купить</button></div>
+<div class="card"><div class="icon">💎</div><h3>30 ДНЕЙ</h3><div class="price">700₽</div><p>Месяц постоянного продвижения.</p><button class="btn primary" onclick="openOrder('month',700,'30 дней')">Купить</button></div>
+<div class="card"><div class="popular">∞ TOP</div><div class="icon">👑</div><h3>ВЕЧНАЯ РЕКЛАМА</h3><div class="price">1 000₽</div><p>Размещение без срока окончания.</p><button class="btn primary" onclick="openOrder('forever',1000,'Вечная реклама')">Купить</button></div>
+<div class="card"><div class="icon">🛠️</div><h3>ПОМОЩНИК САЙТА</h3><div class="price">4 000₽</div><p>Размещение помощника/партнёрского проекта в отдельном премиум-блоке.</p><button class="btn primary" onclick="openOrder('assistant',4000,'Помощник сайта')">Купить</button></div>
+<div class="card"><div class="icon">📱</div><h3>TELEGRAM</h3><div class="price">350₽</div><p>Реклама Telegram-канала или сообщества на 7 дней.</p><button class="btn primary" onclick="openOrder('tg',350,'Telegram • 7 дней')">Купить</button></div>
+<div class="card"><div class="icon">🎵</div><h3>TIKTOK</h3><div class="price">450₽</div><p>Реклама TikTok-профиля или ролика на 7 дней.</p><button class="btn primary" onclick="openOrder('tiktok',450,'TikTok • 7 дней')">Купить</button></div>
+<div class="card"><div class="icon">👕</div><h3>БРЕНД / ОДЕЖДА</h3><div class="price">500₽</div><p>Витрина бренда одежды или магазина на 7 дней.</p><button class="btn primary" onclick="openOrder('clothes',500,'Бренд / одежда • 7 дней')">Купить</button></div>
+<div class="card"><div class="icon">🌐</div><h3>САЙТ / ПРОЕКТ</h3><div class="price">500₽</div><p>Реклама сайта, сервиса или игрового проекта на 7 дней.</p><button class="btn primary" onclick="openOrder('site',500,'Сайт / проект • 7 дней')">Купить</button></div>
+<div class="card"><div class="popular">🏆 PREMIUM</div><div class="icon">💠</div><h3>VIP ВИТРИНА</h3><div class="price">1 500₽</div><p>Премиум-карточка проекта на 30 дней с максимальным выделением.</p><button class="btn primary" onclick="openOrder('vip',1500,'VIP витрина • 30 дней')">Купить VIP</button></div>
+<div class="card"><div class="icon">📌</div><h3>ЗАКРЕП</h3><div class="price">900₽</div><p>Приоритетный блок в верхней части рекламной витрины на 7 дней.</p><button class="btn primary" onclick="openOrder('pin',900,'Закреп • 7 дней')">Купить</button></div>
+</div>
+</div></section>
+
+<section id="donate"><div class="wrap">
+<div class="support-grid">
+<div class="support-main">
+<span class="badge">💚 ПОДДЕРЖАТЬ PUSH CLXN</span>
+<h2>Помоги проекту развиваться</h2>
+<p>Любая сумма помогает оплачивать серверы, разработку, обновления и новые функции. Пожертвование не является покупкой рекламы — это добровольная поддержка проекта.</p>
+<div class="support-actions"><a class="btn primary" href="https://www.donationalerts.com/r/tepasww" target="_blank" rel="noopener">💚 Поддержать через DonationAlerts</a><a class="btn" href="https://discord.gg/6y5tMn5raX" target="_blank" rel="noopener">◈ Наш Discord</a></div>
+</div>
+<div class="support-side"><div class="coin">💚</div><b>THANK YOU</b><span>за поддержку PUSH CLXN</span></div>
+</div>
+</div></section>
+
+<section id="how"><div class="wrap">
+<div class="title"><h2>🛒 Как это работает</h2><p>Четыре шага от покупки до публикации.</p></div>
+<div class="feature">
+<div class="big"><h2>Оплатил → отправил → готово</h2><p>При покупке сайт создаёт уникальный номер заказа. Ты переходишь в DonationAlerts и отправляешь точную сумму, указав код заказа в сообщении платежа. Сервер проверяет новые донаты через API и после совпадения суммы и кода активирует рекламу.</p><a class="btn primary" href="https://www.donationalerts.com/r/tepasww" target="_blank" rel="noopener">💳 DonationAlerts</a></div>
+<div class="steps">
+<div class="step"><div class="num">1</div><div><b>Выбери тариф</b><span>Нажми «Купить».</span></div></div>
+<div class="step"><div class="num">2</div><div><b>Получи код заказа</b><span>Скопируй его в сообщение доната.</span></div></div>
+<div class="step"><div class="num">3</div><div><b>Оплати</b><span>DonationAlerts принимает доступные способы оплаты.</span></div></div>
+<div class="step"><div class="num">4</div><div><b>Отправь данные рекламы</b><span>После проверки платежа заполни карточку проекта.</span></div></div>
+</div>
+</div>
+</div></section>
+
+<section id="info"><div class="wrap">
+<div class="discord"><div><h3>◈ Discord PUSH CLXN</h3><p>Новости, поддержка, заявки и связь с администрацией.</p></div><a class="btn primary" href="https://discord.gg/6y5tMn5raX" target="_blank" rel="noopener">Зайти в Discord</a></div>
+<p class="notice">Реклама проходит модерацию. Запрещены мошенничество, вредоносные ссылки, незаконный контент и проекты, нарушающие правила площадки.</p>
+</div></section>
+
+<section id="servers"><div class="wrap">
+<div class="title"><h2>🟩 Minecraft Bedrock Servers</h2><p>Сервера, которые можно открыть и добавить в свой список для продвижения.</p></div>
+<div class="server-grid">
+<article class="server-card">
+  <div class="server-top"><div class="server-logo">A</div><div><span class="online"><i></i> BEDROCK</span><h3>anmine.ru</h3></div></div>
+  <div class="ip"><span>IP</span><b>anmine.ru</b><button onclick="copyText('anmine.ru')">COPY</button></div>
+  <div class="port"><span>PORT</span><b>19132</b><button onclick="copyText('19132')">COPY</button></div>
+  <a class="btn primary" href="#prices">🔥 Продвигать сервер</a>
+</article>
+<article class="server-card">
+  <div class="server-top"><div class="server-logo">I</div><div><span class="online"><i></i> BEDROCK</span><h3>inmine.ru</h3></div></div>
+  <div class="ip"><span>IP</span><b>inmine.ru</b><button onclick="copyText('inmine.ru')">COPY</button></div>
+  <div class="port"><span>PORT</span><b>19132</b><button onclick="copyText('19132')">COPY</button></div>
+  <a class="btn primary" href="#prices">🔥 Продвигать сервер</a>
+</article>
+</div>
+<div class="server-note">💡 Чтобы добавить свой Minecraft Bedrock сервер в рекламный список — выбери тариф и отправь данные после оплаты.</div>
+</div></section>
+
+<section id="promo"><div class="wrap">
+<div class="promo-box">
+  <div><span class="badge">⚡ PUSH CLXN PROMO</span><h2>Хочешь, чтобы о твоём сервере узнали?</h2><p>Оплати размещение, отправь IP и описание — твой проект сможет появиться в рекламной витрине.</p></div>
+  <a class="btn primary" href="#prices">🚀 Начать продвижение</a>
+</div>
+</div></section>
+</main>
+
+<footer><div class="wrap foot"><span>© 2026 PUSH CLXN — рекламная площадка</span><span>Discord: discord.gg/6y5tMn5raX</span></div></footer>
+
+<div class="modal" id="orderModal"><div class="box">
+<button class="close" onclick="closeModal()">×</button>
+<h2 id="orderTitle">Покупка рекламы</h2><p class="sub">Твой заказ будет привязан к уникальному коду. Не меняй сумму платежа.</p>
+<div class="order"><div class="muted">КОД ЗАКАЗА</div><div id="orderCode" class="code"></div><div id="orderAmount" style="margin-top:7px"></div></div>
+<div class="pay">
+<a id="payLink" class="btn primary" href="https://www.donationalerts.com/r/tepasww" target="_blank" rel="noopener">💳 Оплатить через DonationAlerts</a>
+</div>
+<p class="notice">В DonationAlerts укажи код заказа в сообщении доната. После оплаты нажми «Проверить оплату».</p>
+<button id="checkPaymentBtn" class="btn" style="width:100%;margin-top:8px" onclick="startPaymentPolling()">🔎 Проверить оплату</button>
+<div id="paymentResult" style="margin-top:12px"></div>
+<div id="adForm" class="hidden">
+<hr style="border:0;border-top:1px solid #202a35;margin:20px 0">
+<h3>📢 Данные для рекламы</h3>
+<label>Название проекта</label><input id="adName" maxlength="60" placeholder="Например: PUSH CLXN">
+<label>Ссылка на проект</label><input id="adUrl" placeholder="https://discord.gg/...">
+<label>Описание</label><textarea id="adDesc" maxlength="240" placeholder="Коротко расскажи о проекте"></textarea>
+<label>Категория</label><select id="adCat"><option>Discord</option><option>Minecraft</option><option>Telegram</option><option>Сайт</option><option>Другое</option></select>
+<button class="btn primary" style="width:100%;margin-top:12px" onclick="submitAd()">🚀 Отправить на модерацию</button>
+</div>
+</div></div>
+
+<script>
+let current=null;
+let paymentTimer=null;
+let paymentChecking=false;
+function code(){return 'PUSH-'+Math.random().toString(36).slice(2,7).toUpperCase()+'-'+Date.now().toString().slice(-4)}
+function openOrder(id,amount,title){
+ stopPaymentPolling();
+ current={id,amount,title,code:code()};
+ document.getElementById('orderTitle').textContent='Покупка: '+title;
+ document.getElementById('orderCode').textContent=current.code;
+ document.getElementById('orderAmount').textContent='К оплате: '+amount+'₽';
+ document.getElementById('paymentResult').innerHTML='';
+ document.getElementById('checkPaymentBtn').disabled=false;
+ document.getElementById('checkPaymentBtn').textContent='🔎 Проверить оплату';
+ document.getElementById('adForm').classList.add('hidden');
+ document.getElementById('orderModal').classList.add('open');
+ startPaymentPolling();
+}
+function closeModal(){
+ stopPaymentPolling();
+ document.getElementById('orderModal').classList.remove('open');
+}
+function stopPaymentPolling(){
+ if(paymentTimer){clearInterval(paymentTimer); paymentTimer=null;}
+ paymentChecking=false;
+}
+async function checkPayment(){
+ if(!current || paymentChecking)return;
+ paymentChecking=true;
+ try{
+  const res=await fetch('/api/check-payment?code='+encodeURIComponent(current.code)+'&amount='+current.amount,{cache:'no-store'});
+  let data={};
+  try{ data=await res.json(); }catch(e){ data={}; }
+
+  if(data.paid){
+   document.getElementById('paymentResult').innerHTML='<div class="ok">✅ Оплата подтверждена! Теперь отправь данные рекламы.</div>';
+   document.getElementById('checkPaymentBtn').disabled=true;
+   document.getElementById('checkPaymentBtn').textContent='✅ Оплата подтверждена';
+   document.getElementById('adForm').classList.remove('hidden');
+   stopPaymentPolling();
+  }
+  if(!data.paid){
+   document.getElementById('paymentResult').innerHTML='<div class="notice">🔄 Проверка оплаты идет…</div>';
+  }
+ }catch(e){
+  // Тихо повторяем проверку через несколько секунд.
+ }finally{
+  paymentChecking=false;
+ }
+}
+function startPaymentPolling(){
+ if(paymentTimer || !current)return;
+ document.getElementById('checkPaymentBtn').disabled=true;
+ document.getElementById('checkPaymentBtn').textContent='🔄 Проверка оплаты…';
+ document.getElementById('paymentResult').innerHTML='<div class="notice">🔄 Проверка оплаты идет…</div>';
+ checkPayment();
+ paymentTimer=setInterval(checkPayment,5000);
+}
+async function submitAd(){
+ const payload={code:current.code,plan:current.id,amount:current.amount,name:document.getElementById('adName').value.trim(),url:document.getElementById('adUrl').value.trim(),description:document.getElementById('adDesc').value.trim(),category:document.getElementById('adCat').value};
+ if(!payload.name||!payload.url||!payload.description){alert('Заполни название, ссылку и описание.');return}
+ const r=await fetch('/api/submit-ad',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+ const d=await r.json();
+ alert(d.message||'Заявка отправлена');
+ if(d.ok) closeModal();
+}
+function copyText(t){navigator.clipboard?.writeText(t);alert('Скопировано: '+t)}
+window.addEventListener('click',e=>{if(e.target.id==='orderModal')closeModal()});
+</script>
+</body>
+</html>
