@@ -29,28 +29,88 @@ footer{border-top:1px solid #171d27;padding:30px 0;color:#687485;font-size:13px;
 .server-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.server-card{padding:24px;border:1px solid #1d2a35;border-radius:22px;background:linear-gradient(145deg,#0b1218,#080c12);box-shadow:0 20px 65px rgba(0,0,0,.16);transition:.25s}.server-card:hover{transform:translateY(-5px);border-color:#3b514b}.server-top{display:flex;align-items:center;gap:15px;margin-bottom:20px}.server-logo{width:58px;height:58px;border-radius:17px;display:grid;place-items:center;background:linear-gradient(135deg,#65ffae,#8b7cff);color:#06100a;font-size:26px;font-weight:1000}.server-top h3{margin:5px 0 0;font-size:24px}.online{font-size:10px;font-weight:900;color:#65ffae;letter-spacing:1px}.online i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#65ffae;box-shadow:0 0 12px #65ffae;margin-right:5px}.ip,.port{display:flex;align-items:center;gap:10px;padding:13px 14px;background:#070b10;border:1px solid #19232d;border-radius:13px;margin-top:9px}.ip span,.port span{font-size:10px;color:#687587;font-weight:900}.ip b,.port b{flex:1;font-size:14px}.ip button,.port button{border:0;background:#111a22;color:#8d9aaa;border-radius:8px;padding:7px 9px;font-size:10px;font-weight:900;cursor:pointer}.server-card .btn{width:100%;margin-top:14px}.server-note{margin-top:15px;padding:15px 18px;border:1px solid #202b36;border-radius:15px;color:#7f8b9b;background:#090e14;font-size:13px}.promo-box{display:flex;align-items:center;justify-content:space-between;gap:25px;padding:35px;border:1px solid #26363a;border-radius:25px;background:radial-gradient(circle at 80% 30%,rgba(101,255,174,.13),transparent 35%),linear-gradient(135deg,#0b1218,#0a0d13)}.promo-box h2{font-size:34px;margin:15px 0 8px}.promo-box p{color:#8995a5;max-width:650px;line-height:1.6}.promo-box .btn{white-space:nowrap}
 
 .support-grid{display:grid;grid-template-columns:1fr 300px;gap:16px}.support-main{padding:35px;border:1px solid #23342e;border-radius:25px;background:radial-gradient(circle at 80% 10%,rgba(101,255,174,.13),transparent 32%),#0a100e}.support-main h2{font-size:38px;margin:16px 0 10px}.support-main p{color:#89998f;line-height:1.65;max-width:730px}.support-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.support-side{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border:1px solid #23342e;border-radius:25px;background:#0a100e;color:#9aa89f}.support-side b{color:#fff;font-size:20px}.coin{width:76px;height:76px;border-radius:24px;display:grid;place-items:center;font-size:34px;background:rgba(101,255,174,.1);border:1px solid rgba(101,255,174,.25);box-shadow:0 0 45px rgba(101,255,174,.1)}
+
+.hero-pills{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:24px}.hero-pills span{padding:8px 12px;border:1px solid #202a35;background:#0a0f15;border-radius:999px;color:#7f8b9c;font-size:12px}.hero-pills span:first-child{color:#bfffd8;border-color:#234233}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.service-card{position:relative;padding:24px;border:1px solid #1b2731;background:linear-gradient(145deg,#0b1118,#080c12);border-radius:22px;transition:.22s;overflow:hidden}.service-card:before{content:"";position:absolute;inset:auto -30px -70px auto;width:150px;height:150px;background:radial-gradient(circle,rgba(101,255,174,.12),transparent 65%);pointer-events:none}.service-card:hover{transform:translateY(-5px);border-color:#395348}.featured-service{border-color:#31513f;box-shadow:0 18px 60px rgba(101,255,174,.06)}.service-icon{width:56px;height:56px;border-radius:17px;display:grid;place-items:center;background:#121b23;font-size:27px;margin-bottom:15px}.service-tag{display:inline-block;font-size:10px;letter-spacing:1.2px;font-weight:900;color:#65ffae;margin-bottom:8px}.service-card h3{margin:0 0 8px;font-size:21px}.service-card p{color:#8793a4;line-height:1.55;min-height:73px}.service-price{font-size:29px;font-weight:950;margin:16px 0 8px}.service-card .btn{width:100%}.service-note{margin-top:16px;padding:16px 18px;border:1px dashed #30423b;border-radius:16px;background:#09100e;color:#829188;font-size:13px}.service-note b{color:#caffdc}.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}.why-card{display:flex;gap:15px;align-items:flex-start;padding:21px;border:1px solid #1b2430;background:#0a0f15;border-radius:19px}.why-card>span{font-size:27px}.why-card h3{margin:0 0 5px}.why-card p{margin:0;color:#7f8b9b;line-height:1.5}.faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.faq-grid details{border:1px solid #1b2430;background:#0a0f15;border-radius:17px;padding:17px 19px}.faq-grid summary{cursor:pointer;font-weight:850}.faq-grid p{color:#7f8b9b;line-height:1.55;margin:12px 0 0}
+@media(max-width:850px){.service-grid,.why-grid,.faq-grid{grid-template-columns:1fr}}
+
+.java-tools{display:flex;gap:12px;margin:18px 0;flex-wrap:wrap}.java-tools input,.java-tools select{flex:1;min-width:220px;background:#0d0b19;color:#fff;border:1px solid rgba(150,100,255,.25);border-radius:14px;padding:14px}.java-directory{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.directory-card{min-height:320px}.server-avatar{width:58px;height:58px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,#8a5cff,#21d9ff);font-weight:1000;font-size:16px;box-shadow:0 10px 30px rgba(80,80,255,.2)}.java-tags{color:#aaa2c7!important;min-height:38px!important}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px}.eyebrow{font-size:11px;letter-spacing:2px;color:#a894ff;font-weight:900}.navlinks{align-items:center}.navlinks a:last-child{color:#d7c9ff}.navlinks a:last-child:hover{color:#fff}@media(max-width:1050px){.java-directory{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:800px){.java-directory{grid-template-columns:1fr}.section-head{align-items:flex-start;flex-direction:column}.navlinks{display:none}}
+</style>
+
+<style>
+/* PUSH CLXN neon redesign */
+:root{--a:#8b5cf6;--b:#22d3ee;--c:#ec4899;--bg:#05030b}
+body{background:var(--bg);color:#f8f7ff}
+body:before{background:radial-gradient(circle at 15% 15%,rgba(139,92,246,.20),transparent 24%),radial-gradient(circle at 85% 20%,rgba(34,211,238,.14),transparent 25%),radial-gradient(circle at 50% 85%,rgba(236,72,153,.11),transparent 28%)}
+body:after{opacity:.25;background-size:36px 36px}
+header{background:rgba(5,3,11,.76);border-bottom-color:#241a38}
+.brand i{color:var(--b)}
+.btn:hover{border-color:var(--b);box-shadow:0 0 24px rgba(34,211,238,.12)}
+.primary{background:linear-gradient(135deg,var(--a),var(--b));color:#fff;border:0;box-shadow:0 10px 35px rgba(139,92,246,.22)}
+.grad{background:linear-gradient(100deg,#fff,#a78bfa 42%,#67e8f9 72%,#f9a8d4);-webkit-background-clip:text;background-clip:text}
+.badge{border-color:#30214a;background:#0d0817}.dot{background:#a78bfa;box-shadow:0 0 15px #a78bfa}
+.stat,.card,.server-card,.service-card,.step{border-color:#251c36;background:linear-gradient(145deg,#0d0817,#08050e)}
+.card:hover,.service-card:hover,.server-card:hover{border-color:#55358a}
+.icon,.service-icon{background:#171027}
+.featured-service{border-color:#53328a;box-shadow:0 18px 70px rgba(139,92,246,.09)}
+.big{border-color:#392456;background:linear-gradient(135deg,rgba(139,92,246,.13),rgba(34,211,238,.08))}
+.num{background:linear-gradient(135deg,var(--a),var(--b));color:#fff}
+.discord{border-color:#30224b;background:linear-gradient(135deg,rgba(88,101,242,.16),rgba(139,92,246,.12))}
+.promo-box{border-color:#35224e;background:radial-gradient(circle at 80% 30%,rgba(34,211,238,.12),transparent 35%),linear-gradient(135deg,#10091a,#09060e)}
+.support-main,.support-side{border-color:#30224b;background:radial-gradient(circle at 80% 10%,rgba(139,92,246,.15),transparent 32%),#0a0711}
+.coin{background:rgba(139,92,246,.12);border-color:rgba(139,92,246,.3);box-shadow:0 0 45px rgba(139,92,246,.13)}
+
+.xhero{padding:25px 0 10px}.ticker{display:flex;gap:10px;overflow:hidden;padding:10px 0;color:#7f8aa0;font-size:12px}.ticker span{white-space:nowrap;padding:8px 12px;border:1px solid #251c36;border-radius:999px;background:#0b0712}.ticker b{color:#c4b5fd}
+.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin:25px 0 0}.trust-item{padding:18px;border:1px solid #241b34;border-radius:18px;background:rgba(12,8,19,.72)}.trust-item strong{display:block;font-size:18px}.trust-item span{color:#788397;font-size:12px}
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.process-card{padding:22px;border:1px solid #251c36;border-radius:20px;background:#0b0711;position:relative}.process-card .big-num{font-size:44px;font-weight:1000;color:#8b5cf6;line-height:1}.process-card h3{margin:12px 0 6px}.process-card p{margin:0;color:#7f899c;line-height:1.5;font-size:13px}
+.marquee{margin:35px 0;padding:15px 0;border-top:1px solid #21172f;border-bottom:1px solid #21172f;overflow:hidden}.marquee-track{display:flex;gap:45px;width:max-content;animation:slide 24s linear infinite;color:#6f7a8d;font-weight:800;font-size:13px}.marquee-track b{color:#a78bfa}@keyframes slide{to{transform:translateX(-50%)}}
+.cta-big{display:grid;grid-template-columns:1fr auto;align-items:center;gap:25px;padding:38px;border:1px solid #40255e;border-radius:28px;background:linear-gradient(120deg,rgba(139,92,246,.16),rgba(34,211,238,.07),rgba(236,72,153,.07));overflow:hidden}.cta-big h2{font-size:38px;margin:10px 0}.cta-big p{color:#8d97a9;max-width:700px;line-height:1.6}.glow-orb{width:130px;height:130px;border-radius:50%;background:radial-gradient(circle,#67e8f9,rgba(139,92,246,.45),transparent 68%);filter:blur(2px);animation:pulse 3s ease-in-out infinite}@keyframes pulse{50%{transform:scale(1.13);opacity:.7}}
+@media(max-width:850px){.trust,.process{grid-template-columns:1fr 1fr}.cta-big{grid-template-columns:1fr}.glow-orb{display:none}}@media(max-width:520px){.trust,.process{grid-template-columns:1fr}.hero{padding-top:60px}}
+</style>
+
+<style>
+.purchase-live{position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.08);background:linear-gradient(90deg,rgba(139,92,246,.14),rgba(34,211,238,.10),rgba(236,72,153,.12))}
+.purchase-live .live-inner{display:flex;gap:18px;align-items:center;min-height:46px;white-space:nowrap;overflow:hidden;font-size:13px;color:#cbd5e1}
+.purchase-live .pulse{width:8px;height:8px;border-radius:50%;background:#4ade80;box-shadow:0 0 16px #4ade80;animation:livepulse 1.4s infinite;flex:0 0 auto}
+.purchase-live .buyer-list{display:flex;gap:26px;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.purchase-live .buyer{padding:7px 12px;border:1px solid rgba(255,255,255,.08);border-radius:999px;background:rgba(255,255,255,.035)}
+@keyframes livepulse{50%{opacity:.35;transform:scale(.7)}}
+.review-head{display:flex;justify-content:space-between;align-items:end;gap:20px}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+.review-card{padding:22px;border:1px solid rgba(255,255,255,.09);border-radius:22px;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));box-shadow:0 18px 60px rgba(0,0,0,.18)}
+.review-stars{letter-spacing:2px;color:#fbbf24;font-size:18px}.review-name{font-weight:800}.review-date{font-size:12px;color:#64748b}.review-text{color:#cbd5e1;line-height:1.65;margin:13px 0 0}
+.review-empty{grid-column:1/-1;text-align:center;padding:35px;border:1px dashed rgba(255,255,255,.12);border-radius:20px;color:#94a3b8}
+.review-form{margin-top:28px;padding:24px;border-radius:24px;background:linear-gradient(135deg,rgba(139,92,246,.10),rgba(34,211,238,.06));border:1px solid rgba(255,255,255,.09)}
+.review-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.review-form textarea{min-height:110px}.review-form .full{grid-column:1/-1}
+@media(max-width:850px){.review-grid{grid-template-columns:1fr 1fr}}@media(max-width:520px){.review-grid,.review-form-grid{grid-template-columns:1fr}.review-form .full{grid-column:auto}}
+</style>
+
+<style>
+.java-grid,.recovery-layout{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.java-card,.lookup-panel,.recovery-card,.recovery-info,.requests-box{background:rgba(15,12,31,.72);border:1px solid rgba(150,100,255,.25);border-radius:24px;padding:24px;box-shadow:0 12px 40px rgba(0,0,0,.22)}.java-card h3{font-size:28px;margin:15px 0 7px}.featured-java{background:linear-gradient(135deg,rgba(118,55,255,.18),rgba(0,220,255,.08))}.java-top,.server-meta{display:flex;justify-content:space-between;gap:12px;align-items:center}.java-badge{font-size:11px;letter-spacing:2px;padding:7px 10px;border-radius:999px;background:rgba(128,74,255,.18);border:1px solid rgba(128,74,255,.4)}.online-pill{font-size:11px;color:#70ffbd;letter-spacing:1px}.muted-pill{color:#b9b3d6}.server-ip{font-family:monospace;font-size:20px;margin:10px 0 18px}.server-meta{font-size:13px;color:#aaa2c7;margin-bottom:18px}.neon-btn,.ghost-btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;border:0;border-radius:14px;padding:13px 16px;font-weight:800;cursor:pointer;text-decoration:none;margin:4px 5px 0 0}.neon-btn{background:linear-gradient(90deg,#8a5cff,#21d9ff);color:white}.ghost-btn{background:transparent;border:1px solid rgba(255,255,255,.15);color:white}.lookup-panel{margin-top:18px}.lookup-form{display:flex;gap:10px;margin-top:16px}.lookup-form input,.recovery-card input,.recovery-card select,.recovery-card textarea{width:100%;box-sizing:border-box;background:#0d0b19;color:#fff;border:1px solid rgba(255,255,255,.13);border-radius:13px;padding:13px 14px;outline:none}.lookup-result{margin-top:14px;padding:14px;border-radius:14px;background:rgba(255,255,255,.04);color:#c8c1db}.recovery-layout{grid-template-columns:1.1fr .9fr}.recovery-card label{display:block;font-size:12px;color:#aaa2c7;margin-bottom:12px}.recovery-card textarea{min-height:130px;resize:vertical}.recovery-info{display:flex;flex-direction:column;justify-content:center}.status-track{display:flex;align-items:center;gap:8px;margin-bottom:24px}.status-track div{display:flex;flex-direction:column;gap:5px;font-size:10px;text-align:center}.status-track i{height:1px;flex:1;background:rgba(255,255,255,.16)}.safe-box{padding:16px;border-radius:16px;background:rgba(255,185,70,.07);border:1px solid rgba(255,185,70,.16);margin-bottom:16px}.safe-box p{color:#aaa2c7;font-size:13px;line-height:1.55}.requests-box{margin-top:18px}.requests-box p{color:#aaa2c7}.request-id{font-family:monospace;color:#6ee7ff}.request-status{color:#ffd166}.request-done{color:#70ffbd}@media(max-width:800px){.java-grid,.recovery-layout{grid-template-columns:1fr}.lookup-form{flex-direction:column}.status-track{gap:4px}.status-track div span{font-size:8px}.server-ip{font-size:17px}}
 </style>
 </head>
 <body>
 <header><div class="wrap nav">
 <a class="brand" href="#">PUSH <i>CLXN</i></a>
-<nav class="navlinks"><a href="#servers">Сервера</a><a href="#ads">Реклама</a><a href="#prices">Тарифы</a><a href="#donate">Поддержка</a><a href="#how">Как купить</a></nav>
+<nav class="navlinks"><a href="#javaServers">Minecraft Java</a><a href="#recovery">Восстановление</a><a href="https://t.me/OutSai1" target="_blank" rel="noopener">Telegram админа</a><a href="#servers">Сервера</a><a href="#ads">Реклама</a><a href="#prices">Тарифы</a><a href="#services">Discord</a><a href="#how">Как купить</a></nav>
 <a class="btn primary" href="#prices">Купить рекламу</a>
-</div></header>
+</div></header><div class="purchase-live"><div class="wrap live-inner"><span class="pulse"></span><b>ПОСЛЕДНИЕ ПОКУПКИ</b><div class="buyer-list" id="buyerList"><span class="buyer">Загрузка подтверждённых заказов…</span></div></div></div>
+
 
 <main>
 <section class="hero"><div class="wrap">
 <div class="badge"><span class="dot"></span> PUSH CLXN • РЕКЛАМНАЯ ПЛОЩАДКА</div>
 <h1>Твоя реклама.<br><span class="grad">Твоя аудитория.</span></h1>
-<p>Размещай Discord-серверы, Minecraft-проекты, Telegram-каналы, сайты и другие проекты. Оплата через DonationAlerts, после подтверждения платежа объявление автоматически попадает на площадку.</p>
-<div class="actions"><a class="btn primary" href="#prices">🚀 Купить рекламу</a><a class="btn" href="https://discord.gg/6y5tMn5raX" target="_blank" rel="noopener">◈ Discord PUSH CLXN</a></div>
+<p>Размещай Discord-серверы, Minecraft-проекты, Telegram-каналы, сайты и другие проекты. А ещё заказывай Discord-ботов и настройку серверов. Оплата через DonationAlerts, после подтверждения можно сразу отправить данные заказа.</p>
+<div class="actions"><a class="btn primary" href="#prices">🚀 Купить рекламу</a><a class="btn" href="#services">🤖 Услуги Discord</a><a class="btn" href="https://discord.gg/6y5tMn5raX" target="_blank" rel="noopener">◈ Discord PUSH CLXN</a><a class="btn" href="https://t.me/OutSai1" target="_blank" rel="noopener">📲 Админ в Telegram</a></div>
+<div class="hero-pills"><span>⚡ Быстрая заявка</span><span>🔐 Проверка оплаты</span><span>🛠️ Помощь с настройкой</span><span>💬 Поддержка в Discord</span></div>
 </div></section>
 
 <div class="wrap"><div class="stats">
 <div class="stat"><b>24/7</b><small>приём заказов</small></div>
 <div class="stat"><b>⚡ AUTO</b><small>проверка оплаты</small></div>
-<div class="stat"><b>1 000₽</b><small>вечное размещение</small></div>
-<div class="stat"><b>∞</b><small>активные проекты</small></div>
+<div class="stat"><b>300₽</b><small>Discord-бот от</small></div>
+<div class="stat"><b>600₽</b><small>настройка сервера от</small></div>
 </div></div>
 
 <section id="ads"><div class="wrap">
@@ -75,6 +135,29 @@ footer{border-top:1px solid #171d27;padding:30px 0;color:#687485;font-size:13px;
 <div class="card"><div class="icon">🌐</div><h3>САЙТ / ПРОЕКТ</h3><div class="price">500₽</div><p>Реклама сайта, сервиса или игрового проекта на 7 дней.</p><button class="btn primary" onclick="openOrder('site',500,'Сайт / проект • 7 дней')">Купить</button></div>
 <div class="card"><div class="popular">🏆 PREMIUM</div><div class="icon">💠</div><h3>VIP ВИТРИНА</h3><div class="price">1 500₽</div><p>Премиум-карточка проекта на 30 дней с максимальным выделением.</p><button class="btn primary" onclick="openOrder('vip',1500,'VIP витрина • 30 дней')">Купить VIP</button></div>
 <div class="card"><div class="icon">📌</div><h3>ЗАКРЕП</h3><div class="price">900₽</div><p>Приоритетный блок в верхней части рекламной витрины на 7 дней.</p><button class="btn primary" onclick="openOrder('pin',900,'Закреп • 7 дней')">Купить</button></div>
+</div>
+</div></section>
+
+<section id="services"><div class="wrap">
+<div class="title"><h2>🤖 Discord-услуги</h2><p>Можно заказать не только рекламу — поможем собрать и настроить Discord под твою задачу.</p></div>
+<div class="service-grid">
+<article class="service-card featured-service"><div class="service-icon">🤖</div><div class="service-tag">СТАРТ</div><h3>Свой Discord-бот</h3><p>Базовый бот под твой сервер: команды, ответы и простая логика. Детали согласуем после оплаты.</p><div class="service-price">300₽</div><button class="btn primary" onclick="openOrder('discord-bot',300,'Discord-бот')">Заказать бота →</button></article>
+<article class="service-card"><div class="service-icon">⚙️</div><div class="service-tag">НАСТРОЙКА</div><h3>Настройка Discord-сервера</h3><p>Каналы, категории, роли, базовые права и порядок на сервере — под твою структуру.</p><div class="service-price">600₽</div><button class="btn primary" onclick="openOrder('discord-setup',600,'Настройка Discord-сервера')">Заказать настройку →</button></article>
+<article class="service-card"><div class="service-icon">🎨</div><div class="service-tag">ОФОРМЛЕНИЕ</div><h3>Красивое оформление сервера</h3><p>Поможем привести каналы, роли и структуру к аккуратному единому виду.</p><div class="service-price">400₽</div><button class="btn" onclick="openOrder('discord-design',400,'Оформление Discord-сервера')">Заказать →</button></article>
+<article class="service-card"><div class="service-icon">🧩</div><div class="service-tag">БОТ + КОМАНДЫ</div><h3>Расширение бота</h3><p>Дополнительные команды и простые функции для уже существующего Discord-бота.</p><div class="service-price">700₽</div><button class="btn" onclick="openOrder('bot-upgrade',700,'Расширение Discord-бота')">Заказать →</button></article>
+<article class="service-card"><div class="service-icon">🛡️</div><div class="service-tag">МОДЕРАЦИЯ</div><h3>Базовая защита сервера</h3><p>Помощь с ролями, правами доступа и базовой организацией модерации.</p><div class="service-price">500₽</div><button class="btn" onclick="openOrder('discord-moderation',500,'Базовая защита Discord-сервера')">Заказать →</button></article>
+<article class="service-card"><div class="service-icon">🚀</div><div class="service-tag">ПОД КЛЮЧ</div><h3>Discord-пакет</h3><p>Бот + базовая настройка сервера. Подходит, если хочешь стартануть проект сразу комплексно.</p><div class="service-price">900₽</div><button class="btn" onclick="openOrder('discord-pack',900,'Discord-пакет')">Заказать пакет →</button></article>
+</div>
+<div class="service-note"><b>💬 Не знаешь, что выбрать?</b> Опиши задачу после оплаты — подскажем, какие функции и настройка нужны именно твоему серверу.</div>
+</div></section>
+
+<section id="why"><div class="wrap">
+<div class="title"><h2>✨ Почему здесь удобно</h2><p>Всё собрано в одном месте: реклама, Discord-услуги и связь с командой.</p></div>
+<div class="why-grid">
+<div class="why-card"><span>🔎</span><div><h3>Понятная покупка</h3><p>Получаешь уникальный код заказа и используешь его при оплате.</p></div></div>
+<div class="why-card"><span>⚡</span><div><h3>Проверка оплаты</h3><p>После нажатия проверки сайт сам повторяет запрос каждые несколько секунд.</p></div></div>
+<div class="why-card"><span>🛠️</span><div><h3>Услуги для Discord</h3><p>Бот, настройка, оформление и дополнительные функции — в одном каталоге.</p></div></div>
+<div class="why-card"><span>💬</span><div><h3>Поддержка</h3><p>Если задача нестандартная, можно связаться через Discord PUSH CLXN.</p></div></div>
 </div>
 </div></section>
 
@@ -135,11 +218,66 @@ footer{border-top:1px solid #171d27;padding:30px 0;color:#687485;font-size:13px;
 </div></section>
 </main>
 
+
+<section class="xhero"><div class="wrap"><div class="ticker"><span>⚡ <b>LIVE</b> заказы принимаются</span><span>🤖 Discord-боты от 300₽</span><span>🛠️ Настройка сервера от 600₽</span><span>📢 Реклама проектов</span><span>💳 DonationAlerts</span></div><div class="trust"><div class="trust-item"><strong>⚡ Быстрый старт</strong><span>Выбираешь услугу → оплачиваешь → отправляешь данные.</span></div><div class="trust-item"><strong>🔐 Проверка оплаты</strong><span>Заказ привязан к уникальному коду платежа.</span></div><div class="trust-item"><strong>💬 Поддержка</strong><span>Можно обсудить нестандартную задачу в Discord.</span></div></div></div></section>
+
+<section id="process"><div class="wrap"><div class="title"><h2>🚀 От идеи до результата</h2><p>Без лишних действий — всё собрано в одном месте.</p></div><div class="process"><div class="process-card"><div class="big-num">01</div><h3>Выбираешь</h3><p>Рекламу, бота или настройку Discord.</p></div><div class="process-card"><div class="big-num">02</div><h3>Получаешь код</h3><p>У каждого заказа свой уникальный код.</p></div><div class="process-card"><div class="big-num">03</div><h3>Оплачиваешь</h3><p>Переходишь в DonationAlerts и указываешь код.</p></div><div class="process-card"><div class="big-num">04</div><h3>Запускаем</h3><p>После подтверждения отправляешь данные заказа.</p></div></div></div></section>
+
+<div class="wrap"><div class="marquee"><div class="marquee-track"><span>DISCORD</span><b>✦</b><span>MINECRAFT</span><b>✦</b><span>TELEGRAM</span><b>✦</b><span>БЫСТРЫЕ ЗАКАЗЫ</span><b>✦</b><span>DISCORD БОТЫ</span><b>✦</b><span>PUSH CLXN</span><b>✦</b><span>DISCORD</span><b>✦</b><span>MINECRAFT</span><b>✦</b><span>TELEGRAM</span><b>✦</b></div></div></div>
+
+<section id="final-cta"><div class="wrap"><div class="cta-big"><div><span class="badge">💜 PUSH CLXN STUDIO</span><h2>Есть идея? Давай соберём её.</h2><p>Нужен бот, красивый Discord, продвижение сервера или нестандартная задача? Выбери готовую услугу или напиши нам в Discord — разберём задачу и подскажем формат.</p><div class="actions"><a class="btn primary" href="#prices">🔥 Выбрать услугу</a><a class="btn" href="https://discord.gg/6y5tMn5raX" target="_blank" rel="noopener">💬 Обсудить в Discord</a></div></div><div class="glow-orb"></div></div></div></section>
+
+<section id="reviews"><div class="wrap">
+<div class="review-head"><div class="title"><h2>⭐ Отзывы покупателей</h2><p>Здесь появляются отзывы после подтверждённой оплаты.</p></div><a class="btn primary" href="#review-form">✍️ Оставить отзыв</a></div>
+<div class="review-grid" id="reviewGrid"><div class="review-empty">Загрузка отзывов…</div></div>
+<div class="review-form" id="review-form"><div class="title"><h3>✍️ Оставить отзыв</h3><p>Нужен код заказа из покупки — это помогает не публиковать случайные отзывы.</p></div>
+<div class="review-form-grid"><div><label>Код заказа</label><input id="reviewCode" placeholder="PUSH-XXXXX-1234"></div><div><label>Имя / ник</label><input id="reviewName" maxlength="30" placeholder="Например: Alex"></div><div><label>Оценка</label><select id="reviewRating"><option value="5">★★★★★ — 5</option><option value="4">★★★★☆ — 4</option><option value="3">★★★☆☆ — 3</option><option value="2">★★☆☆☆ — 2</option><option value="1">★☆☆☆☆ — 1</option></select></div><div class="full"><label>Отзыв</label><textarea id="reviewText" maxlength="300" placeholder="Расскажи, как прошла покупка…"></textarea></div></div><button class="btn primary" onclick="submitReview()">🚀 Опубликовать отзыв</button><div id="reviewResult" style="margin-top:12px"></div></div>
+</div></section>
+
+<section id="faq"><div class="wrap"><div class="title">
+<section class="section" id="javaServers">
+  <div class="section-head"><div><span class="eyebrow">MINECRAFT JAVA DIRECTORY</span><h2>⛏️ Большой каталог Minecraft Java</h2><p>Популярные Java-серверы, IP, версии, режимы и живой статус. Каталог можно расширять новыми проектами.</p></div><a class="neon-btn" href="https://t.me/OutSai1" target="_blank" rel="noopener">📲 Добавить сервер через админа</a></div>
+  <div class="java-tools"><input id="javaSearch" placeholder="🔎 Поиск сервера, IP или режима…" oninput="filterJavaServers()"><select id="javaFilter" onchange="filterJavaServers()"><option value="all">Все серверы</option><option value="pvp">PvP</option><option value="survival">Выживание</option><option value="minigames">Мини-игры</option><option value="anarchy">Анархия</option></select></div>
+  <div id="javaGrid" class="java-directory"><div class="lookup-result">🔄 Загружаем каталог…</div></div>
+  <div class="lookup-panel">
+    <div><span class="eyebrow">PLAYER LOOKUP</span><h3>🔎 Проверка игрока</h3><p>Введите Minecraft-ник. Показываем только публичные данные профиля. Приватную информацию и пароли сайт не получает.</p></div>
+    <div class="lookup-form"><input id="playerNick" maxlength="16" placeholder="Например: Danya123"><button class="neon-btn" onclick="lookupPlayer()">ПРОВЕРИТЬ</button></div>
+    <div id="playerResult" class="lookup-result">👤 Здесь появится результат проверки.</div>
+  </div>
+</section>
+
+<section class="section recovery-section" id="recovery">
+  <div class="section-head"><div><span class="eyebrow">ACCOUNT RECOVERY</span><h2>🔐 Восстановление Minecraft-аккаунта</h2><p>Не помните пароль? Оставьте безопасную заявку — пароль на сайте PUSH CLXN не запрашивается.</p></div></div>
+  <div class="recovery-layout">
+    <form class="recovery-card" onsubmit="submitRecovery(event)">
+      <label>Minecraft Nick<input id="recNick" maxlength="16" required placeholder="Введите ник"></label>
+      <label>Server<select id="recServer"><option>ReallyWorld</option><option>MBars.ru</option><option>Другой сервер</option></select></label>
+      <label>Проблема<textarea id="recProblem" maxlength="700" required placeholder="Опишите, что произошло..."></textarea></label>
+      <label>📎 Скриншот <input id="recScreenshot" type="file" accept="image/png,image/jpeg,image/webp"></label>
+      <button class="neon-btn" type="submit">🚀 ОТПРАВИТЬ ЗАПРОС</button>
+      <div id="recoveryResult" class="lookup-result"></div>
+    </form>
+    <div class="recovery-info">
+      <div class="status-track"><div><b>🟡 01</b><span>НА ПРОВЕРКЕ</span></div><i></i><div><b>🔵 02</b><span>СВЯЗЬ С СЕРВЕРОМ</span></div><i></i><div><b>🟢 03</b><span>ВОССТАНОВЛЕНО</span></div></div>
+      <div class="safe-box"><b>🛡️ Важно</b><p>Никогда не отправляйте нам пароль, коды 2FA, токены или другие секреты. Скриншот используется только как дополнительная информация, а не как доказательство владения аккаунтом.</p></div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px"><a class="neon-btn" href="https://t.me/OutSai1" target="_blank" rel="noopener">📲 НАПИСАТЬ АДМИНУ @OutSai1</a><a class="ghost-btn" href="https://discord.gg/6y5tMn5raX" target="_blank" rel="noopener">💬 DISCORD ПОДДЕРЖКА</a></div>
+    </div>
+  </div>
+  <div class="requests-box"><h3>📋 My Requests</h3><p>После отправки заявки здесь можно будет видеть её номер и текущий статус.</p><div id="requestStatus">Заявок в этой сессии пока нет.</div></div>
+</section>
+
+<h2>❓ Частые вопросы</h2><p>Коротко о покупке и оплате.</p></div><div class="faq-grid">
+<details><summary>Как оплатить заказ?</summary><p>Нажми «Купить», получи код заказа, перейди в DonationAlerts и укажи этот код в сообщении доната. Затем нажми «Проверить оплату».</p></details>
+<details><summary>Нужно ли нажимать проверку много раз?</summary><p>Нет. После запуска проверки сайт повторяет её автоматически примерно каждые 5 секунд.</p></details>
+<details><summary>Можно заказать услугу для своего Discord?</summary><p>Да. Выбери услугу в разделе Discord и после подтверждения оплаты отправь описание задачи.</p></details>
+<details><summary>Можно ли обсудить нестандартную задачу?</summary><p>Да, для нестандартных задач используй Discord PUSH CLXN и опиши, что именно нужно сделать.</p></details>
+</div></div></section>
+
 <footer><div class="wrap foot"><span>© 2026 PUSH CLXN — рекламная площадка</span><span>Discord: discord.gg/6y5tMn5raX</span></div></footer>
 
 <div class="modal" id="orderModal"><div class="box">
 <button class="close" onclick="closeModal()">×</button>
-<h2 id="orderTitle">Покупка рекламы</h2><p class="sub">Твой заказ будет привязан к уникальному коду. Не меняй сумму платежа.</p>
+<h2 id="orderTitle">Покупка</h2><p class="sub">Твой заказ будет привязан к уникальному коду. Не меняй сумму платежа.</p>
 <div class="order"><div class="muted">КОД ЗАКАЗА</div><div id="orderCode" class="code"></div><div id="orderAmount" style="margin-top:7px"></div></div>
 <div class="pay">
 <a id="payLink" class="btn primary" href="https://www.donationalerts.com/r/tepasww" target="_blank" rel="noopener">💳 Оплатить через DonationAlerts</a>
@@ -149,10 +287,10 @@ footer{border-top:1px solid #171d27;padding:30px 0;color:#687485;font-size:13px;
 <div id="paymentResult" style="margin-top:12px"></div>
 <div id="adForm" class="hidden">
 <hr style="border:0;border-top:1px solid #202a35;margin:20px 0">
-<h3>📢 Данные для рекламы</h3>
-<label>Название проекта</label><input id="adName" maxlength="60" placeholder="Например: PUSH CLXN">
-<label>Ссылка на проект</label><input id="adUrl" placeholder="https://discord.gg/...">
-<label>Описание</label><textarea id="adDesc" maxlength="240" placeholder="Коротко расскажи о проекте"></textarea>
+<h3 id="formTitle">📦 Данные заказа</h3>
+<label id="nameLabel">Название / имя проекта</label><input id="adName" maxlength="60" placeholder="Например: PUSH CLXN">
+<label id="urlLabel">Ссылка на проект / Discord</label><input id="adUrl" placeholder="https://discord.gg/...">
+<label id="descLabel">Описание</label><textarea id="adDesc" maxlength="240" placeholder="Коротко расскажи о проекте или опиши задачу"></textarea>
 <label>Категория</label><select id="adCat"><option>Discord</option><option>Minecraft</option><option>Telegram</option><option>Сайт</option><option>Другое</option></select>
 <button class="btn primary" style="width:100%;margin-top:12px" onclick="submitAd()">🚀 Отправить на модерацию</button>
 </div>
@@ -169,6 +307,11 @@ function openOrder(id,amount,title){
  document.getElementById('orderTitle').textContent='Покупка: '+title;
  document.getElementById('orderCode').textContent=current.code;
  document.getElementById('orderAmount').textContent='К оплате: '+amount+'₽';
+ const service=title.toLowerCase().includes('discord')||title.toLowerCase().includes('бот')||title.toLowerCase().includes('оформ');
+ document.getElementById('formTitle').textContent=service?'🛠️ Данные для выполнения заказа':'📢 Данные для рекламы';
+ document.getElementById('nameLabel').textContent=service?'Имя / название сервера':'Название проекта';
+ document.getElementById('urlLabel').textContent=service?'Ссылка на Discord-сервер':'Ссылка на проект';
+ document.getElementById('descLabel').textContent=service?'Опиши, что именно нужно сделать':'Описание';
  document.getElementById('paymentResult').innerHTML='';
  document.getElementById('checkPaymentBtn').disabled=false;
  document.getElementById('checkPaymentBtn').textContent='🔎 Проверить оплату';
@@ -226,6 +369,50 @@ async function submitAd(){
 }
 function copyText(t){navigator.clipboard?.writeText(t);alert('Скопировано: '+t)}
 window.addEventListener('click',e=>{if(e.target.id==='orderModal')closeModal()});
+
+async function loadRecentPurchases(){
+  const box=document.getElementById('buyerList'); if(!box)return;
+  try{ const r=await fetch('/api/recent-purchases'); const rows=await r.json();
+    if(!rows.length){box.innerHTML='<span class="buyer">Пока нет подтверждённых покупок</span>';return;}
+    box.innerHTML=rows.map(x=>{const safe=String(x.code||''); const short=safe.length>9?safe.slice(0,5)+'•••'+safe.slice(-4):safe; return `<span class="buyer">💜 Покупатель ${short} · ${x.amount}₽</span>`}).join('');
+  }catch{box.innerHTML='<span class="buyer">Покупки появятся здесь после оплаты</span>'}
+}
+function stars(n){return '★'.repeat(n)+'☆'.repeat(5-n)}
+async function loadReviews(){
+ const grid=document.getElementById('reviewGrid'); if(!grid)return;
+ try{const r=await fetch('/api/reviews'); const rows=await r.json();
+  if(!rows.length){grid.innerHTML='<div class="review-empty">⭐ Пока отзывов нет. Стань первым покупателем, который оставит отзыв!</div>';return;}
+  grid.innerHTML=rows.map(x=>`<article class="review-card"><div class="review-stars">${stars(Number(x.rating)||5)}</div><div style="margin-top:8px" class="review-name">${escapeHtml(x.name)}</div><div class="review-date">Покупатель PUSH CLXN</div><p class="review-text">${escapeHtml(x.text)}</p></article>`).join('');
+ }catch{grid.innerHTML='<div class="review-empty">Не удалось загрузить отзывы. Попробуй обновить страницу.</div>'}
+}
+function escapeHtml(v){return String(v||'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
+async function submitReview(){
+ const result=document.getElementById('reviewResult'); result.textContent='⏳ Публикуем отзыв…';
+ try{const r=await fetch('/api/reviews',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:reviewCode.value,name:reviewName.value,text:reviewText.value,rating:Number(reviewRating.value)})}); const j=await r.json(); result.textContent=j.message||'Готово'; if(j.ok){reviewText.value='';reviewName.value='';loadReviews();}}catch{result.textContent='⚠️ Не удалось отправить отзыв.'}
+}
+loadRecentPurchases(); loadReviews(); setInterval(loadRecentPurchases,15000);
+
+const JAVA_SERVERS_CACHE=[];
+async function loadJavaDirectory(){
+ const grid=document.getElementById('javaGrid');
+ try{const r=await fetch('/api/java-servers');const rows=await r.json();JAVA_SERVERS_CACHE.push(...rows);renderJavaServers(rows);}catch{grid.innerHTML='<div class="lookup-result">⚠️ Каталог временно недоступен.</div>'}
+}
+function renderJavaServers(rows){
+ const grid=document.getElementById('javaGrid');
+ if(!rows.length){grid.innerHTML='<div class="lookup-result">Ничего не найдено.</div>';return;}
+ grid.innerHTML=rows.map((x,i)=>`<article class="java-card directory-card" data-host="${escapeHtml(x.host)}"><div class="java-top"><span class="java-badge">JAVA</span><span id="js-${i}" class="online-pill">🔄 ПРОВЕРКА</span></div><div class="server-avatar">${escapeHtml(x.icon||'MC')}</div><h3>${escapeHtml(x.name)}</h3><div class="server-ip">${escapeHtml(x.host)}</div><div class="server-meta"><span>${escapeHtml(x.versions)}</span><span>👥 <b id="jp-${i}">—</b></span></div><p class="java-tags">${escapeHtml(x.tags)}</p><button class="neon-btn" onclick="copyText('${escapeHtml(x.host)}')">📋 СКОПИРОВАТЬ IP</button><a class="ghost-btn" href="https://t.me/OutSai1" target="_blank" rel="noopener">📲 Связаться</a></article>`).join('');
+ rows.forEach((x,i)=>checkJavaCard(x,i));
+}
+async function checkJavaCard(x,i){
+ try{const r=await fetch('/api/java-status?host='+encodeURIComponent(x.host),{cache:'no-store'});const d=await r.json();const st=document.getElementById('js-'+i),pl=document.getElementById('jp-'+i);if(d.online){st.textContent='🟢 ONLINE';pl.textContent=(d.players?.online??0)+' / '+(d.players?.max??'—');}else{st.textContent='🔴 OFFLINE';pl.textContent='0';}}catch{const st=document.getElementById('js-'+i);if(st)st.textContent='⚪ НЕДОСТУПНО';}
+}
+function filterJavaServers(){
+ const q=(document.getElementById('javaSearch').value||'').toLowerCase();const f=document.getElementById('javaFilter').value;
+ const rows=JAVA_SERVERS_CACHE.filter(x=>{const hay=(x.name+' '+x.host+' '+x.tags+' '+x.versions).toLowerCase();const okQ=hay.includes(q);const tags=x.tags.toLowerCase();const okF=f==='all'||(f==='pvp'&&tags.includes('pvp'))||(f==='survival'&&tags.includes('выживание'))||(f==='minigames'&&tags.includes('мини'))||(f==='anarchy'&&tags.includes('анархия'));return okQ&&okF;});renderJavaServers(rows);
+}
+async function lookupPlayer(){const nick=document.getElementById('playerNick').value.trim();const box=document.getElementById('playerResult');if(!/^[A-Za-z0-9_]{3,16}$/.test(nick)){box.textContent='⚠️ Введите корректный Minecraft-ник.';return}box.textContent='🔄 Проверяем публичный профиль…';try{const r=await fetch('/api/player-lookup?nick='+encodeURIComponent(nick));const d=await r.json();if(!d.ok){box.textContent='❌ '+(d.message||'Профиль не найден.');return}box.innerHTML=`👤 Ник: <b>${escapeHtml(d.name)}</b><br>🆔 UUID: <code>${escapeHtml(d.uuid)}</code><br>🏷️ Привилегия: <span>не предоставляется публичным API</span><br>🎮 Статус на конкретном сервере: <span>проверяется только при наличии публичного API сервера</span>`;}catch{box.textContent='⚠️ Проверка временно недоступна.'}}
+async function submitRecovery(e){e.preventDefault();const box=document.getElementById('recoveryResult');box.textContent='⏳ Создаём заявку…';const file=document.getElementById('recScreenshot').files[0];let screenshot='';if(file){if(file.size>3*1024*1024){box.textContent='⚠️ Скриншот должен быть до 3 МБ.';return}try{const reader=new FileReader();screenshot=await new Promise(resolve=>{reader.onload=()=>resolve(String(reader.result));reader.readAsDataURL(file)})}catch{}}try{const r=await fetch('/api/recovery-requests',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({nick:recNick.value,server:recServer.value,problem:recProblem.value,screenshot})});const d=await r.json();box.innerHTML=(d.message||'Готово')+(d.ok?`<br><br><a class="neon-btn" href="https://t.me/OutSai1" target="_blank" rel="noopener">📲 ОТКРЫТЬ TELEGRAM @OutSai1</a>`:'');if(d.ok){document.getElementById('requestStatus').innerHTML=`<div class="request-id">REQUEST #${escapeHtml(d.id)}</div><div class="request-status">🟡 UNDER REVIEW</div><p>Напиши администратору <b>@OutSai1</b> и укажи этот номер заявки.</p>`;e.target.reset();}}catch{box.textContent='⚠️ Не удалось отправить заявку.'}}
+loadRecentPurchases(); loadReviews(); setInterval(loadRecentPurchases,15000);loadJavaDirectory();
 </script>
 </body>
 </html>
