@@ -1,0 +1,39 @@
+PUSH CLXN — ПЛАТЁЖИ
+
+Что уже сделано:
+- Красивый экран оплаты payment.html.
+- Меню и ссылка «Оплата».
+- Фиксированный каталог цен на сервере: от 120₽.
+- Кнопка «Оплатить картой» создаёт Stripe Checkout.
+- Номер PUSH-заказа создаётся сервером.
+- Сервер сам проверяет payment_status.
+- Webhook для автоматического подтверждения.
+- Карточные данные сервер PUSH CLXN не хранит.
+- В публичных покупателях появляются только подтверждённые оплаты.
+
+Что НЕЛЬЗЯ сделать кодом без аккаунта платёжного провайдера:
+Нельзя придумать merchant account, банковский счёт или секретный Stripe key. Эти данные выдаёт Stripe/Barclaycard после регистрации и проверки владельца.
+
+1. Создай/активируй Stripe Business account.
+2. В Stripe подключи банковский счёт для выплат.
+3. Возьми Secret key из Stripe Dashboard.
+4. Открой .env и поставь:
+   STRIPE_SECRET_KEY=sk_live_...
+   SHOP_CURRENCY=rub
+   PUBLIC_BASE_URL=https://ТВОЙ-ДОМЕН
+5. Для webhook создай endpoint:
+   https://ТВОЙ-ДОМЕН/api/stripe-webhook
+   Событие: checkout.session.completed
+6. Скопируй signing secret webhook в:
+   STRIPE_WEBHOOK_SECRET=whsec_...
+7. Перезапусти START.bat.
+
+ВАЖНО:
+- Не вставляй Secret key в index.html.
+- Не отправляй Secret key в Telegram/чат.
+- Не вставляй номер карты/CVV/PIN в .env.
+- Деньги поступают на банковский счёт, который подключён к платёжному аккаунту, с учётом выплат и комиссий провайдера.
+- Для публичного запуска используй HTTPS-домен.
+
+Если используешь Barclaycard Smartpay/ePDQ вместо Stripe:
+нужен merchant account и credentials Barclaycard. Обычная дебетовая карта не является merchant gateway.

@@ -2,7 +2,7 @@
 setlocal EnableExtensions
 cd /d "%~dp0"
 color 0B
-title PUSH CLXN - START
+title PUSH CLXN - FINAL START
 
 cls
 echo ==================================================

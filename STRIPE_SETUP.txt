@@ -1,0 +1,31 @@
+PUSH CLXN — КАРТОЧНАЯ ОПЛАТА
+
+Сайт теперь рассчитан на обычную оплату банковской картой через hosted checkout.
+Реквизиты карт покупателей сайт не хранит.
+
+ВАЖНО:
+1. Создай/подключи Stripe аккаунт.
+2. В Stripe добавь свой банковский счёт Barclays в Bank accounts and currencies.
+3. Получи Secret key.
+4. В .env:
+   STRIPE_SECRET_KEY=...
+   PUBLIC_BASE_URL=https://твой-домен
+   SHOP_CURRENCY=gbp
+5. Создай webhook:
+   https://твой-домен/api/stripe-webhook
+   Событие: checkout.session.completed
+6. Вставь signing secret в STRIPE_WEBHOOK_SECRET.
+
+ПОСЛЕ ЭТОГО:
+Покупатель -> Купить -> Оплатить картой -> защищённый Stripe Checkout ->
+успешная оплата -> backend подтверждает заказ -> заказ становится paid.
+
+ДЕНЬГИ:
+Stripe переводит выплаты на банковский счёт, привязанный в Stripe.
+Сам номер дебетовой карты Barclays в код сайта не используется.
+
+BARCLAYCARD:
+Если ты оформил именно Barclaycard Smartpay/ePDQ merchant account,
+можно заменить Stripe на Barclaycard hosted payment page. Для этого нужны
+merchant credentials из твоего Barclaycard merchant account; они не видны
+на обычной банковской карте и не должны отправляться в чат.

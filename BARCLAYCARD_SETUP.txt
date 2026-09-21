@@ -1,0 +1,16 @@
+BARCLAYCARD SMARTPAY / ePDQ
+
+Barclaycard предлагает hosted payment page для custom websites.
+На такой странице покупатель вводит данные карты на стороне платёжного
+провайдера, а сайт получает подтверждение транзакции.
+
+Для реального подключения нужны данные merchant account:
+- PSPID / merchant identifier
+- доступ к выбранному Smartpay/ePDQ окружению
+- секреты подписи/интеграции
+- test/live credentials
+
+Не путай их с номером обычной дебетовой карты.
+
+После получения merchant credentials интеграция может быть подключена
+через hosted checkout без хранения карточных реквизитов на PUSH CLXN.

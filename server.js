@@ -1,18 +1,14 @@
-// PUSH CLXN backend
-// Node.js 18+
-// DonationAlerts OAuth token stays on the server.
+// PUSH CLXN — card checkout backend
+// Hosted checkout integration. No customer card details are stored by this server.
 //
-// Setup:
-//   npm install
-//   copy .env.example to .env
-//   put DA_ACCESS_TOKEN into .env
-//   npm start
+// Recommended production flow:
+//   PUSH CLXN -> hosted checkout (Stripe or Barclaycard) -> webhook -> order paid
 //
-// The payment check matches:
-//   1) exact amount in RUB
-//   2) unique PUSH-... order code in donation message
+// This file supports Stripe Checkout out of the box.
+// For Barclays/Barclaycard Smartpay, use the hosted-payment-page adapter described in
+// BARCLAYCARD_SETUP.txt after obtaining merchant credentials.
 //
-// IMPORTANT: never put DA_ACCESS_TOKEN in index.html or send it to the browser.
+// IMPORTANT: never put secret payment keys in index.html.
 
 const express = require("express");
 const fs = require("fs");
@@ -24,152 +20,206 @@ const app = express();
 const PORT = Number(process.env.PORT || 3000);
 const DATA = path.join(__dirname, "data.json");
 
-app.use(express.json({limit:"6mb"}));
+function load(){
+  try { return JSON.parse(fs.readFileSync(DATA, "utf8")); }
+  catch { return {orders:{}, ads:[], reviews:[], recoveryRequests:[]}; }
+}
+function save(db){ fs.writeFileSync(DATA, JSON.stringify(db, null, 2)); }
+
+function clean(v,max=300){ return String(v ?? "").trim().slice(0,max); }
+function currency(){ return String(process.env.SHOP_CURRENCY || "gbp").toLowerCase(); }
+function stripeConfigured(){ return Boolean(clean(process.env.STRIPE_SECRET_KEY)); }
+
 app.use(express.static(__dirname));
 
-function load(){
-  try {
-    return JSON.parse(fs.readFileSync(DATA, "utf8"));
-  } catch {
-    return {orders:{}, ads:[], reviews:[], recoveryRequests:[]};
-  }
-}
-function save(db){
-  fs.writeFileSync(DATA, JSON.stringify(db, null, 2));
-}
+/* Parse webhook body before the global JSON parser so Stripe signatures remain verifiable. */
+app.use("/api/stripe-webhook", express.raw({type:"application/json"}));
 
-function configured(){
-  return Boolean(String(process.env.DA_ACCESS_TOKEN || "").trim());
-}
+/* ---------- Stripe Checkout ---------- */
 
-async function fetchDonations(){
-  const token = String(process.env.DA_ACCESS_TOKEN || "").trim();
-  if(!token) {
-    const err = new Error("DA_ACCESS_TOKEN is not configured");
-    err.code = "NOT_CONFIGURED";
-    throw err;
-  }
-
-  // DonationAlerts paginates this endpoint. Read several pages so a recent
-  // donation is not missed when the account has more than 30 donations.
-  const all = [];
-  let url = "https://www.donationalerts.com/api/v1/alerts/donations?page=1";
-  const maxPages = Number(process.env.DA_MAX_PAGES || 10);
-
-  for(let page = 1; page <= maxPages && url; page++){
-    const r = await fetch(url, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        Accept: "application/json"
-      }
-    });
-
-    if(!r.ok){
-      const err = new Error(`DonationAlerts API returned HTTP ${r.status}`);
-      err.status = r.status;
-      throw err;
-    }
-
-    const body = await r.json();
-    if(Array.isArray(body.data)) all.push(...body.data);
-    url = body?.links?.next || null;
-  }
-
-  return all;
-}
-
-function normalizeMessage(value){
-  return String(value || "").trim().toUpperCase();
-}
-
-function donationMatches(d, code, amount){
-  return (
-    Number(d.amount) === Number(amount) &&
-    String(d.currency || "").toUpperCase() === "RUB" &&
-    normalizeMessage(d.message).includes(normalizeMessage(code))
-  );
-}
-
-app.get("/api/status", (req,res)=>{
-  res.json({
-    ok: true,
-    paymentChecker: configured() ? "configured" : "not_configured"
+async function stripeRequest(endpoint, params){
+  const key=clean(process.env.STRIPE_SECRET_KEY);
+  const r=await fetch("https://api.stripe.com/v1/"+endpoint,{
+    method:"POST",
+    headers:{
+      Authorization:"Bearer "+key,
+      "Content-Type":"application/x-www-form-urlencoded"
+    },
+    body:new URLSearchParams(params)
   });
+  const body=await r.json().catch(()=>({}));
+  if(!r.ok){
+    const e=new Error(body?.error?.message || "Stripe API error");
+    e.status=r.status; e.body=body; throw e;
+  }
+  return body;
+}
+
+function amountMinor(amount){
+  // GBP/USD/EUR use 2 decimals. Keep the helper simple and explicit.
+  return Math.round(Number(amount)*100);
+}
+
+function baseUrl(req){
+  const configured=clean(process.env.PUBLIC_BASE_URL);
+  if(configured) return configured.replace(/\/+$/,"");
+  const proto=(req.headers["x-forwarded-proto"]||req.protocol||"http").split(",")[0];
+  return proto+"://"+req.get("host");
+}
+
+app.use(express.json({limit:"6mb"}));
+
+const PRODUCTS = {
+  day:{title:"Реклама • 24 часа",amount:120},
+  week:{title:"Реклама • 7 дней",amount:350},
+  month:{title:"Реклама • 30 дней",amount:700},
+  vip:{title:"VIP витрина • 30 дней",amount:1200},
+  "discord-bot":{title:"Discord-бот",amount:300},
+  "discord-setup":{title:"Настройка Discord-сервера",amount:600},
+  "bot-upgrade":{title:"Расширение Discord-бота",amount:600},
+  "bundle-start":{title:"Старт проекта",amount:600},
+  "bundle-discord":{title:"Discord Launch",amount:950},
+  "bundle-max":{title:"Пакет Максимум",amount:1800}
+};
+
+app.post("/api/create-checkout", async (req,res)=>{
+  if(!stripeConfigured()){
+    return res.status(503).json({ok:false,error:"payment_not_configured",message:"Платёжный аккаунт ещё не активирован: добавь STRIPE_SECRET_KEY в .env."});
+  }
+  const {productId,customerName=""}=req.body||{};
+  const product=PRODUCTS[String(productId||"")];
+  if(!product) return res.status(400).json({ok:false,error:"invalid_product"});
+
+  const code="PUSH-"+crypto.randomBytes(4).toString("hex").toUpperCase()+"-"+Date.now().toString().slice(-5);
+  const db=load();
+  db.orders[code]={code,productId:String(productId),title:product.title,amount:product.amount,currency:currency(),customerName:clean(customerName,80),paid:false,createdAt:new Date().toISOString()};
+  save(db);
+
+  try{
+    const root=baseUrl(req);
+    const session=await stripeRequest("checkout/sessions",{
+      "mode":"payment",
+      "success_url":root+"/payment.html?payment=success&order="+encodeURIComponent(code),
+      "cancel_url":root+"/payment.html?payment=cancelled&order="+encodeURIComponent(code),
+      "payment_method_types[0]":"card",
+      "line_items[0][price_data][currency]":currency(),
+      "line_items[0][price_data][product_data][name]":product.title,
+      "line_items[0][price_data][product_data][description]":"PUSH CLXN • "+code,
+      "line_items[0][price_data][unit_amount]":String(amountMinor(product.amount)),
+      "line_items[0][quantity]":"1",
+      "metadata[order_code]":code,
+      "metadata[product_id]":String(productId)
+    });
+    db.orders[code].checkoutSessionId=session.id;
+    save(db);
+    res.json({ok:true,code,url:session.url,amount:product.amount,title:product.title,currency:currency()});
+  }catch(e){
+    console.error("[stripe-create]",e.message);
+    delete db.orders[code]; save(db);
+    res.status(502).json({ok:false,error:"checkout_create_failed",message:"Не удалось создать страницу оплаты. Проверь ключ Stripe и валюту аккаунта."});
+  }
 });
 
-app.get("/api/check-payment", async (req,res)=>{
-  const code = String(req.query.code || "").trim();
-  const amount = Number(req.query.amount || 0);
+app.get("/api/check-payment",async(req,res)=>{
+  const code=clean(req.query.code,80);
+  if(!code) return res.status(400).json({paid:false,error:"invalid_order"});
+  const db=load();
+  const order=db.orders[code];
+  if(!order) return res.status(404).json({paid:false,error:"order_not_found"});
+  if(order.paid) return res.json({paid:true});
 
-  if(!/^PUSH-[A-Z0-9]+-[0-9]+$/i.test(code) || !Number.isFinite(amount) || amount <= 0){
-    return res.status(400).json({paid:false, error:"invalid_order"});
-  }
-
-  const db = load();
-  if(db.orders[code]?.paid){
-    return res.json({paid:true});
-  }
-
-  // Record the expected amount for this code. If the browser sends a different
-  // amount later, the order is not silently changed.
-  if(!db.orders[code]){
-    db.orders[code] = {
-      amount,
-      createdAt: new Date().toISOString()
-    };
-    save(db);
-  } else if(Number(db.orders[code].amount) !== amount){
-    return res.status(400).json({paid:false, error:"amount_mismatch"});
+  if(!stripeConfigured() || !order.checkoutSessionId){
+    return res.json({paid:false,waiting:true});
   }
 
   try{
-    const list = await fetchDonations();
-    const hit = list.find(d => donationMatches(d, code, amount));
-
-    if(hit){
-      // One DonationAlerts donation can confirm only one order.
-      const alreadyUsed = Object.entries(db.orders).some(([otherCode, order]) =>
-        otherCode !== code && order?.paid && String(order.donationId) === String(hit.id)
-      );
-      if(alreadyUsed){
-        return res.json({paid:false, error:"donation_already_used"});
-      }
-
-      db.orders[code] = {
-        ...db.orders[code],
-        paid: true,
-        donationId: hit.id,
-        paidAt: hit.created_at || new Date().toISOString()
-      };
+    const key=clean(process.env.STRIPE_SECRET_KEY);
+    const r=await fetch("https://api.stripe.com/v1/checkout/sessions/"+encodeURIComponent(order.checkoutSessionId),{
+      headers:{Authorization:"Bearer "+key}
+    });
+    const s=await r.json();
+    if(!r.ok) throw new Error(s?.error?.message||"Stripe status error");
+    if(s.payment_status==="paid"){
+      order.paid=true;
+      order.paidAt=new Date().toISOString();
+      order.paymentId=s.payment_intent||s.id;
+      db.orders[code]=order;
       save(db);
       return res.json({paid:true});
     }
-
-    return res.json({paid:false});
+    return res.json({paid:false,waiting:true,status:s.payment_status||"unpaid"});
   }catch(e){
-    console.error("[payment-check]", e.message);
+    console.error("[stripe-check]",e.message);
+    return res.status(503).json({paid:false,error:"payment_check_unavailable"});
+  }
+});
 
-    if(e.code === "NOT_CONFIGURED"){
-      return res.status(503).json({
-        paid:false,
-        error:"not_configured",
-        message:"DonationAlerts не подключён на сервере."
-      });
+app.get("/api/order/:code",(req,res)=>{
+  const code=clean(req.params.code,80);
+  const order=load().orders[code];
+  if(!order) return res.status(404).json({ok:false,error:"order_not_found"});
+  res.json({ok:true,code:order.code,title:order.title,amount:order.amount,currency:order.currency,paid:!!order.paid,paidAt:order.paidAt||null});
+});
+
+app.get("/api/payment-config",(req,res)=>{
+  res.json({
+    ok:true,
+    provider:"stripe",
+    configured:stripeConfigured(),
+    currency:currency(),
+    hostedCheckout:true
+  });
+});
+
+app.get("/api/health",(req,res)=>{
+  res.json({ok:true,service:"PUSH CLXN card checkout backend",time:new Date().toISOString()});
+});
+
+app.get("/api/status",(req,res)=>{
+  res.json({
+    ok:true,
+    paymentProvider:"stripe",
+    paymentChecker:stripeConfigured()?"configured":"not_configured"
+  });
+});
+
+/* Stripe webhook.
+   For a first working deployment the polling endpoint above also confirms paid
+   Checkout Sessions. The webhook is included for robust server-side fulfilment.
+*/
+app.post("/api/stripe-webhook",(req,res)=>{
+  // Full Stripe signature verification requires the endpoint secret.
+  // We fail closed if it is not configured.
+  const secret=clean(process.env.STRIPE_WEBHOOK_SECRET);
+  if(!secret) return res.status(503).send("Webhook secret not configured");
+
+  const sig=String(req.headers["stripe-signature"]||"");
+  const body=req.body;
+  try{
+    const parts=Object.fromEntries(sig.split(",").map(x=>x.split("=",2)));
+    const ts=Number(parts.t);
+    const v1=parts.v1;
+    if(!ts || !v1) throw new Error("invalid signature");
+    if(Math.abs(Date.now()/1000-ts)>300) throw new Error("stale signature");
+    const expected=crypto.createHmac("sha256",secret).update(ts+"."+body.toString()).digest("hex");
+    if(!crypto.timingSafeEqual(Buffer.from(expected),Buffer.from(v1))) throw new Error("bad signature");
+
+    const event=JSON.parse(body.toString("utf8"));
+    if(event.type==="checkout.session.completed"){
+      const s=event.data?.object||{};
+      const code=clean(s.metadata?.order_code,80);
+      const db=load();
+      if(code && db.orders[code] && s.payment_status==="paid"){
+        db.orders[code].paid=true;
+        db.orders[code].paidAt=new Date().toISOString();
+        db.orders[code].paymentId=s.payment_intent||s.id;
+        save(db);
+      }
     }
-
-    if(e.status === 401 || e.status === 403){
-      return res.status(503).json({
-        paid:false,
-        error:"invalid_token",
-        message:"DonationAlerts отклонил OAuth-токен. Проверь DA_ACCESS_TOKEN и права oauth-donation-index."
-      });
-    }
-
-    return res.status(503).json({
-      paid:false,
-      error:"api_unavailable",
-      message:"DonationAlerts API временно недоступен."
-    });
+    res.json({received:true});
+  }catch(e){
+    console.error("[stripe-webhook]",e.message);
+    return res.status(400).send("Invalid webhook");
   }
 });
 
@@ -251,73 +301,6 @@ app.post("/api/reviews", (req,res)=>{
 });
 
 
-
-// Minecraft Java directory + public player lookup.
-const JAVA_SERVERS = [
-  {name:'ReallyWorld', host:'mc.reallyworld.ru', versions:'1.16–1.21', tags:'Выживание • Анархия • PvP', icon:'RW'},
-  {name:'FunTime', host:'play.funtime.su', versions:'1.8–1.21', tags:'Анархия • Гриф • Мини-игры', icon:'FT'},
-  {name:'MineBlaze', host:'mc.mineblaze.net', versions:'1.8–1.21', tags:'BedWars • SkyWars • PvP', icon:'MB'},
-  {name:'HolyWorld', host:'hub.holyworld.ru', versions:'Java', tags:'Мини-игры • Выживание', icon:'HW'},
-  {name:'Hypixel', host:'mc.hypixel.net', versions:'1.8+', tags:'BedWars • SkyBlock • Duels', icon:'HP'},
-  {name:'CubeCraft', host:'play.cubecraft.net', versions:'1.8+', tags:'SkyWars • EggWars • Games', icon:'CC'},
-  {name:'Wynncraft', host:'play.wynncraft.com', versions:'Java', tags:'MMORPG • Quests • Adventure', icon:'WC'},
-  {name:'2b2t', host:'2b2t.org', versions:'1.20+', tags:'Anarchy • Survival', icon:'2B'},
-  {name:'JartexNetwork', host:'play.jartexnetwork.com', versions:'1.8+', tags:'BedWars • SkyBlock • PvP', icon:'JN'},
-  {name:'BlocksMC', host:'blocksmc.com', versions:'1.8+', tags:'BedWars • SkyWars • Practice', icon:'BM'},
-  {name:'Minemen Club', host:'eu.minemen.club', versions:'1.8+', tags:'Practice • PvP • Duels', icon:'MM'},
-  {name:'PikaNetwork', host:'play.pika-network.net', versions:'1.8+', tags:'BedWars • Survival • SkyBlock', icon:'PN'}
-];
-
-app.get('/api/java-servers', (req,res)=>res.json(JAVA_SERVERS));
-
-app.get('/api/java-status', async (req,res)=>{
-  const host=String(req.query.host||'').trim().toLowerCase();
-  if(!/^[a-z0-9.-]+$/.test(host)) return res.status(400).json({online:false,message:'invalid_host'});
-  try{
-    const r=await fetch('https://api.mcsrvstat.us/3/'+encodeURIComponent(host),{headers:{accept:'application/json'}});
-    if(!r.ok) throw new Error('status '+r.status);
-    const d=await r.json();
-    res.json({online:!!d.online,players:d.players||{online:0,max:0},version:d.version||'',motd:Array.isArray(d.motd?.clean)?d.motd.clean.join(' '):'',icon:d.icon||null});
-  }catch(e){res.status(503).json({online:false,message:'status_unavailable'});}
-});
-
-app.get('/api/player-lookup', async (req,res)=>{
-  const nick=String(req.query.nick||'').trim();
-  if(!/^[A-Za-z0-9_]{3,16}$/.test(nick)) return res.status(400).json({ok:false,message:'Некорректный Minecraft-ник.'});
-  try{
-    const r=await fetch('https://api.mojang.com/users/profiles/minecraft/'+encodeURIComponent(nick),{headers:{accept:'application/json'}});
-    if(r.status===204 || r.status===404) return res.status(404).json({ok:false,message:'Публичный профиль не найден.'});
-    if(!r.ok) throw new Error('mojang '+r.status);
-    const d=await r.json();
-    res.json({ok:true,name:d.name,uuid:d.id});
-  }catch(e){res.status(503).json({ok:false,message:'Публичный API Minecraft временно недоступен.'});}
-});
-
-app.post('/api/recovery-requests',(req,res)=>{
-  const {nick,server,problem,screenshot}=req.body||{};
-  const cleanNick=String(nick||'').trim().slice(0,16);
-  const cleanServer=String(server||'').trim().slice(0,60);
-  const cleanProblem=String(problem||'').trim().slice(0,700);
-  const cleanShot=String(screenshot||'');
-  if(!/^[A-Za-z0-9_]{3,16}$/.test(cleanNick) || !cleanServer || !cleanProblem) return res.status(400).json({ok:false,message:'Заполни ник, сервер и описание проблемы.'});
-  if(cleanShot && !/^data:image\/(png|jpeg|webp);base64,/.test(cleanShot)) return res.status(400).json({ok:false,message:'Разрешён только PNG/JPEG/WebP скриншот.'});
-  if(cleanShot.length>4_500_000) return res.status(400).json({ok:false,message:'Скриншот слишком большой.'});
-  const db=load(); db.recoveryRequests=db.recoveryRequests||[];
-  const id=String(1000+Math.floor(Math.random()*9000));
-  let screenshotFile='';
-  if(cleanShot){
-    const m=cleanShot.match(/^data:image\/(png|jpeg|webp);base64,(.+)$/s);
-    if(m){
-      const ext=m[1]==='jpeg'?'jpg':m[1];
-      const dir=path.join(__dirname,'recovery_uploads'); fs.mkdirSync(dir,{recursive:true});
-      screenshotFile=path.join('recovery_uploads',id+'_'+crypto.randomBytes(4).toString('hex')+'.'+ext);
-      fs.writeFileSync(path.join(__dirname,screenshotFile),Buffer.from(m[2],'base64'));
-    }
-  }
-  db.recoveryRequests.push({id,nick:cleanNick,server:cleanServer,problem:cleanProblem,screenshotFile,createdAt:new Date().toISOString(),status:'UNDER REVIEW'});
-  save(db);
-  res.json({ok:true,id,message:'Заявка создана. Свяжитесь с администратором в Telegram, указав номер заявки.'});
-});
 
 app.listen(PORT,()=>{
   console.log(`PUSH CLXN running on http://localhost:${PORT}`);
