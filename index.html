@@ -220,7 +220,7 @@ body{background:radial-gradient(circle at 10% 0%,rgba(0,229,255,.10),transparent
 <div class="choice-grid">
   <article class="choice-card"><h3>⚡ Хочу попробовать</h3><p>Покажи проект в витрине на короткий срок и посмотри на результат.</p><div class="choice-price">120₽ <span class="old-price">150₽</span></div><button class="btn primary" onclick="openOrder('day',120,'24 часа')">Начать за 120₽ →</button></article>
   <article class="choice-card"><h3>🔥 Хочу неделю</h3><p>Оптимальный вариант, если проект нужно показывать несколько дней подряд.</p><div class="choice-price">350₽ <span class="old-price">500₽</span></div><button class="btn primary" onclick="openOrder('week',350,'7 дней')">Взять 7 дней →</button></article>
-  <article class="choice-card"><h3>💎 Хочу надолго</h3><p>Для постоянного присутствия проекта без необходимости покупать размещение каждую неделю.</p><div class="choice-price">700₽</div><button class="btn primary" onclick="openOrder('month',700,'30 дней')">Взять 30 дней →</button></article>
+  <article class="choice-card"><h3>💎 Хочу надолго</h3><p>Для постоянного присутствия проекта без необходимости покупать размещение каждую неделю.</p><div class="choice-price">650₽</div><button class="btn primary" onclick="openOrder('month',650,'30 дней')">Взять 30 дней →</button></article>
 </div>
 <div class="value-strip">
   <div class="value-item"><b>⚡ Быстрый старт</b><span>заказ создаётся сразу</span></div>
@@ -473,7 +473,7 @@ async function restorePaymentResult(){
  try{
    const r=await fetch('/api/order/'+encodeURIComponent(order),{cache:'no-store'}); const d=await r.json();
    if(!d.ok)return;
-   current={id:'',amount:Number(d.amount),title:d.title,code:d.code};
+   current={id:d.productId||'',amount:Number(d.amount),title:d.title,code:d.code};
    document.getElementById('orderTitle').textContent=status==='cancelled'?'Оплата отменена':'Проверяем оплату';
    document.getElementById('orderCode').textContent=d.code;
    document.getElementById('orderAmount').textContent='К оплате: '+d.amount+'₽';
@@ -484,6 +484,15 @@ async function restorePaymentResult(){
    }
    document.getElementById('paymentResult').innerHTML='<div class="notice">🔄 Проверяем подтверждение платежа…</div>';
    startPaymentPolling();
+ }catch(e){}
+}
+
+async function loadActiveAds(){
+ const grid=document.getElementById('adsGrid'); if(!grid)return;
+ try{
+  const r=await fetch('/api/ads',{cache:'no-store'}); const ads=await r.json();
+  if(!Array.isArray(ads) || !ads.length) return;
+  grid.innerHTML=ads.map(ad=>`<article class="card"><div class="icon">📢</div><h3>${escapeHtml(ad.name)}</h3><p>${escapeHtml(ad.description)}</p><span class="muted">${escapeHtml(ad.category||'Реклама')}</span><a class="btn" href="${escapeHtml(ad.url)}" target="_blank" rel="noopener noreferrer">Открыть →</a></article>`).join('');
  }catch(e){}
 }
 
@@ -508,7 +517,8 @@ async function submitReview(){
  try{const r=await fetch('/api/reviews',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:reviewCode.value,name:reviewName.value,text:reviewText.value,rating:Number(reviewRating.value)})}); const j=await r.json(); result.textContent=j.message||'Готово'; if(j.ok){reviewText.value='';reviewName.value='';loadReviews();}}catch{result.textContent='⚠️ Не удалось отправить отзыв.'}
 }
 loadRecentPurchases();
-restorePaymentResult(); loadReviews(); setInterval(loadRecentPurchases,15000);
+loadActiveAds();
+restorePaymentResult(); loadReviews(); setInterval(loadRecentPurchases,15000); setInterval(loadActiveAds,15000);
 </script>
 
 <script>

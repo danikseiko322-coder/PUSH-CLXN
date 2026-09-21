@@ -38,6 +38,14 @@ if not exist "%~dp0.env" (
   echo Created .env
 )
 
+findstr /R /B /C:"STRIPE_SECRET_KEY=$" /C:"STRIPE_SECRET_KEY= *$" "%~dp0.env" >nul 2>&1
+if not errorlevel 1 (
+  echo.
+  echo [SETUP] Stripe secret key is not configured.
+  echo The key stays on this PC only and is never sent to the browser.
+  call "%~dp0SETUP_STRIPE_KEY.bat"
+)
+
 set "PORT=3000"
 for /L %%P in (3000,1,3010) do (
   netstat -ano 2>nul | findstr /R /C:":%%P .*LISTENING" >nul

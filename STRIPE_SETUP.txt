@@ -1,31 +1,34 @@
-PUSH CLXN — КАРТОЧНАЯ ОПЛАТА
+PUSH CLXN — LIVE STRIPE SETUP
 
-Сайт теперь рассчитан на обычную оплату банковской картой через hosted checkout.
-Реквизиты карт покупателей сайт не хранит.
-
-ВАЖНО:
-1. Создай/подключи Stripe аккаунт.
-2. В Stripe добавь свой банковский счёт Barclays в Bank accounts and currencies.
-3. Получи Secret key.
-4. В .env:
+1. Open Stripe Dashboard -> Developers -> API keys.
+2. For a production website, use a live secret key (sk_live_...) or a restricted live key (rk_live_...) with the required Checkout/payment permissions. A restricted rk_live key only works if its permissions include creating/reading Checkout Sessions and the required payment resources.
+3. Put the key only in the local .env file:
    STRIPE_SECRET_KEY=...
-   PUBLIC_BASE_URL=https://твой-домен
-   SHOP_CURRENCY=gbp
-5. Создай webhook:
-   https://твой-домен/api/stripe-webhook
-   Событие: checkout.session.completed
-6. Вставь signing secret в STRIPE_WEBHOOK_SECRET.
+4. Put your live publishable key in:
+   STRIPE_PUBLISHABLE_KEY=pk_live_...
+5. Keep .env private. Never upload it to GitHub or paste the secret key into index.html/payment.html.
+6. Make sure your Stripe account has a bank account connected for payouts and that payments are enabled.
+7. Start with START_FINAL.bat or START.bat.
 
-ПОСЛЕ ЭТОГО:
-Покупатель -> Купить -> Оплатить картой -> защищённый Stripe Checkout ->
-успешная оплата -> backend подтверждает заказ -> заказ становится paid.
+IMPORTANT
+The restricted key previously shared in chat should be rotated/revoked if it has been exposed elsewhere. Do not publish secret/restricted keys.
 
-ДЕНЬГИ:
-Stripe переводит выплаты на банковский счёт, привязанный в Stripe.
-Сам номер дебетовой карты Barclays в код сайта не используется.
 
-BARCLAYCARD:
-Если ты оформил именно Barclaycard Smartpay/ePDQ merchant account,
-можно заменить Stripe на Barclaycard hosted payment page. Для этого нужны
-merchant credentials из твоего Barclaycard merchant account; они не видны
-на обычной банковской карте и не должны отправляться в чат.
+GLOBAL PAYMENTS & FRAUD PROTECTION
+
+- The Checkout session uses Stripe automatic payment methods, so Stripe can show eligible cards/wallets/payment methods for the buyer's country. This does NOT mean every country is supported: Stripe, card networks, sanctions, local regulations, and your account's capabilities can restrict availability.
+- Billing address and phone collection are enabled to improve payment verification and fraud screening.
+- 3D Secure is left to Stripe's automatic decisioning/SCA flow.
+- Use Stripe Radar in the Dashboard for additional fraud rules/reviews. Do not promise customers that chargebacks are impossible.
+- The server verifies the Checkout Session's payment_status before accepting an order and blocks reuse of an already-fulfilled paid order.
+- Keep the webhook configured in production and set STRIPE_WEBHOOK_SECRET. The polling check is a fallback; webhook confirmation is the preferred fulfillment signal.
+- For the strongest setup, enable Radar and review high-risk payments before delivering valuable digital goods.
+
+
+FIX INCLUDED
+- Removed the conflicting payment_method_types=card setting when automatic_payment_methods is enabled.
+- Production base URL is now taken from the incoming HTTPS request unless PUBLIC_BASE_URL is explicitly set to a real public URL.
+
+
+ВАЖНО: сайт не заставляет покупателя вводить адрес или телефон. Stripe может запросить дополнительные данные только если это требуется выбранным способом оплаты или правилами.
+APPLE PAY: Stripe Checkout может автоматически показать Apple Pay на совместимом iPhone/Safari. Это зависит от доступности Apple Pay, страны, устройства и настроек Stripe.

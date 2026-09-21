@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PUSH CLXN — Безопасная оплата</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:#05070b;color:#f4f8ff;font-family:Inter,Arial,sans-serif}body:before{content:"";position:fixed;inset:0;background:radial-gradient(circle at 15% 10%,rgba(0,229,255,.16),transparent 28%),radial-gradient(circle at 85% 20%,rgba(124,58,237,.18),transparent 30%),radial-gradient(circle at 50% 100%,rgba(236,72,153,.10),transparent 30%);pointer-events:none}.wrap{width:min(1160px,calc(100% - 28px));margin:auto;position:relative}.top{height:74px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #18212d}.logo{font-weight:1000;letter-spacing:2px;font-size:21px}.logo b{color:#00e5ff}.back{color:#aab6c6;text-decoration:none}.hero{text-align:center;padding:45px 0 28px}.pill{display:inline-flex;gap:8px;align-items:center;padding:8px 13px;border:1px solid #234253;background:#09131c;border-radius:999px;color:#7beaff;font-size:12px;font-weight:900}.hero h1{font-size:clamp(38px,6vw,68px);line-height:1;margin:16px 0 12px;background:linear-gradient(90deg,#fff,#5ee7ff,#a78bfa,#fff);-webkit-background-clip:text;color:transparent}.hero p{max-width:690px;margin:auto;color:#8593a5;line-height:1.65}.layout{display:grid;grid-template-columns:390px minmax(0,1fr);gap:20px;margin:20px 0 70px}.card{background:rgba(9,13,20,.88);border:1px solid #202b3a;border-radius:28px;box-shadow:0 25px 100px rgba(0,0,0,.3);backdrop-filter:blur(16px)}.summary{padding:25px;align-self:start;position:sticky;top:18px}.small{font-size:11px;letter-spacing:1.5px;color:#68788b;font-weight:900}.product{font-size:25px;font-weight:1000;margin:10px 0}.price{font-size:48px;font-weight:1000;margin:8px 0}.code{font-family:monospace;color:#bceeff;background:#070b11;border:1px dashed #334657;border-radius:13px;padding:12px;margin-top:18px}.trust{display:grid;gap:10px;margin-top:20px}.trust div{padding:12px;border:1px solid #1b2836;border-radius:13px;background:#080e15;color:#9aaabd;font-size:12px}.checkout{padding:25px}.checkout-head{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:18px}.checkout h2{margin:0;font-size:25px}.lock{font-size:12px;color:#72eaff}.card-visual{height:185px;border-radius:22px;padding:22px;position:relative;overflow:hidden;background:linear-gradient(135deg,#101c2a,#16263c 50%,#31204d);border:1px solid #34465b;box-shadow:0 18px 55px rgba(0,0,0,.3);margin-bottom:20px}.card-visual:after{content:"";position:absolute;width:230px;height:230px;border-radius:50%;right:-80px;top:-100px;background:rgba(0,229,255,.16)}.chip{width:43px;height:31px;border-radius:7px;background:linear-gradient(135deg,#d9c88b,#fff1bd);position:relative;z-index:1}.cv-number{margin-top:36px;font:600 20px monospace;letter-spacing:2px;position:relative;z-index:1}.cv-bottom{display:flex;justify-content:space-between;margin-top:13px;font-size:10px;color:#aab8ca;position:relative;z-index:1}.stripebox{min-height:180px;border:1px solid #1e2a38;border-radius:20px;background:#080d14;padding:18px}.stripebox.ready{padding:0;overflow:hidden;background:white}.stripebox iframe{max-width:100%}.notice{padding:13px 14px;border-radius:14px;background:#0b121b;border:1px solid #1d2b39;color:#94a5b7;font-size:12px;line-height:1.55;margin-top:15px}.notice strong{color:#eaf6ff}.error{color:#ffb4b4!important;border-color:#5b2b32!important;background:#180d10!important}.success{color:#bfffdc!important;border-color:#24563b!important;background:#0c1a12!important}.btn{width:100%;border:0;border-radius:15px;padding:16px;background:linear-gradient(90deg,#00b8ff,#7c3aed,#ec4899);color:#fff;font-size:15px;font-weight:1000;cursor:pointer;margin-top:16px}.btn:disabled{opacity:.55;cursor:wait}.footer{text-align:center;color:#526072;padding:20px 0 45px;font-size:12px}@media(max-width:850px){.layout{grid-template-columns:1fr}.summary{position:static}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="logo">PUSH <b>CLXN</b></div><a class="back" href="/">← Вернуться в магазин</a></header>
+<section class="hero"><span class="pill">🔒 ЗАЩИЩЁННАЯ ОПЛАТА</span><h1>Оплата заказа</h1><p>После нажатия «Оплатить картой» откроется защищённая страница Stripe. Там покупатель введёт номер карты, срок действия и CVC. PUSH CLXN не получает и не сохраняет данные карты.</p></section>
+<div class="layout">
+<section class="card summary"><div class="small">ВАШ ЗАКАЗ</div><div id="product" class="product">PUSH CLXN</div><div id="price" class="price">—</div><div id="code" class="code">Создаём номер заказа…</div><div class="trust"><div>🛡️ Данные карты не сохраняются на PUSH CLXN</div><div>🔐 Защищённое соединение платёжного провайдера</div><div>⚡ После оплаты заказ проверяется автоматически</div></div></section>
+<section class="card checkout">
+<div class="checkout-head"><h2>💳 Данные карты</h2><span class="lock">🔒 SECURE</span></div>
+<div class="card-visual"><div class="chip"></div><div class="cv-number">•••• •••• •••• ••••</div><div class="cv-bottom"><span>PUSH CLXN</span><span>VISA / Mastercard</span></div></div>
+<div id="stripeCheckout" class="stripebox"><div style="color:#8d9caf;line-height:1.6;font-size:13px">Загрузка защищённой формы оплаты…</div></div>
+<button id="start" class="btn">💳 Оплатить картой</button>
+<div id="status" class="notice"><strong>Готово к оплате.</strong><br>После нажатия откроется защищённая страница Stripe, где покупатель введёт номер карты, срок действия и CVC.</div>
+</section>
+</div>
+<div class="footer">PUSH CLXN • безопасная оплата • поддержка <a href="https://t.me/OutSai1" target="_blank" style="color:#70eaff">@OutSai1</a></div>
+</div>
+<script>
+const products={day:['Реклама • 24 часа',120],week:['Реклама • 7 дней',350],month:['Реклама • 30 дней',700],vip:['VIP витрина • 30 дней',1200],'discord-bot':['Discord-бот',300],'discord-setup':['Настройка Discord-сервера',600],'bot-upgrade':['Расширение Discord-бота',600],'bundle-start':['Старт проекта',600],'bundle-discord':['Discord Launch',950],'bundle-max':['Пакет Максимум',1800]};
+const q=new URLSearchParams(location.search),id=q.get('product'),order=q.get('order');
+const product=document.getElementById('product'),price=document.getElementById('price'),code=document.getElementById('code'),status=document.getElementById('status'),start=document.getElementById('start'),box=document.getElementById('stripeCheckout');
+if(products[id]){product.textContent=products[id][0];price.textContent=products[id][1]+' ₽';}
+function msg(html,cls=''){status.className='notice '+cls;status.innerHTML=html;}
+async function loadOrder(){
+  if(!order)return;
+  try{const r=await fetch('/api/order/'+encodeURIComponent(order),{cache:'no-store'});const d=await r.json();
+    if(d.ok){product.textContent=d.title;price.textContent=d.amount+' ₽';code.textContent=d.code;
+      if(d.paid){msg('<strong>✅ Оплата подтверждена.</strong><br>Заказ уже принят.','success');start.disabled=true;start.textContent='✅ Оплачено';return;}
+    }
+  }catch(e){}
+}
+async function startPayment(){
+  if(!products[id]&&!order){msg('<strong>Выбери товар в магазине.</strong><br>Сначала выбери услугу, затем нажми «Купить».','error');return;}
+  start.disabled=true;start.textContent='⏳ Открываем защищённую оплату…';
+  msg('<strong>🔐 Подготавливаем оплату…</strong><br>Сейчас откроется защищённая страница Stripe. Данные карты вводятся там и не передаются PUSH CLXN.');
+  try{
+    const body={productId:id};
+    const r=await fetch('/api/create-checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),cache:'no-store'});
+    const d=await r.json();
+    if(!r.ok||!d.ok) throw new Error(d.message||'Не удалось создать платёж');
+    code.textContent=d.code;product.textContent=d.title;price.textContent=d.amount+' ₽';
+    if(!d.url) throw new Error('Платёжная страница не вернула адрес.');
+    msg('<strong>🔒 Защищённая страница готова.</strong><br>Переходим к оплате картой…','success');
+    setTimeout(()=>{location.href=d.url;},250);
+  }catch(e){
+    msg('<strong>⚠️ Не удалось открыть оплату.</strong><br>'+String(e.message||'Попробуйте ещё раз.'),'error');
+    start.disabled=false;start.textContent='💳 Оплатить картой';
+  }
+}
+async function checkAfterReturn(){
+  if(!order)return;
+  code.textContent=order;
+  msg('<strong>🔄 Проверяем оплату…</strong><br>Подтверждение поступает от Stripe автоматически.');
+  let tries=0;
+  const timer=setInterval(async()=>{
+    tries++;
+    try{
+      const r=await fetch('/api/check-payment?code='+encodeURIComponent(order),{cache:'no-store'});
+      const d=await r.json();
+      if(d.paid){clearInterval(timer);msg('<strong>✅ Оплата подтверждена!</strong><br>Заказ принят. Спасибо за покупку.','success');start.disabled=true;start.textContent='✅ Оплачено';return;}
+    }catch(e){}
+    if(tries>=12){clearInterval(timer);msg('<strong>⌛ Платёж ещё подтверждается.</strong><br>Если деньги уже списаны, не оплачивай повторно. Обратись в поддержку <a href="https://t.me/OutSai1" target="_blank" style="color:#70eaff">@OutSai1</a>.');}
+  },2500);
+}
+start.onclick=startPayment;
+loadOrder().then(()=>{if(q.get('payment')==='success'&&order)checkAfterReturn();});
+</script>
+</body></html>
