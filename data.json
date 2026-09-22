@@ -1,15 +1,15 @@
 {
   "orders": {
-    "PUSH-2698A0F0-42457": {
-      "code": "PUSH-2698A0F0-42457",
-      "productId": "month",
-      "title": "Реклама • 30 дней",
-      "amount": 650,
+    "PUSH-03B07053-10979": {
+      "code": "PUSH-03B07053-10979",
+      "productId": "day",
+      "title": "Реклама • 24 часа",
+      "amount": 120,
       "currency": "rub",
       "customerName": "",
       "paid": false,
-      "createdAt": "2026-09-21T21:05:42.458Z",
-      "checkoutSessionId": "cs_live_a1ZKNoNZnpRQc0VX0d7SXONNMrJCjUQDMgaxAnzHDETxheUlQeEnoqqhDA"
+      "createdAt": "2026-09-22T14:28:30.979Z",
+      "checkoutSessionId": "cs_live_a1yRWuZ1YZiKNDliESBjApq1HPAZvjAAqNyMaBUjJycomLmxJf9jnpORGf"
     }
   },
   "ads": []

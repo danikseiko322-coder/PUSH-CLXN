@@ -11,30 +11,57 @@ body:before{content:"";position:fixed;inset:-30%;z-index:-2;background:radial-gr
 body:after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.35;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:42px 42px}
 a{text-decoration:none;color:inherit}.wrap{max-width:1180px;margin:auto;padding:0 22px}
 header{position:sticky;top:0;z-index:50;background:rgba(5,7,11,.72);backdrop-filter:blur(18px);border-bottom:1px solid #171d27}
-.nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:1000;letter-spacing:1.5px;font-size:21px}.brand i{font-style:normal;color:#65ffae}.navlinks{display:flex;gap:26px;color:#9ba5b5;font-size:14px}.navlinks a:hover{color:#fff}
-.btn{border:1px solid #293341;background:#0d131b;padding:13px 19px;border-radius:13px;font-weight:850;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.2s}.btn:hover{transform:translateY(-2px);border-color:#65ffae}.primary{background:#65ffae;color:#06100a;border-color:#65ffae;box-shadow:0 8px 28px rgba(101,255,174,.12)}
-.hero{text-align:center;padding:105px 0 75px}.badge{display:inline-flex;gap:8px;align-items:center;border:1px solid #28333f;background:#0b1118;border-radius:999px;padding:8px 13px;color:#b3bfce;font-size:13px}.dot{width:7px;height:7px;background:#65ffae;border-radius:50%;box-shadow:0 0 15px #65ffae}
-h1{font-size:clamp(48px,8vw,94px);line-height:.94;letter-spacing:-5px;margin:23px 0 20px}.grad{background:linear-gradient(100deg,#fff,#65ffae 45%,#9c8cff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:1000;letter-spacing:1.5px;font-size:21px}.brand i{font-style:normal;color:#ff2147}.navlinks{display:flex;gap:26px;color:#9ba5b5;font-size:14px}.navlinks a:hover{color:#fff}
+.btn{border:1px solid #293341;background:#0d131b;padding:13px 19px;border-radius:13px;font-weight:850;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.2s}.btn:hover{transform:translateY(-2px);border-color:#ff2147}.primary{background:#ff2147;color:#0b0507;border-color:#ff2147;box-shadow:0 8px 28px rgba(255,33,71,.12)}
+.hero{text-align:center;padding:105px 0 75px}.badge{display:inline-flex;gap:8px;align-items:center;border:1px solid #28333f;background:#0b1118;border-radius:999px;padding:8px 13px;color:#b3bfce;font-size:13px}.dot{width:7px;height:7px;background:#ff2147;border-radius:50%;box-shadow:0 0 15px #ff2147}
+h1{font-size:clamp(48px,8vw,94px);line-height:.94;letter-spacing:-5px;margin:23px 0 20px}.grad{background:linear-gradient(100deg,#fff,#ff2147 45%,#9c8cff);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero p{max-width:730px;margin:0 auto 31px;color:#9da7b7;font-size:18px;line-height:1.65}.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin:15px 0 55px}.stat{padding:22px;border:1px solid #1a222d;border-radius:18px;background:linear-gradient(145deg,#0b1017,#080b10)}.stat b{font-size:25px}.stat small{display:block;color:#778293;margin-top:6px}
 section{padding:55px 0}.title{margin-bottom:24px}.title h2{font-size:34px;margin:0 0 8px}.title p{margin:0;color:#7e899a}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.card{border:1px solid #1b2430;background:rgba(10,14,20,.86);border-radius:21px;padding:23px;box-shadow:0 18px 55px rgba(0,0,0,.12);transition:.2s}.card:hover{transform:translateY(-4px);border-color:#354253}.icon{width:53px;height:53px;border-radius:16px;background:#141b24;display:grid;place-items:center;font-size:24px;margin-bottom:17px}.card h3{margin:0 0 9px}.card p{color:#8994a4;line-height:1.55;min-height:48px}.price{font-size:31px;font-weight:950;margin:15px 0 5px}.muted{color:#778293}.popular{display:inline-block;background:#65ffae;color:#06100a;border-radius:999px;padding:6px 9px;font-size:10px;font-weight:950;margin-bottom:10px}.card .btn{width:100%;margin-top:10px}
-.feature{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.big{padding:32px;border-radius:24px;border:1px solid #202b37;background:linear-gradient(135deg,rgba(101,255,174,.09),rgba(117,88,255,.08))}.big h2{font-size:38px;margin:0 0 12px}.big p{color:#909bab;line-height:1.65}.steps{display:grid;gap:12px}.step{display:flex;gap:13px;padding:18px;border:1px solid #1b2430;border-radius:17px;background:#0b1016}.num{min-width:33px;height:33px;border-radius:10px;background:#65ffae;color:#06100a;display:grid;place-items:center;font-weight:950}.step b{display:block;margin-bottom:4px}.step span{color:#7f8999;font-size:14px}
-.discord{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:27px;border:1px solid #273244;border-radius:22px;background:linear-gradient(135deg,rgba(88,101,242,.15),rgba(101,255,174,.06))}.discord h3{margin:0 0 6px;font-size:25px}.discord p{margin:0;color:#8d98a9}
+.card{border:1px solid #1b2430;background:rgba(10,14,20,.86);border-radius:21px;padding:23px;box-shadow:0 18px 55px rgba(0,0,0,.12);transition:.2s}.card:hover{transform:translateY(-4px);border-color:#354253}.icon{width:53px;height:53px;border-radius:16px;background:#141b24;display:grid;place-items:center;font-size:24px;margin-bottom:17px}.card h3{margin:0 0 9px}.card p{color:#8994a4;line-height:1.55;min-height:48px}.price{font-size:31px;font-weight:950;margin:15px 0 5px}.muted{color:#778293}.popular{display:inline-block;background:#ff2147;color:#0b0507;border-radius:999px;padding:6px 9px;font-size:10px;font-weight:950;margin-bottom:10px}.card .btn{width:100%;margin-top:10px}
+.feature{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.big{padding:32px;border-radius:24px;border:1px solid #202b37;background:linear-gradient(135deg,rgba(255,33,71,.09),rgba(117,88,255,.08))}.big h2{font-size:38px;margin:0 0 12px}.big p{color:#909bab;line-height:1.65}.steps{display:grid;gap:12px}.step{display:flex;gap:13px;padding:18px;border:1px solid #1b2430;border-radius:17px;background:#0b1016}.num{min-width:33px;height:33px;border-radius:10px;background:#ff2147;color:#0b0507;display:grid;place-items:center;font-weight:950}.step b{display:block;margin-bottom:4px}.step span{color:#7f8999;font-size:14px}
+.discord{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:27px;border:1px solid #273244;border-radius:22px;background:linear-gradient(135deg,rgba(88,101,242,.15),rgba(255,33,71,.06))}.discord h3{margin:0 0 6px;font-size:25px}.discord p{margin:0;color:#8d98a9}
 .notice{margin-top:16px;color:#768293;font-size:12px;line-height:1.5}
 footer{border-top:1px solid #171d27;padding:30px 0;color:#687485;font-size:13px;margin-top:60px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.modal{display:none;position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.78);padding:18px;place-items:center}.modal.open{display:grid}.box{width:min(590px,100%);max-height:92vh;overflow:auto;background:#0b1017;border:1px solid #2a3542;border-radius:23px;padding:25px;box-shadow:0 30px 100px #000}.close{float:right;background:none;border:0;color:#8290a2;font-size:28px;cursor:pointer}.box h2{margin:0 0 7px;font-size:27px}.sub{color:#7f8a9a;font-size:14px;line-height:1.5}label{display:block;font-size:13px;color:#aeb8c7;margin-top:12px}input,textarea,select{width:100%;margin-top:7px;background:#070a0f;border:1px solid #25303d;color:#fff;border-radius:12px;padding:13px;font:inherit;outline:none}textarea{min-height:90px;resize:vertical}.order{padding:15px;border:1px dashed #334252;border-radius:14px;background:#080c12;margin:14px 0}.code{font-size:25px;font-weight:950;letter-spacing:2px;color:#65ffae}.pay{display:grid;gap:9px}.hidden{display:none}.ok{padding:13px;border-radius:12px;background:rgba(101,255,174,.09);border:1px solid rgba(101,255,174,.25);color:#b8ffd8}
+.modal{display:none;position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.78);padding:18px;place-items:center}.modal.open{display:grid}.box{width:min(590px,100%);max-height:92vh;overflow:auto;background:#0b1017;border:1px solid #2a3542;border-radius:23px;padding:25px;box-shadow:0 30px 100px #000}.close{float:right;background:none;border:0;color:#8290a2;font-size:28px;cursor:pointer}.box h2{margin:0 0 7px;font-size:27px}.sub{color:#7f8a9a;font-size:14px;line-height:1.5}label{display:block;font-size:13px;color:#aeb8c7;margin-top:12px}input,textarea,select{width:100%;margin-top:7px;background:#070a0f;border:1px solid #25303d;color:#fff;border-radius:12px;padding:13px;font:inherit;outline:none}textarea{min-height:90px;resize:vertical}.order{padding:15px;border:1px dashed #334252;border-radius:14px;background:#080c12;margin:14px 0}.code{font-size:25px;font-weight:950;letter-spacing:2px;color:#ff2147}.pay{display:grid;gap:9px}.hidden{display:none}.ok{padding:13px;border-radius:12px;background:rgba(255,33,71,.09);border:1px solid rgba(255,33,71,.25);color:#b8ffd8}
 @media(max-width:850px){.navlinks{display:none}.stats,.grid,.feature{grid-template-columns:1fr}.hero{padding-top:75px}h1{letter-spacing:-3px}.discord{display:block}.discord .btn{margin-top:16px;width:100%}}
 
-.server-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.server-card{padding:24px;border:1px solid #1d2a35;border-radius:22px;background:linear-gradient(145deg,#0b1218,#080c12);box-shadow:0 20px 65px rgba(0,0,0,.16);transition:.25s}.server-card:hover{transform:translateY(-5px);border-color:#3b514b}.server-top{display:flex;align-items:center;gap:15px;margin-bottom:20px}.server-logo{width:58px;height:58px;border-radius:17px;display:grid;place-items:center;background:linear-gradient(135deg,#65ffae,#8b7cff);color:#06100a;font-size:26px;font-weight:1000}.server-top h3{margin:5px 0 0;font-size:24px}.online{font-size:10px;font-weight:900;color:#65ffae;letter-spacing:1px}.online i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#65ffae;box-shadow:0 0 12px #65ffae;margin-right:5px}.ip,.port{display:flex;align-items:center;gap:10px;padding:13px 14px;background:#070b10;border:1px solid #19232d;border-radius:13px;margin-top:9px}.ip span,.port span{font-size:10px;color:#687587;font-weight:900}.ip b,.port b{flex:1;font-size:14px}.ip button,.port button{border:0;background:#111a22;color:#8d9aaa;border-radius:8px;padding:7px 9px;font-size:10px;font-weight:900;cursor:pointer}.server-card .btn{width:100%;margin-top:14px}.server-note{margin-top:15px;padding:15px 18px;border:1px solid #202b36;border-radius:15px;color:#7f8b9b;background:#090e14;font-size:13px}.promo-box{display:flex;align-items:center;justify-content:space-between;gap:25px;padding:35px;border:1px solid #26363a;border-radius:25px;background:radial-gradient(circle at 80% 30%,rgba(101,255,174,.13),transparent 35%),linear-gradient(135deg,#0b1218,#0a0d13)}.promo-box h2{font-size:34px;margin:15px 0 8px}.promo-box p{color:#8995a5;max-width:650px;line-height:1.6}.promo-box .btn{white-space:nowrap}
+.server-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.server-card{padding:24px;border:1px solid #1d2a35;border-radius:22px;background:linear-gradient(145deg,#0b1218,#080c12);box-shadow:0 20px 65px rgba(0,0,0,.16);transition:.25s}.server-card:hover{transform:translateY(-5px);border-color:#3b514b}.server-top{display:flex;align-items:center;gap:15px;margin-bottom:20px}.server-logo{width:58px;height:58px;border-radius:17px;display:grid;place-items:center;background:linear-gradient(135deg,#ff2147,#8b7cff);color:#0b0507;font-size:26px;font-weight:1000}.server-top h3{margin:5px 0 0;font-size:24px}.online{font-size:10px;font-weight:900;color:#ff2147;letter-spacing:1px}.online i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#ff2147;box-shadow:0 0 12px #ff2147;margin-right:5px}.ip,.port{display:flex;align-items:center;gap:10px;padding:13px 14px;background:#070b10;border:1px solid #19232d;border-radius:13px;margin-top:9px}.ip span,.port span{font-size:10px;color:#687587;font-weight:900}.ip b,.port b{flex:1;font-size:14px}.ip button,.port button{border:0;background:#111a22;color:#8d9aaa;border-radius:8px;padding:7px 9px;font-size:10px;font-weight:900;cursor:pointer}.server-card .btn{width:100%;margin-top:14px}.server-note{margin-top:15px;padding:15px 18px;border:1px solid #202b36;border-radius:15px;color:#7f8b9b;background:#090e14;font-size:13px}.promo-box{display:flex;align-items:center;justify-content:space-between;gap:25px;padding:35px;border:1px solid #26363a;border-radius:25px;background:radial-gradient(circle at 80% 30%,rgba(255,33,71,.13),transparent 35%),linear-gradient(135deg,#0b1218,#0a0d13)}.promo-box h2{font-size:34px;margin:15px 0 8px}.promo-box p{color:#8995a5;max-width:650px;line-height:1.6}.promo-box .btn{white-space:nowrap}
 
-.support-grid{display:grid;grid-template-columns:1fr 300px;gap:16px}.support-main{padding:35px;border:1px solid #23342e;border-radius:25px;background:radial-gradient(circle at 80% 10%,rgba(101,255,174,.13),transparent 32%),#0a100e}.support-main h2{font-size:38px;margin:16px 0 10px}.support-main p{color:#89998f;line-height:1.65;max-width:730px}.support-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.support-side{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border:1px solid #23342e;border-radius:25px;background:#0a100e;color:#9aa89f}.support-side b{color:#fff;font-size:20px}.coin{width:76px;height:76px;border-radius:24px;display:grid;place-items:center;font-size:34px;background:rgba(101,255,174,.1);border:1px solid rgba(101,255,174,.25);box-shadow:0 0 45px rgba(101,255,174,.1)}
+.support-grid{display:grid;grid-template-columns:1fr 300px;gap:16px}.support-main{padding:35px;border:1px solid #23342e;border-radius:25px;background:radial-gradient(circle at 80% 10%,rgba(255,33,71,.13),transparent 32%),#0a100e}.support-main h2{font-size:38px;margin:16px 0 10px}.support-main p{color:#89998f;line-height:1.65;max-width:730px}.support-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.support-side{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border:1px solid #23342e;border-radius:25px;background:#0a100e;color:#9aa89f}.support-side b{color:#fff;font-size:20px}.coin{width:76px;height:76px;border-radius:24px;display:grid;place-items:center;font-size:34px;background:rgba(255,33,71,.1);border:1px solid rgba(255,33,71,.25);box-shadow:0 0 45px rgba(255,33,71,.1)}
 
 .hero-pills{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:24px}.hero-pills span{padding:8px 12px;border:1px solid #202a35;background:#0a0f15;border-radius:999px;color:#7f8b9c;font-size:12px}.hero-pills span:first-child{color:#bfffd8;border-color:#234233}
-.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.service-card{position:relative;padding:24px;border:1px solid #1b2731;background:linear-gradient(145deg,#0b1118,#080c12);border-radius:22px;transition:.22s;overflow:hidden}.service-card:before{content:"";position:absolute;inset:auto -30px -70px auto;width:150px;height:150px;background:radial-gradient(circle,rgba(101,255,174,.12),transparent 65%);pointer-events:none}.service-card:hover{transform:translateY(-5px);border-color:#395348}.featured-service{border-color:#31513f;box-shadow:0 18px 60px rgba(101,255,174,.06)}.service-icon{width:56px;height:56px;border-radius:17px;display:grid;place-items:center;background:#121b23;font-size:27px;margin-bottom:15px}.service-tag{display:inline-block;font-size:10px;letter-spacing:1.2px;font-weight:900;color:#65ffae;margin-bottom:8px}.service-card h3{margin:0 0 8px;font-size:21px}.service-card p{color:#8793a4;line-height:1.55;min-height:73px}.service-price{font-size:29px;font-weight:950;margin:16px 0 8px}.service-card .btn{width:100%}.service-note{margin-top:16px;padding:16px 18px;border:1px dashed #30423b;border-radius:16px;background:#09100e;color:#829188;font-size:13px}.service-note b{color:#caffdc}.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}.why-card{display:flex;gap:15px;align-items:flex-start;padding:21px;border:1px solid #1b2430;background:#0a0f15;border-radius:19px}.why-card>span{font-size:27px}.why-card h3{margin:0 0 5px}.why-card p{margin:0;color:#7f8b9b;line-height:1.5}.faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.faq-grid details{border:1px solid #1b2430;background:#0a0f15;border-radius:17px;padding:17px 19px}.faq-grid summary{cursor:pointer;font-weight:850}.faq-grid p{color:#7f8b9b;line-height:1.55;margin:12px 0 0}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.service-card{position:relative;padding:24px;border:1px solid #1b2731;background:linear-gradient(145deg,#0b1118,#080c12);border-radius:22px;transition:.22s;overflow:hidden}.service-card:before{content:"";position:absolute;inset:auto -30px -70px auto;width:150px;height:150px;background:radial-gradient(circle,rgba(255,33,71,.12),transparent 65%);pointer-events:none}.service-card:hover{transform:translateY(-5px);border-color:#395348}.featured-service{border-color:#31513f;box-shadow:0 18px 60px rgba(255,33,71,.06)}.service-icon{width:56px;height:56px;border-radius:17px;display:grid;place-items:center;background:#121b23;font-size:27px;margin-bottom:15px}.service-tag{display:inline-block;font-size:10px;letter-spacing:1.2px;font-weight:900;color:#ff2147;margin-bottom:8px}.service-card h3{margin:0 0 8px;font-size:21px}.service-card p{color:#8793a4;line-height:1.55;min-height:73px}.service-price{font-size:29px;font-weight:950;margin:16px 0 8px}.service-card .btn{width:100%}.service-note{margin-top:16px;padding:16px 18px;border:1px dashed #30423b;border-radius:16px;background:#09100e;color:#829188;font-size:13px}.service-note b{color:#caffdc}.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}.why-card{display:flex;gap:15px;align-items:flex-start;padding:21px;border:1px solid #1b2430;background:#0a0f15;border-radius:19px}.why-card>span{font-size:27px}.why-card h3{margin:0 0 5px}.why-card p{margin:0;color:#7f8b9b;line-height:1.5}.faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.faq-grid details{border:1px solid #1b2430;background:#0a0f15;border-radius:17px;padding:17px 19px}.faq-grid summary{cursor:pointer;font-weight:850}.faq-grid p{color:#7f8b9b;line-height:1.55;margin:12px 0 0}
 @media(max-width:850px){.service-grid,.why-grid,.faq-grid{grid-template-columns:1fr}}
 
 
+
+
+/* === PUSH STORE REFERENCE LAYOUT === */
+body{background:#03040a!important}
+header{background:rgba(3,4,10,.78)!important;border-bottom:1px solid rgba(255,255,255,.08)!important}
+.nav{height:62px}.brand{font-size:24px;letter-spacing:-1px}.brand i{color:#ff1e45}
+.navlinks{gap:24px;font-size:12px}.navlinks a{color:#8e93a3}.navlinks a:first-child{color:#fff}
+.purchase-live{background:rgba(4,5,11,.72)!important;border-bottom:1px solid rgba(255,255,255,.05)!important}
+.hero{padding:30px 0 24px!important;min-height:700px!important;display:block!important;text-align:center!important}
+.hero .wrap{position:relative;max-width:1420px!important;padding:0 20px!important}
+.reference-hero{position:relative;display:grid;grid-template-columns:220px minmax(420px,1fr) 300px;gap:18px;align-items:center;min-height:650px;padding:22px 0}
+.reference-side,.reference-player{background:rgba(5,8,15,.82);border:1px solid rgba(255,255,255,.10);border-radius:16px;box-shadow:0 25px 80px rgba(0,0,0,.35);backdrop-filter:blur(14px);text-align:left}
+.reference-side{padding:18px}.reference-side h4{margin:0 0 16px;font-size:12px;color:#dfe2eb}.ref-stat{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)}.ref-stat:last-child{border-bottom:0}.ref-icon{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;color:#ff1e45;background:rgba(255,30,69,.10);border:1px solid rgba(255,30,69,.18)}.ref-stat b{display:block;font-size:14px}.ref-stat span{display:block;color:#777e90;font-size:10px;margin-top:3px}
+.reference-center{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:600px;position:relative}.reference-center:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(255,24,63,.18),transparent 65%);filter:blur(12px);z-index:0}.ref-crown{font-size:26px;color:#ff1e45;position:relative;z-index:1}.ref-logo{font-size:clamp(76px,10vw,150px);font-weight:1000;line-height:.78;letter-spacing:-10px;font-style:italic;color:#ff173f;text-shadow:0 0 35px rgba(255,23,63,.24);position:relative;z-index:1}.ref-logo span{display:block;font-size:.45em;letter-spacing:-3px;color:#e8ebf2;margin-top:16px;text-shadow:none}.ref-tagline{margin-top:16px;color:#b7bcc8;font-size:12px;position:relative;z-index:1}.reference-actions{margin-top:28px;display:flex;flex-direction:column;gap:9px;width:min(360px,100%);position:relative;z-index:1}.reference-actions .btn{height:48px;border-radius:12px}.reference-actions .btn.primary{font-size:14px}.reference-actions .btn.music-ref{background:rgba(5,8,15,.76)}
+.reference-player{padding:14px;overflow:hidden}.ref-player-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}.ref-player-top b{font-size:11px}.ref-player-top span{font-size:9px;color:#7e8596}.ref-now{display:flex;gap:10px;align-items:center;padding:10px;border-radius:11px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06)}.ref-cover{width:42px;height:42px;border-radius:9px;display:grid;place-items:center;background:linear-gradient(135deg,#31030c,#ff1e45);font-size:19px}.ref-now b{font-size:11px}.ref-now span{display:block;color:#7f8697;font-size:9px;margin-top:3px}.ref-list{margin-top:10px;display:grid;gap:4px}.ref-song{padding:8px 9px;border-radius:9px;color:#8f96a7;font-size:9px;border:1px solid transparent}.ref-song.active{color:#ff3b5e;background:rgba(255,30,69,.07);border-color:rgba(255,30,69,.16)}.ref-open{display:block;text-align:center;margin-top:10px;padding:9px;border:1px solid rgba(255,255,255,.08);border-radius:9px;color:#8f96a7;font-size:9px}
+.hero>.wrap>.badge,.hero>.wrap>h1,.hero>.wrap>p,.hero>.wrap>.actions,.hero>.wrap>.hero-pills{display:none}
+.stats{max-width:1420px;margin:-5px auto 45px!important;padding:0 20px;position:relative;z-index:2;grid-template-columns:repeat(4,1fr)}.stats .stat{background:rgba(5,8,15,.80);border-color:rgba(255,255,255,.08);backdrop-filter:blur(10px)}
+section{position:relative;z-index:2}.title h2{letter-spacing:-.5px}
+#prices .wrap{max-width:1420px}.catalog-tools{background:rgba(3,5,11,.72);padding:10px;border:1px solid rgba(255,255,255,.07);border-radius:15px}
+.card,.sales-card,.policy-card,.real-stat,.why-card,.faq-grid details,.service-card{background:rgba(5,8,15,.82)!important;border-color:rgba(255,255,255,.08)!important;box-shadow:0 16px 50px rgba(0,0,0,.20)}
+.btn.primary,.popular{background:#ff173f!important;border-color:#ff173f!important;box-shadow:0 10px 32px rgba(255,23,63,.20)!important}
+.push-music{left:0!important;right:0!important;bottom:0!important;border-radius:0!important;background:rgba(3,5,11,.94)!important;border-top:1px solid rgba(255,255,255,.10)!important;box-shadow:0 -18px 70px rgba(0,0,0,.55)!important;backdrop-filter:blur(18px)!important;z-index:100!important}
+.push-music-inner{max-width:1420px!important;margin:auto!important;padding:10px 20px!important}.push-music-cover{background:linear-gradient(135deg,#1b0207,#ff173f)!important}.push-music-btn{border-color:rgba(255,255,255,.12)!important;background:#080b12!important}.push-music-btn:hover{border-color:#ff173f!important}.push-music-info b{color:#fff}.push-music-info span{color:#777f90}.push-playlist{border-color:rgba(255,255,255,.10)!important;color:#aeb5c3!important}
+#maxKorzhPlayer{position:fixed!important;width:1px!important;height:1px!important;opacity:0!important;pointer-events:none!important}
+@media(max-width:1050px){.reference-hero{grid-template-columns:180px minmax(320px,1fr) 250px}.ref-logo{font-size:clamp(68px,9vw,120px)}}
+@media(max-width:800px){.reference-hero{grid-template-columns:1fr;min-height:auto;padding:30px 0 40px}.reference-side{display:none}.reference-player{width:min(420px,100%);margin:0 auto;order:3}.reference-center{min-height:470px}.ref-logo{font-size:90px}.stats{grid-template-columns:1fr 1fr!important}.push-music-inner{padding:8px 12px!important}.push-volume,.push-playlist{display:none!important}}
+@media(max-width:520px){.ref-logo{font-size:72px}.reference-center{min-height:420px}.stats{grid-template-columns:1fr!important}.hero{min-height:auto!important}}
 
 /* === PUSH CLXN AURORA REDESIGN === */
 :root{--p:#a78bfa;--p2:#00b8ff;--c:#00e5ff;--pink:#f472b6;--gold:#fbbf24;--bg:#05030b;--panel:#0d0917}
@@ -76,10 +103,10 @@ h1{font-weight:1000;text-shadow:0 10px 50px rgba(124,58,237,.16)}.grad{backgroun
 
 
 <style>
-.price-card{position:relative}.old-price{text-decoration:line-through;color:#596575;font-size:14px;margin-left:5px}.save{color:#65ffae;font-size:11px;font-weight:900;margin-top:5px}.discount{background:#ffcf5a;color:#1b1300;padding:6px 9px;border-radius:999px;font-size:10px;font-weight:1000}.navlinks{align-items:center}.hero-pills{margin-top:24px}.hero-pills span:first-child{color:#bfffd8;border-color:#234233}.conversion-bar{border-color:#31513f;background:linear-gradient(90deg,rgba(101,255,174,.09),rgba(101,255,174,.025))}.choice-card:nth-child(2){border-color:#31513f;box-shadow:0 18px 65px rgba(101,255,174,.06)}.service-card:hover{border-color:#395348}.why-card{transition:.2s}.why-card:hover{transform:translateY(-4px);border-color:#354253}.sticky-buy{box-shadow:0 20px 60px rgba(0,0,0,.4)}@media(max-width:850px){.navlinks{display:none}}
+.price-card{position:relative}.old-price{text-decoration:line-through;color:#596575;font-size:14px;margin-left:5px}.save{color:#ff2147;font-size:11px;font-weight:900;margin-top:5px}.discount{background:#ffcf5a;color:#1b1300;padding:6px 9px;border-radius:999px;font-size:10px;font-weight:1000}.navlinks{align-items:center}.hero-pills{margin-top:24px}.hero-pills span:first-child{color:#bfffd8;border-color:#234233}.conversion-bar{border-color:#31513f;background:linear-gradient(90deg,rgba(255,33,71,.09),rgba(255,33,71,.025))}.choice-card:nth-child(2){border-color:#31513f;box-shadow:0 18px 65px rgba(255,33,71,.06)}.service-card:hover{border-color:#395348}.why-card{transition:.2s}.why-card:hover{transform:translateY(-4px);border-color:#354253}.sticky-buy{box-shadow:0 20px 60px rgba(0,0,0,.4)}@media(max-width:850px){.navlinks{display:none}}
 
 /* Ultimate conversion layer */
-.sale-ribbon{background:linear-gradient(90deg,#6d28d9,#0891b2,#db2777,#6d28d9);background-size:250% 100%;animation:ribbon 9s linear infinite;color:#fff;text-align:center;padding:11px 14px;font-size:13px;letter-spacing:.1px;box-shadow:0 10px 35px rgba(124,58,237,.18)}.sale-ribbon a{text-decoration:underline;font-weight:900}.sale-ribbon strong{color:#fff;font-size:15px}.old-price{text-decoration:line-through;color:#667184;font-size:.48em;font-weight:700;margin-left:5px;vertical-align:middle}.save{display:inline-block;color:#bfffe0;background:rgba(101,255,174,.08);border:1px solid rgba(101,255,174,.2);border-radius:999px;padding:4px 8px;font-size:10px;font-weight:900}.mega-deal{position:relative;overflow:hidden;display:grid;grid-template-columns:1.3fr .7fr;gap:30px;padding:42px;border-radius:30px;border:1px solid rgba(167,139,250,.28);background:radial-gradient(circle at 80% 20%,rgba(34,211,238,.16),transparent 30%),radial-gradient(circle at 30% 80%,rgba(167,139,250,.13),transparent 35%),linear-gradient(135deg,#10091b,#07131a);box-shadow:0 30px 100px rgba(0,0,0,.25)}.deal-kicker{font-size:11px;font-weight:1000;letter-spacing:2px;color:#fbbf24}.mega-deal h2{font-size:clamp(42px,6vw,72px);margin:12px 0 8px;line-height:1}.mega-deal h2 span{background:linear-gradient(90deg,#00e5ff,#a78bfa,#f472b6);-webkit-background-clip:text;color:transparent}.mega-deal p{color:#9da7b7;font-size:17px;line-height:1.6;max-width:700px}.deal-points{display:flex;gap:9px;flex-wrap:wrap;margin:22px 0}.deal-points span{padding:8px 11px;border-radius:999px;background:#0b1118;border:1px solid #273141;color:#aeb9c8;font-size:12px}.big-buy{padding:16px 22px;font-size:15px}.deal-visual{min-height:270px;position:relative;display:grid;place-items:center}.deal-price{position:relative;z-index:2;width:190px;height:190px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#fff,#a78bfa 13%,#00b8ff 40%,#08101a 70%);box-shadow:0 0 80px rgba(124,58,237,.5),inset 0 0 35px rgba(255,255,255,.12);font-size:46px;font-weight:1000}.deal-price small{display:block;font-size:10px;letter-spacing:2px;margin-top:-60px;color:#dfe8ff}.deal-orbit{position:absolute;border:1px solid rgba(34,211,238,.35);border-radius:50%;animation:spin 10s linear infinite}.o1{width:240px;height:100px;transform:rotate(25deg)}.o2{width:110px;height:260px;transform:rotate(-35deg);border-color:rgba(244,114,182,.25);animation-duration:14s;animation-direction:reverse}.bundle-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.bundle{position:relative;padding:25px;border:1px solid #242136;border-radius:23px;background:linear-gradient(145deg,#0d0917,#080c13);transition:.25s}.bundle:hover{transform:translateY(-5px);border-color:#55417a;box-shadow:0 20px 70px rgba(124,58,237,.1)}.bundle.featured{border-color:#5a3980;box-shadow:0 20px 80px rgba(124,58,237,.13)}.bundle-tag{display:inline-block;font-size:10px;letter-spacing:1px;color:#b9a4ff;margin-bottom:12px}.bundle h3{font-size:24px;margin:0 0 8px}.bundle p{color:#8792a3;line-height:1.5;min-height:48px}.bundle-price{font-size:30px;font-weight:1000;margin:16px 0 5px}.bundle .btn{width:100%;margin-top:13px}.compare{border:1px solid #202735;border-radius:22px;overflow:hidden;background:#090d14}.compare-row{display:grid;grid-template-columns:1.2fr .8fr .8fr 1.5fr .65fr;gap:10px;align-items:center;padding:16px 18px;border-top:1px solid #1a2230;color:#9ca8b8;font-size:13px}.compare-row.head{border-top:0;background:#0d121b;color:#667386;font-size:11px;text-transform:uppercase;letter-spacing:1px}.compare-row b{color:#fff}.compare-row strong{color:#fff;font-size:18px}.compare-row.hot{background:linear-gradient(90deg,rgba(124,58,237,.12),rgba(34,211,238,.04));box-shadow:inset 3px 0 #a78bfa}.mini-buy{border:1px solid #3a2e55;background:#120d1d;color:#d8ccff;padding:8px 11px;border-radius:9px;font-weight:850;cursor:pointer}.extra-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.extra{display:flex;gap:13px;padding:19px;border:1px solid #1e2634;background:#090e15;border-radius:18px}.extra>span{font-size:25px}.extra b{display:block;margin-bottom:5px}.extra p{margin:0;color:#7f8a9b;line-height:1.45;font-size:13px}.sticky-buy{border:1px solid rgba(167,139,250,.25)!important;background:rgba(10,7,18,.88)!important;box-shadow:0 -10px 50px rgba(0,0,0,.3),0 0 40px rgba(124,58,237,.08)}
+.sale-ribbon{background:linear-gradient(90deg,#6d28d9,#0891b2,#db2777,#6d28d9);background-size:250% 100%;animation:ribbon 9s linear infinite;color:#fff;text-align:center;padding:11px 14px;font-size:13px;letter-spacing:.1px;box-shadow:0 10px 35px rgba(124,58,237,.18)}.sale-ribbon a{text-decoration:underline;font-weight:900}.sale-ribbon strong{color:#fff;font-size:15px}.old-price{text-decoration:line-through;color:#667184;font-size:.48em;font-weight:700;margin-left:5px;vertical-align:middle}.save{display:inline-block;color:#bfffe0;background:rgba(255,33,71,.08);border:1px solid rgba(255,33,71,.2);border-radius:999px;padding:4px 8px;font-size:10px;font-weight:900}.mega-deal{position:relative;overflow:hidden;display:grid;grid-template-columns:1.3fr .7fr;gap:30px;padding:42px;border-radius:30px;border:1px solid rgba(167,139,250,.28);background:radial-gradient(circle at 80% 20%,rgba(34,211,238,.16),transparent 30%),radial-gradient(circle at 30% 80%,rgba(167,139,250,.13),transparent 35%),linear-gradient(135deg,#10091b,#07131a);box-shadow:0 30px 100px rgba(0,0,0,.25)}.deal-kicker{font-size:11px;font-weight:1000;letter-spacing:2px;color:#fbbf24}.mega-deal h2{font-size:clamp(42px,6vw,72px);margin:12px 0 8px;line-height:1}.mega-deal h2 span{background:linear-gradient(90deg,#00e5ff,#a78bfa,#f472b6);-webkit-background-clip:text;color:transparent}.mega-deal p{color:#9da7b7;font-size:17px;line-height:1.6;max-width:700px}.deal-points{display:flex;gap:9px;flex-wrap:wrap;margin:22px 0}.deal-points span{padding:8px 11px;border-radius:999px;background:#0b1118;border:1px solid #273141;color:#aeb9c8;font-size:12px}.big-buy{padding:16px 22px;font-size:15px}.deal-visual{min-height:270px;position:relative;display:grid;place-items:center}.deal-price{position:relative;z-index:2;width:190px;height:190px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#fff,#a78bfa 13%,#00b8ff 40%,#08101a 70%);box-shadow:0 0 80px rgba(124,58,237,.5),inset 0 0 35px rgba(255,255,255,.12);font-size:46px;font-weight:1000}.deal-price small{display:block;font-size:10px;letter-spacing:2px;margin-top:-60px;color:#dfe8ff}.deal-orbit{position:absolute;border:1px solid rgba(34,211,238,.35);border-radius:50%;animation:spin 10s linear infinite}.o1{width:240px;height:100px;transform:rotate(25deg)}.o2{width:110px;height:260px;transform:rotate(-35deg);border-color:rgba(244,114,182,.25);animation-duration:14s;animation-direction:reverse}.bundle-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.bundle{position:relative;padding:25px;border:1px solid #242136;border-radius:23px;background:linear-gradient(145deg,#0d0917,#080c13);transition:.25s}.bundle:hover{transform:translateY(-5px);border-color:#55417a;box-shadow:0 20px 70px rgba(124,58,237,.1)}.bundle.featured{border-color:#5a3980;box-shadow:0 20px 80px rgba(124,58,237,.13)}.bundle-tag{display:inline-block;font-size:10px;letter-spacing:1px;color:#b9a4ff;margin-bottom:12px}.bundle h3{font-size:24px;margin:0 0 8px}.bundle p{color:#8792a3;line-height:1.5;min-height:48px}.bundle-price{font-size:30px;font-weight:1000;margin:16px 0 5px}.bundle .btn{width:100%;margin-top:13px}.compare{border:1px solid #202735;border-radius:22px;overflow:hidden;background:#090d14}.compare-row{display:grid;grid-template-columns:1.2fr .8fr .8fr 1.5fr .65fr;gap:10px;align-items:center;padding:16px 18px;border-top:1px solid #1a2230;color:#9ca8b8;font-size:13px}.compare-row.head{border-top:0;background:#0d121b;color:#667386;font-size:11px;text-transform:uppercase;letter-spacing:1px}.compare-row b{color:#fff}.compare-row strong{color:#fff;font-size:18px}.compare-row.hot{background:linear-gradient(90deg,rgba(124,58,237,.12),rgba(34,211,238,.04));box-shadow:inset 3px 0 #a78bfa}.mini-buy{border:1px solid #3a2e55;background:#120d1d;color:#d8ccff;padding:8px 11px;border-radius:9px;font-weight:850;cursor:pointer}.extra-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.extra{display:flex;gap:13px;padding:19px;border:1px solid #1e2634;background:#090e15;border-radius:18px}.extra>span{font-size:25px}.extra b{display:block;margin-bottom:5px}.extra p{margin:0;color:#7f8a9b;line-height:1.45;font-size:13px}.sticky-buy{border:1px solid rgba(167,139,250,.25)!important;background:rgba(10,7,18,.88)!important;box-shadow:0 -10px 50px rgba(0,0,0,.3),0 0 40px rgba(124,58,237,.08)}
 @keyframes ribbon{0%{background-position:0 0}100%{background-position:250% 0}}@keyframes spin{to{transform:rotate(385deg)}}
 @media(max-width:850px){.mega-deal{grid-template-columns:1fr;padding:28px}.deal-visual{min-height:220px}.bundle-grid,.extra-grid{grid-template-columns:1fr}.compare{overflow:auto}.compare-row{min-width:700px}.compare-row.head{min-width:700px}}
 </style>
@@ -133,7 +160,7 @@ body{background:radial-gradient(circle at 10% 0%,rgba(0,229,255,.10),transparent
 .pc-realbox{border-radius:24px;background:#0a1018;border:1px solid rgba(255,255,255,.08);padding:24px}
 .pc-real-list{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
 .pc-real-item{padding:14px;border-radius:16px;background:#0e1621;border:1px solid rgba(255,255,255,.06)}
-.pc-real-item strong{color:#fff}.pc-real-item small{display:block;color:#76859a;margin-top:5px}.pc-paid{color:#55f2a3;font-weight:900}
+.pc-real-item strong{color:#fff}.pc-real-item small{display:block;color:#76859a;margin-top:5px}.pc-paid{color:#ff2147;font-weight:900}
 .pc-cta{max-width:1180px;margin:55px auto;padding:0 18px}
 .pc-cta-box{padding:32px;border-radius:28px;background:linear-gradient(120deg,#071722,#130d08);border:1px solid rgba(0,229,255,.18);display:flex;align-items:center;justify-content:space-between;gap:20px}
 .pc-cta-box h2{margin:0;color:#fff}.pc-cta-box p{margin:8px 0 0;color:#8c99aa}
@@ -150,7 +177,7 @@ body{background:radial-gradient(circle at 10% 0%,rgba(0,229,255,.10),transparent
 /* BEAST EDITION */
 .pc-live{max-width:1180px;margin:18px auto 0;padding:0 18px}
 .pc-livebar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:11px 15px;border-radius:15px;background:rgba(85,242,163,.055);border:1px solid rgba(85,242,163,.16);color:#c9d6e5;font-size:13px}
-.pc-dot{width:9px;height:9px;border-radius:50%;background:#55f2a3;box-shadow:0 0 15px #55f2a3;animation:pulse 1.5s infinite}
+.pc-dot{width:9px;height:9px;border-radius:50%;background:#ff2147;box-shadow:0 0 15px #ff2147;animation:pulse 1.5s infinite}
 @keyframes pulse{50%{opacity:.35;transform:scale(.7)}}
 .pc-metrics{max-width:1180px;margin:35px auto;padding:0 18px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .pc-metric{border-radius:20px;padding:22px;background:linear-gradient(145deg,#0b121c,#090d14);border:1px solid rgba(255,255,255,.07);text-align:center}
@@ -165,10 +192,60 @@ body{background:radial-gradient(circle at 10% 0%,rgba(0,229,255,.10),transparent
 .pc-toast.show{transform:none;opacity:1}.pc-toast b{color:#fff}.pc-toast small{display:block;color:#7e8ca0;margin-top:4px}
 @media(max-width:800px){.pc-metrics{grid-template-columns:1fr}.pc-faq-grid{grid-template-columns:1fr}}
 </style>
+
+<style>
+/* SALES UPGRADE */
+.sales-hub{margin:35px 0}.sales-hub-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.sales-card{padding:21px;border:1px solid rgba(255,255,255,.08);border-radius:20px;background:linear-gradient(145deg,#0d1119,#080b11);transition:.25s}.sales-card:hover{transform:translateY(-5px);border-color:rgba(255,33,71,.3);box-shadow:0 20px 70px rgba(0,0,0,.25)}.sales-icon{font-size:27px;margin-bottom:12px}.sales-card h3{margin:0 0 7px}.sales-card p{margin:0;color:#8490a2;line-height:1.5;font-size:13px}.sales-card strong{color:#fff}.popular-live{border-color:rgba(255,33,71,.32)!important;box-shadow:0 15px 60px rgba(255,33,71,.07)}.catalog-tools{display:grid;grid-template-columns:1.5fr .7fr .7fr auto;gap:10px;margin:18px 0}.catalog-tools input,.catalog-tools select{margin:0}.catalog-tools button{white-space:nowrap}.tool-btn{border:1px solid #273342;background:#0d131b;color:#dce6f1;border-radius:12px;padding:12px 14px;font-weight:850;cursor:pointer}.tool-btn.active{border-color:#ff2147;color:#ff2147;background:rgba(255,33,71,.06)}.fav-btn{position:absolute;right:16px;top:16px;width:36px;height:36px;border-radius:11px;border:1px solid #283341;background:#0b1017;color:#8b98a9;cursor:pointer}.fav-btn.active{color:#ff668e;border-color:rgba(255,102,142,.35);background:rgba(255,102,142,.07)}.price-card{min-height:100%;position:relative}.quick-choice{margin:16px 0;padding:20px;border:1px solid rgba(167,139,250,.18);border-radius:20px;background:linear-gradient(120deg,rgba(167,139,250,.08),rgba(34,211,238,.04));display:flex;align-items:center;justify-content:space-between;gap:18px}.quick-choice p{margin:5px 0 0;color:#8995a6}.quiz-modal{display:none;position:fixed;inset:0;z-index:10001;background:rgba(0,0,0,.78);place-items:center;padding:18px}.quiz-modal.open{display:grid}.quiz-box{width:min(600px,100%);background:#0b1017;border:1px solid #293645;border-radius:24px;padding:25px;box-shadow:0 30px 100px #000}.quiz-q{margin:18px 0 8px;font-weight:900}.quiz-opt{display:block;width:100%;text-align:left;margin:8px 0;padding:13px 15px;border:1px solid #273342;background:#080d13;color:#fff;border-radius:13px;cursor:pointer}.quiz-opt:hover{border-color:#ff2147}.quiz-result{padding:16px;border-radius:15px;background:rgba(255,33,71,.07);border:1px solid rgba(255,33,71,.2);color:#caffdc;margin-top:14px}.policy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.policy-card{padding:22px;border:1px solid #1b2430;background:#0a0f15;border-radius:20px}.policy-icon{font-size:26px;margin-bottom:10px}.policy-card h3{margin:0 0 7px}.policy-card p{margin:0;color:#7f8b9b;line-height:1.55;font-size:13px}.faq-20{grid-template-columns:repeat(2,1fr)}.real-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin:25px 0}.real-stat{padding:21px;border:1px solid rgba(255,255,255,.08);border-radius:19px;background:#0a0f15}.real-stat b{display:block;font-size:28px}.real-stat span{color:#7f8b9b;font-size:13px}.telegram-cta{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:28px;border:1px solid rgba(88,101,242,.25);border-radius:23px;background:linear-gradient(120deg,rgba(88,101,242,.13),rgba(255,33,71,.05))}.telegram-cta h3{margin:0 0 6px;font-size:25px}.telegram-cta p{margin:0;color:#8793a4}.theme-light{background:#f4f6f8!important;color:#10131a!important}.theme-light header{background:rgba(244,246,248,.84);border-color:#dce2e8}.theme-light .card,.theme-light .sales-card,.theme-light .real-stat,.theme-light .policy-card,.theme-light .why-card,.theme-light .faq-grid details{background:#fff;border-color:#dce2e8}.theme-light .card p,.theme-light .sales-card p,.theme-light .real-stat span,.theme-light .policy-card p,.theme-light .faq-grid p{color:#596579}.backtop{position:fixed;right:20px;bottom:20px;z-index:9990;display:none;width:46px;height:46px;border-radius:14px;border:1px solid #33404f;background:#0c1219;color:#fff;cursor:pointer}.backtop.show{display:block}.site-loader{position:fixed;inset:0;z-index:20000;background:#05070b;display:grid;place-items:center;transition:.35s}.site-loader.hide{opacity:0;pointer-events:none}.loader-mark{font-size:30px;font-weight:1000;letter-spacing:2px}.loader-mark span{color:#ff2147}@media(max-width:900px){.sales-hub-grid,.real-stats{grid-template-columns:1fr 1fr}.catalog-tools{grid-template-columns:1fr 1fr}.policy-grid,.faq-20{grid-template-columns:1fr}.telegram-cta{display:block}.telegram-cta .btn{margin-top:15px;width:100%}}@media(max-width:600px){.sales-hub-grid,.real-stats{grid-template-columns:1fr}.catalog-tools{grid-template-columns:1fr}.quick-choice{display:block}.quick-choice .btn{margin-top:13px;width:100%}}
+</style>
+<style>
+/* PUSH STORE anime + music add-on — existing store design preserved */
+#pushAnimeBg{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:-5;opacity:.34;filter:brightness(.62) saturate(1.25) contrast(1.05);pointer-events:none}
+#pushAnimeShade{position:fixed;inset:0;z-index:-4;pointer-events:none;background:linear-gradient(90deg,rgba(5,7,11,.92),rgba(5,7,11,.62),rgba(5,7,11,.9)),linear-gradient(180deg,rgba(5,7,11,.25),rgba(5,7,11,.9))}
+.push-music{position:fixed;left:16px;right:16px;bottom:16px;z-index:80;display:none}
+.push-music.show{display:block}
+.push-music-inner{max-width:720px;margin:auto;display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid rgba(255,33,71,.22);border-radius:17px;background:rgba(7,10,15,.9);backdrop-filter:blur(18px);box-shadow:0 18px 65px rgba(0,0,0,.45)}
+.push-music-cover{width:42px;height:42px;flex:0 0 42px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,#ff2147,#8d76ff);font-size:20px}
+.push-music-info{min-width:0;flex:1}.push-music-info b,.push-music-info span{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.push-music-info span{font-size:11px;color:#7f8998;margin-top:3px}
+.push-music-btn{width:39px;height:39px;border:1px solid #293341;border-radius:11px;background:#0d131b;color:#fff;cursor:pointer}.push-music-btn:hover{border-color:#ff2147}
+.push-volume{width:90px}.push-playlist{font-size:11px;color:#ff2147;white-space:nowrap}
+#pushMusicOpen{position:fixed;right:20px;bottom:20px;z-index:81;border:1px solid #293341;background:rgba(10,14,20,.9);color:#fff;border-radius:13px;padding:11px 14px;cursor:pointer;backdrop-filter:blur(14px);box-shadow:0 10px 35px rgba(0,0,0,.25)}
+#pushMusicOpen:hover{border-color:#ff2147;transform:translateY(-2px)}
+@media(max-width:600px){.push-music{left:8px;right:8px;bottom:8px}.push-music-inner{flex-wrap:wrap}.push-music-info{max-width:48%}.push-volume{width:70px}.push-playlist{display:none}#pushMusicOpen{right:10px;bottom:10px;padding:9px 11px}}
+</style>
+
+<style id="push-anime-photo-style">
+/* PUSH STORE — red/black anime presentation */
+body{background:#050306!important}
+body:before{background:radial-gradient(circle at 15% 15%,rgba(255,20,55,.16),transparent 25%),radial-gradient(circle at 85% 15%,rgba(255,20,55,.12),transparent 25%),radial-gradient(circle at 50% 90%,rgba(120,0,25,.12),transparent 30%)!important}
+header{background:rgba(5,3,6,.72)!important;border-bottom-color:rgba(255,33,71,.16)!important}
+.brand i{color:#ff2147!important}.grad{background:linear-gradient(100deg,#fff 15%,#ff2147 52%,#ff8a9b)!important;-webkit-background-clip:text!important;background-clip:text!important}
+.btn.primary,.popular{background:#ff2147!important;border-color:#ff2147!important;color:#fff!important;box-shadow:0 10px 34px rgba(255,33,71,.20)!important}
+.btn:hover,.tool-btn:hover{border-color:#ff2147!important}.dot{background:#ff2147!important;box-shadow:0 0 15px #ff2147!important}
+.card:hover,.sales-card:hover{border-color:rgba(255,33,71,.42)!important}.sales-card,.card,.real-stat,.policy-card{background:linear-gradient(145deg,rgba(12,8,13,.90),rgba(7,6,10,.90))!important}
+#pushAnimeBg{opacity:.46!important;filter:brightness(.48) saturate(1.28) contrast(1.08)!important}
+#pushAnimeShade{background:linear-gradient(90deg,rgba(4,2,5,.88),rgba(4,2,5,.38),rgba(4,2,5,.88)),linear-gradient(180deg,rgba(4,2,5,.16),rgba(4,2,5,.93))!important}
+.push-music{display:block!important;left:auto!important;right:22px!important;bottom:22px!important;width:min(390px,calc(100vw - 44px))!important}
+.push-music-inner{margin:0!important;border-color:rgba(255,33,71,.38)!important;background:rgba(7,4,8,.92)!important;box-shadow:0 18px 70px rgba(255,33,71,.12),0 20px 80px rgba(0,0,0,.55)!important}
+.push-music-cover{background:linear-gradient(135deg,#ff2147,#7c1027)!important;box-shadow:0 0 25px rgba(255,33,71,.22)}
+.push-music-btn:hover{border-color:#ff2147!important}.push-playlist{color:#ff6a82!important}
+#pushMusicOpen{display:none!important}
+.push-music-info span{color:#a68b92!important}
+/* Hero overlay like the reference: centered title over the anime background */
+.hero{position:relative;min-height:620px;display:grid;place-items:center;padding:90px 0 95px!important}
+.hero:before{content:"";position:absolute;inset:8% 12%;background:radial-gradient(circle,rgba(255,33,71,.10),transparent 58%);pointer-events:none;filter:blur(8px)}
+.hero>*{position:relative;z-index:1}
+.badge{border-color:rgba(255,33,71,.28)!important;background:rgba(10,5,8,.72)!important}
+.stat{background:rgba(8,5,9,.76)!important;border-color:rgba(255,33,71,.13)!important}
+.sale-ribbon,.pc-topdeal{background:rgba(55,5,14,.82)!important;border-color:rgba(255,33,71,.25)!important}
+.promo-box,.big,.discord,.telegram-cta{border-color:rgba(255,33,71,.22)!important}
+@media(max-width:700px){#pushAnimeBg{content:url("assets/anime-bg.gif");opacity:.28!important}.hero{min-height:540px}.push-music{right:10px!important;left:10px!important;bottom:10px!important;width:auto!important}.push-music-inner{max-width:none!important}.push-playlist{display:none!important}}
+</style>
 </head>
 <body>
+<img id="pushAnimeBg" src="assets/anime-alt-bg.gif" alt="" onerror="this.style.display='none'"><div id="pushAnimeShade"></div>
+
 <section class="pc-live pc-reveal">
-  <div class="pc-livebar"><span class="pc-dot"></span><b style="color:#55f2a3">Система работает</b> • Заказы принимаются • Поддержка на связи</div>
+  <div class="pc-livebar"><span class="pc-dot"></span><b style="color:#ff2147">Система работает</b> • Заказы принимаются • Поддержка на связи</div>
 </section>
 
 <section class="pc-announcement pc-reveal">
@@ -187,17 +264,36 @@ body{background:radial-gradient(circle at 10% 0%,rgba(0,229,255,.10),transparent
 <header><div class="wrap nav">
 <a class="brand" href="#">PUSH <i>CLXN</i></a>
 <nav class="navlinks"><a href="#prices">Цены</a><a href="#services">Услуги</a><a href="#buyers">Покупатели</a><a href="#reviews">Отзывы</a><a href="#faq">FAQ</a><a href="payment.html">💳 Оплата</a><a href="https://t.me/OutSai1" target="_blank" rel="noopener">Поддержка</a></nav>
-<a class="btn primary" href="#prices">Купить рекламу</a>
+<div style="display:flex;gap:8px;align-items:center"><button class="tool-btn" type="button" onclick="toggleTheme()" title="Тема">◐</button><a class="btn primary" href="#prices">Купить рекламу</a></div>
 </div></header><div class="purchase-live"><div class="wrap live-inner"><span class="pulse"></span><b>ПОСЛЕДНИЕ ПОКУПКИ</b><div class="buyer-list" id="buyerList"><span class="buyer">Загрузка подтверждённых заказов…</span></div></div></div>
 
 
 <main>
 <section class="hero"><div class="wrap">
-<div class="badge"><span class="dot"></span> PUSH CLXN • РЕКЛАМНАЯ ПЛОЩАДКА</div>
-<h1>Покажи проект.<br><span class="grad">Получи внимание.</span></h1>
-<p>Реклама проектов, Discord-услуги и помощь с запуском — в одном месте. Понятные цены, быстрый заказ и поддержка, если не знаешь, что выбрать.</p>
-<div class="actions"><a class="btn primary" href="#prices">🚀 Купить рекламу</a><a class="btn" href="#services">🤖 Услуги Discord</a><a class="btn" href="https://discord.gg/6y5tMn5raX" target="_blank" rel="noopener">◈ Discord PUSH CLXN</a><a class="btn" href="https://t.me/OutSai1" target="_blank" rel="noopener">📲 Админ в Telegram</a></div>
-<div class="hero-pills"><span>⚡ Быстрая заявка</span><span>🔐 Проверка оплаты</span><span>🛠️ Помощь с настройкой</span><span>💬 Поддержка в Discord</span></div>
+<div class="reference-hero">
+  <aside class="reference-side">
+    <h4>Реальная статистика</h4>
+    <div class="ref-stat"><div class="ref-icon">🛒</div><div><b>0+</b><span>Заказов выполнено</span></div></div>
+    <div class="ref-stat"><div class="ref-icon">▣</div><div><b>0+</b><span>Активных товаров</span></div></div>
+    <div class="ref-stat"><div class="ref-icon">♡</div><div><b>0+</b><span>Довольных клиентов</span></div></div>
+    <div class="ref-stat"><div class="ref-icon">★</div><div><b>0.0</b><span>Средняя оценка</span></div></div>
+  </aside>
+  <div class="reference-center">
+    <div class="ref-crown">♛</div>
+    <div class="ref-logo">PUSH<span>STORE</span></div>
+    <div class="ref-tagline">магазин проекта PUSH</div>
+    <div class="reference-actions">
+      <a class="btn primary" href="#prices">🛒 Купить сейчас&nbsp; →</a>
+      <button class="btn music-ref" type="button" onclick="window.pushStartMusic&&window.pushStartMusic()">♫ &nbsp;Включить музыку</button>
+    </div>
+  </div>
+  <aside class="reference-player">
+    <div class="ref-player-top"><b>♫ Музыка</b><span>Макс Корж</span></div>
+    <div class="ref-now"><div class="ref-cover">♫</div><div><b>Макс Корж — Жить в кайф</b><span>Официальный источник</span></div></div>
+    <div class="ref-list"><div class="ref-song active">1. Макс Корж — Жить в кайф</div><div class="ref-song">2. Макс Корж — Эндорфин</div><div class="ref-song">3. Макс Корж — Малый повзрослел</div><div class="ref-song">4. Макс Корж — Не выдумывай</div><div class="ref-song">5. Макс Корж — Пьяный дождь</div></div>
+    <a class="ref-open" href="https://www.youtube.com/results?search_query=%D0%9C%D0%B0%D0%BA%D1%81+%D0%9A%D0%BE%D1%80%D0%B6+%D0%BE%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5+%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE" target="_blank" rel="noopener">Открыть официальные видео ↗</a>
+  </aside>
+</div>
 </div></section>
 
 <div class="wrap"><div class="stats">
@@ -207,12 +303,29 @@ body{background:radial-gradient(circle at 10% 0%,rgba(0,229,255,.10),transparent
 <div class="stat"><b>600₽</b><small>настройка сервера от</small></div>
 </div></div>
 
+<section class="sales-hub reveal"><div class="wrap">
+<div class="title"><h2>💎 Почему покупают у нас?</h2><p>Без выдуманных цифр: здесь только то, что реально можно проверить.</p></div>
+<div class="sales-hub-grid">
+<div class="sales-card"><div class="sales-icon">⚡</div><h3>Быстро</h3><p>После подтверждения оплаты можно сразу отправить данные заказа.</p></div>
+<div class="sales-card"><div class="sales-icon">🔒</div><h3>Надёжно</h3><p>Оплата проходит через платёжный провайдер, а заказ считается оплаченным только после проверки.</p></div>
+<div class="sales-card"><div class="sales-icon">💬</div><h3>Поддержка</h3><p>Не знаешь, какой тариф выбрать? <strong>Напиши в Telegram.</strong></p></div>
+<div class="sales-card"><div class="sales-icon">🎁</div><h3>Бонус</h3><p>Бонус без фальшивых обещаний: помощь с выбором тарифа и оформлением заказа.</p></div>
+</div>
+<div id="popularLive" class="quick-choice" style="margin-top:12px"><div><strong>🔥 Популярный тариф</strong><p>Появится автоматически, когда будет реальная статистика оплаченных заказов.</p></div></div>
+<div class="real-stats" id="realStats">
+<div class="real-stat"><b>—</b><span>оплаченных заказов</span></div><div class="real-stat"><b>—</b><span>активных реклам</span></div><div class="real-stat"><b>—</b><span>отзывов</span></div><div class="real-stat"><b>—</b><span>средняя оценка</span></div>
+</div>
+<div class="telegram-cta"><div><h3>💬 Есть вопрос?</h3><p>Напиши в Telegram перед покупкой — поможем подобрать тариф и объясним, что входит.</p></div><a class="btn primary" href="https://t.me/OutSai1" target="_blank" rel="noopener">💬 Написать в Telegram</a></div>
+</div></section>
+
 <section id="ads"><div class="wrap">
 <div class="title"><h2>🔥 Активные рекламы</h2><p>Здесь появляются оплаченные объявления.</p></div>
 <div id="adsGrid" class="grid">
 <article class="card"><div class="icon">🚀</div><h3>PUSH CLXN</h3><p>Discord-комьюнити • общение • новости • поддержка.</p><span class="muted">Официальное сообщество</span><a class="btn" href="https://discord.gg/6y5tMn5raX" target="_blank" rel="noopener">Открыть →</a></article>
 </div>
 </div></section>
+
+<section id="my-order" class="reveal"><div class="wrap"><div class="title"><h2>📦 Проверить мой заказ</h2><p>Введи код заказа — сайт покажет актуальный статус, полученный с сервера.</p></div><div class="quick-choice"><div style="flex:1"><input id="orderLookupCode" placeholder="Например: PUSH-AB12CD34-12345" style="margin:0"></div><button class="btn primary" type="button" onclick="lookupOrder()">Проверить статус →</button></div><div id="orderLookupResult"></div></div></section>
 
 <section id="choose"><div class="wrap">
 <div class="conversion-bar"><div><b>🔥 Начни с малого — проверь результат</b><span>Не нужно сразу брать месяц: можно начать с 24 часов.</span></div><a class="btn primary" href="#prices">Выбрать вариант →</a></div>
@@ -232,12 +345,14 @@ body{background:radial-gradient(circle at 10% 0%,rgba(0,229,255,.10),transparent
 
 <section class="reveal"><div class="wrap"><div class="trust" style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px"><div class="trust-item"><strong>⚡ Быстрый старт</strong><span>Заказ оформляется за пару минут.</span></div><div class="trust-item"><strong>🔐 Код заказа</strong><span>Каждая покупка получает свой код.</span></div><div class="trust-item"><strong>💬 Поддержка</strong><span>Поможем до и после покупки.</span></div><div class="trust-item"><strong>💎 Премиум</strong><span>VIP-размещение для проектов.</span></div></div></div></section>
 <section id="prices" class="reveal"><div class="wrap">
-<div class="title"><h2>💸 Тарифы</h2><p>Выбери срок, нажми «Купить» — код заказа и дальнейшие шаги появятся сразу.</p></div><div class="sale-spotlight reveal"><div><strong>⚡ Скидки уже внутри цены</strong><small>−30% на 7 дней и скидки на все остальные позиции. Никаких скрытых доплат.</small></div><div class="countdown">СКИДКА АКТИВНА</div></div><div class="price-note">💡 <strong>Совет:</strong> если ты впервые размещаешь проект, начни с <b>24 часов за 120₽</b>. Если нужен стабильный показ несколько дней — <b>7 дней за 350₽</b>.</div>
+<div class="title"><h2>💸 Тарифы</h2><p>Выбери срок, нажми «Купить» — код заказа и дальнейшие шаги появятся сразу.</p></div>
+<div class="quick-choice"><div><strong>🎯 Не знаешь, что выбрать?</strong><p>Ответь на 3 вопроса — сайт предложит подходящий вариант.</p></div><button class="btn primary" type="button" onclick="openQuiz()">Подобрать тариф →</button></div>
+<div class="catalog-tools"><input id="catalogSearch" placeholder="🔎 Поиск по товарам…"><select id="catalogCategory"><option value="all">Все категории</option><option value="ads">Реклама</option><option value="discord">Discord</option><option value="social">Telegram / TikTok</option><option value="other">Другое</option></select><select id="catalogSort"><option value="default">Сортировка</option><option value="price-up">Цена ↑</option><option value="price-down">Цена ↓</option><option value="name">Название</option></select><button class="tool-btn" id="favFilter" type="button">❤️ Избранное</button></div><div class="sale-spotlight reveal"><div><strong>⚡ Скидки уже внутри цены</strong><small>−30% на 7 дней и скидки на все остальные позиции. Никаких скрытых доплат.</small></div><div class="countdown">СКИДКА АКТИВНА</div></div><div class="price-note">💡 <strong>Совет:</strong> если ты впервые размещаешь проект, начни с <b>24 часов за 120₽</b>. Если нужен стабильный показ несколько дней — <b>7 дней за 350₽</b>.</div>
 <div class="grid">
-<div class="card price-card"><div class="popular">⚡ −20%</div><div class="icon">⚡</div><h3>24 ЧАСА</h3><div class="price">120₽ <span class="old-price">150₽</span></div><div class="save">Экономия 30₽</div><p>Быстрый тест рекламы в витрине.</p><button class="btn primary" onclick="openOrder('day',120,'24 часа')">Купить за 120₽</button></div>
+<div class="card price-card catalog-item"><div class="popular">⚡ −20%</div><div class="icon">⚡</div><h3>24 ЧАСА</h3><div class="price">120₽ <span class="old-price">150₽</span></div><div class="save">Экономия 30₽</div><p>Быстрый тест рекламы в витрине.</p><button class="btn primary" onclick="openOrder('day',120,'24 часа')">Купить за 120₽</button></div>
 <div class="card"><div class="icon">🚀</div><h3>3 ДНЯ</h3><div class="price">250₽</div><p>Размещение проекта на 3 дня.</p><button class="btn primary" onclick="openOrder('3days',250,'3 дня')">Купить</button></div>
-<div class="card price-card"><div class="popular">🔥 ХИТ • −30%</div><div class="icon">🔥</div><h3>7 ДНЕЙ</h3><div class="price">350₽ <span class="old-price">500₽</span></div><div class="save">Экономия 150₽</div><p>Неделя в рекламной витрине — главный тариф со скидкой.</p><button class="btn primary" onclick="openOrder('week',350,'7 дней')">Купить за 350₽</button></div>
-<div class="card price-card"><div class="popular">💎 −30%</div><div class="icon">💎</div><h3>30 ДНЕЙ</h3><div class="price">650₽ <span class="old-price">1 000₽</span></div><div class="save">Экономия 350₽</div><p>Месяц постоянного продвижения по сниженной цене.</p><button class="btn primary" onclick="openOrder('month',650,'30 дней')">Купить за 650₽</button></div>
+<div class="card price-card catalog-item"><div class="popular">⭐ РЕКОМЕНДУЕМЫЙ • −30%</div><div class="icon">🔥</div><h3>7 ДНЕЙ</h3><div class="price">350₽ <span class="old-price">500₽</span></div><div class="save">Экономия 150₽</div><p>Неделя в рекламной витрине — главный тариф со скидкой.</p><button class="btn primary" onclick="openOrder('week',350,'7 дней')">Купить за 350₽</button></div>
+<div class="card price-card catalog-item"><div class="popular">💎 −30%</div><div class="icon">💎</div><h3>30 ДНЕЙ</h3><div class="price">650₽ <span class="old-price">1 000₽</span></div><div class="save">Экономия 350₽</div><p>Месяц постоянного продвижения по сниженной цене.</p><button class="btn primary" onclick="openOrder('month',650,'30 дней')">Купить за 650₽</button></div>
 <div class="card"><div class="popular">∞ TOP</div><div class="icon">👑</div><h3>ВЕЧНАЯ РЕКЛАМА</h3><div class="price">1 000₽</div><p>Размещение без срока окончания.</p><button class="btn primary" onclick="openOrder('forever',1000,'Вечная реклама')">Купить</button></div>
 <div class="card"><div class="icon">🛠️</div><h3>ПОМОЩНИК САЙТА</h3><div class="price">4 000₽</div><p>Размещение помощника/партнёрского проекта в отдельном премиум-блоке.</p><button class="btn primary" onclick="openOrder('assistant',4000,'Помощник сайта')">Купить</button></div>
 <div class="card"><div class="icon">📱</div><h3>TELEGRAM</h3><div class="price">350₽</div><p>Реклама Telegram-канала или сообщества на 7 дней.</p><button class="btn primary" onclick="openOrder('tg',350,'Telegram • 7 дней')">Купить</button></div>
@@ -248,6 +363,8 @@ body{background:radial-gradient(circle at 10% 0%,rgba(0,229,255,.10),transparent
 <div class="card"><div class="icon">📌</div><h3>ЗАКРЕП</h3><div class="price">700₽ <span class="old-price">900₽</span></div><div class="save">Экономия 200₽</div><p>Приоритетный блок в верхней части рекламной витрины на 7 дней.</p><button class="btn primary" onclick="openOrder('pin',700,'Закреп • 7 дней')">Купить за 700₽</button></div>
 </div>
 </div></section>
+<section class="reveal"><div class="wrap"><div class="title"><h2>📦 Что ты получаешь</h2><p>Четыре понятных пункта вместо пустого рекламного блока.</p></div><div class="why-grid"><div class="why-card"><span>⚡</span><div><h3>Быстрая обработка</h3><p>После успешной оплаты заказ можно сразу передать на выполнение.</p></div></div><div class="why-card"><span>🔒</span><div><h3>Проверка оплаты</h3><p>Сайт выдаёт следующий шаг только после подтверждения платежа.</p></div></div><div class="why-card"><span>💬</span><div><h3>Поддержка</h3><p>Можно задать вопрос до покупки и получить помощь после неё.</p></div></div><div class="why-card"><span>🎁</span><div><h3>Помощь с выбором</h3><p>Если тарифы непонятны, используйте подбор тарифа или Telegram.</p></div></div></div></div></section>
+
 <section id="buy-trust"><div class="wrap">
 <div class="trust-buy">
   <div class="trust-box"><h3>🧾 Что ты получаешь</h3><p>После оплаты ты отправляешь ссылку и описание проекта. Для Discord-услуг — описываешь задачу. Перед публикацией заявка проходит модерацию.</p></div>
@@ -276,7 +393,7 @@ body{background:radial-gradient(circle at 10% 0%,rgba(0,229,255,.10),transparent
 
 <section id="bundles" class="reveal"><div class="wrap"><div class="title"><h2>💥 Готовые наборы</h2><p>Собрал несколько вариантов, чтобы не пришлось выбирать услуги по одной.</p></div>
 <div class="bundle-grid">
-<article class="bundle featured"><span class="bundle-tag">🔥 САМЫЙ ПОПУЛЯРНЫЙ</span><h3>Старт проекта</h3><p>7 дней рекламы + оформление Discord.</p><div class="bundle-price">600₽ <span class="old-price">900₽</span></div><div class="save">Экономия 300₽</div><button class="btn primary" onclick="openOrder('bundle-start',600,'Старт проекта')">Взять набор →</button></article>
+<article class="bundle featured"><span class="bundle-tag">⭐ РЕКОМЕНДУЕМЫЙ</span><h3>Старт проекта</h3><p>7 дней рекламы + оформление Discord.</p><div class="bundle-price">600₽ <span class="old-price">900₽</span></div><div class="save">Экономия 300₽</div><button class="btn primary" onclick="openOrder('bundle-start',600,'Старт проекта')">Взять набор →</button></article>
 <article class="bundle"><span class="bundle-tag">⚡ ДЛЯ НОВОГО СЕРВЕРА</span><h3>Discord Launch</h3><p>Бот + настройка сервера + оформление.</p><div class="bundle-price">950₽ <span class="old-price">1 300₽</span></div><div class="save">Экономия 350₽</div><button class="btn" onclick="openOrder('bundle-discord',950,'Discord Launch')">Взять набор →</button></article>
 <article class="bundle"><span class="bundle-tag">💎 ПРЕМИУМ</span><h3>Максимум</h3><p>VIP-витрина + 30 дней размещения + закреп.</p><div class="bundle-price">1 800₽ <span class="old-price">3 100₽</span></div><div class="save">Экономия 1 300₽</div><button class="btn" onclick="openOrder('bundle-max',1800,'Пакет Максимум')">Взять пакет →</button></article>
 </div></div></section>
@@ -335,20 +452,44 @@ body{background:radial-gradient(circle at 10% 0%,rgba(0,229,255,.10),transparent
 <div class="review-head"><div class="title"><h2>⭐ Отзывы покупателей</h2><p>Здесь появляются отзывы после подтверждённой оплаты.</p></div><a class="btn primary" href="#review-form">✍️ Оставить отзыв</a></div>
 <div class="review-grid" id="reviewGrid"><div class="review-empty">Загрузка отзывов…</div></div>
 <div class="review-form" id="review-form"><div class="title"><h3>✍️ Оставить отзыв</h3><p>Нужен код заказа из покупки — это помогает не публиковать случайные отзывы.</p></div>
-<div class="review-form-grid"><div><label>Код заказа</label><input id="reviewCode" placeholder="PUSH-XXXXX-1234"></div><div><label>Имя / ник</label><input id="reviewName" maxlength="30" placeholder="Например: Alex"></div><div><label>Оценка</label><select id="reviewRating"><option value="5">★★★★★ — 5</option><option value="4">★★★★☆ — 4</option><option value="3">★★★☆☆ — 3</option><option value="2">★★☆☆☆ — 2</option><option value="1">★☆☆☆☆ — 1</option></select></div><div class="full"><label>Отзыв</label><textarea id="reviewText" maxlength="300" placeholder="Расскажи, как прошла покупка…"></textarea></div></div><button class="btn primary" onclick="submitReview()">🚀 Опубликовать отзыв</button><div id="reviewResult" style="margin-top:12px"></div></div>
+<div class="review-form-grid"><div><label>Код заказа</label><input id="reviewCode" placeholder="PUSH-XXXXX-1234"></div><div><label>Имя / ник</label><input id="reviewName" maxlength="30" placeholder="Например: Alex"></div><div><label>Оценка</label><select id="reviewRating"><option value="5">★★★★★ — 5</option><option value="4">★★★★☆ — 4</option><option value="3">★★★☆☆ — 3</option><option value="2">★★☆☆☆ — 2</option><option value="1">★☆☆☆☆ — 1</option></select></div><div class="full"><label>Отзыв</label><textarea id="reviewText" maxlength="300" placeholder="Расскажи, как прошла покупка…"></textarea></div><div class="full"><label>Скриншот результата <span class="muted">(необязательно)</span></label><input id="reviewImage" type="file" accept="image/png,image/jpeg,image/webp"></div></div><button class="btn primary" onclick="submitReview()">🚀 Опубликовать отзыв</button><div id="reviewResult" style="margin-top:12px"></div></div>
 </div></section>
 
-<section id="faq" class="reveal"><div class="wrap"><div class="title">
+<section id="faq" class="reveal"><div class="wrap">
+<div class="title"><h2>❓ Часто задаваемые вопросы</h2><p>20 коротких ответов, чтобы перед покупкой было понятно, что произойдёт.</p></div>
+<div class="faq-grid faq-20">
+<details><summary>Что я получу после оплаты?</summary><p>После подтверждения оплаты появится форма для отправки данных заказа. Для рекламы это ссылка и описание проекта, для услуг — данные задачи.</p></details>
+<details><summary>Как происходит покупка?</summary><p>Выбираешь тариф → нажимаешь «Купить» → переходишь на защищённую страницу оплаты → после подтверждения отправляешь данные заказа.</p></details>
+<details><summary>Какие способы оплаты доступны?</summary><p>Доступные способы показываются непосредственно в Checkout. Они зависят от страны покупателя, валюты, устройства и настроек платёжного аккаунта.</p></details>
+<details><summary>Когда я получу заказ?</summary><p>Реклама активируется после подтверждения оплаты и отправки данных. Для Discord-услуг срок зависит от объёма задачи и согласованного формата.</p></details>
+<details><summary>Что делать, если оплата прошла, но заказ не пришёл?</summary><p>Не оплачивай повторно. Сохрани номер заказа и обратись в поддержку — мы проверим статус платежа на сервере.</p></details>
+<details><summary>Можно ли вернуть деньги?</summary><p>Условия возврата зависят от конкретной услуги и её статуса. Если услуга ещё не выполнена, сначала напиши в поддержку и укажи номер заказа.</p></details>
+<details><summary>Можно ли изменить заказ после оплаты?</summary><p>Напиши в поддержку как можно скорее. Если заказ ещё не выполнен или реклама не опубликована, данные обычно можно уточнить.</p></details>
+<details><summary>Как связаться с поддержкой?</summary><p>Используй большую кнопку «Написать в Telegram» на сайте. Желательно сразу указать номер заказа.</p></details>
+<details><summary>Нужно ли регистрироваться?</summary><p>Нет отдельной регистрации на сайте для обычной покупки не требуется. Заказ идентифицируется уникальным кодом.</p></details>
+<details><summary>Где посмотреть свой заказ?</summary><p>После оплаты Checkout возвращает на страницу сайта, где выполняется автоматическая проверка платежа по коду заказа.</p></details>
+<details><summary>Что делать, если я указал неправильные данные?</summary><p>Сразу напиши в поддержку. Если заказ ещё не обработан, мы попробуем помочь исправить данные.</p></details>
+<details><summary>Есть ли скидки?</summary><p>Актуальные цены и действующие скидки указаны прямо в карточках тарифов. Мы не используем фальшивые таймеры обратного отсчёта.</p></details>
+<details><summary>Есть ли промокоды?</summary><p>Если промокод активен, его условия будут опубликованы на сайте. Не покупай «промокоды» у сторонних людей.</p></details>
+<details><summary>Можно ли купить несколько товаров?</summary><p>Да, можно оформить несколько отдельных заказов. Для нескольких услуг также есть готовые наборы.</p></details>
+<details><summary>Безопасна ли оплата?</summary><p>Данные карты вводятся на защищённой странице платёжного провайдера. PUSH CLXN не хранит данные банковской карты.</p></details>
+<details><summary>Можно ли получить помощь с выбором?</summary><p>Да. Нажми «Не знаю, что выбрать?» или напиши в Telegram — подскажем разницу между тарифами.</p></details>
+<details><summary>Что делать при ошибке оплаты?</summary><p>Проверь данные карты и доступный способ оплаты, затем попробуй снова. Если ошибка повторяется, отправь в поддержку номер заказа и текст ошибки.</p></details>
+<details><summary>Как узнать статус заказа?</summary><p>Статус оплаты автоматически проверяется сервером. Для уже созданного заказа также можно обратиться в поддержку с его кодом.</p></details>
+<details><summary>Можно ли купить с телефона?</summary><p>Да, сайт адаптирован для телефона. Доступные мобильные способы оплаты, включая Apple Pay, зависят от устройства, браузера и страны.</p></details>
+<details><summary>Куда обращаться при проблеме с заказом?</summary><p>В Telegram-поддержку. Укажи номер заказа, выбранный тариф и кратко опиши проблему — так мы быстрее найдём покупку.</p></details>
+</div></div></section>
 
-
-<h2>❓ Частые вопросы</h2><p>Коротко о покупке и оплате.</p></div><div class="faq-grid">
-<details><summary>Как оплатить заказ?</summary><p>Нажми «Купить», получи код заказа, перейди в банковскую карту и укажи этот код в сообщении доната. Затем нажми «Проверить оплату».</p></details>
-<details><summary>Нужно ли нажимать проверку много раз?</summary><p>Нет. После запуска проверки сайт повторяет её автоматически примерно каждые 5 секунд.</p></details>
-<details><summary>Можно заказать услугу для своего Discord?</summary><p>Да. Выбери услугу в разделе Discord и после подтверждения оплаты отправь описание задачи.</p></details>
-<details><summary>Можно ли обсудить нестандартную задачу?</summary><p>Да, для нестандартных задач используй Discord PUSH CLXN и опиши, что именно нужно сделать.</p></details>
+<section id="policies" class="reveal"><div class="wrap"><div class="policy-grid">
+<div class="policy-card"><div class="policy-icon">🔄</div><h3>Условия возврата</h3><p>Если услуга не выполнена, сначала свяжись с поддержкой. Решение зависит от статуса заказа и конкретной услуги.</p></div>
+<div class="policy-card"><div class="policy-icon">🔒</div><h3>Конфиденциальность</h3><p>Данные банковской карты вводятся у платёжного провайдера. На сайте сохраняются только данные, необходимые для обработки заказа.</p></div>
+<div class="policy-card"><div class="policy-icon">🧾</div><h3>Проверка заказа</h3><p>Оплаченным считается только заказ, который сервер подтвердил как успешный. Сам факт перехода в Checkout не считается оплатой.</p></div>
 </div></div></section>
 
 <div class="sticky-buy" id="stickyBuy"><span><b>Готов продвинуть проект?</b> Скидка на 7 дней — 350₽ вместо 500₽.</span><a class="btn primary" href="#prices">Выбрать →</a></div>
+<div class="quiz-modal" id="quizModal"><div class="quiz-box"><button class="close" onclick="closeQuiz()">×</button><h2>🎯 Подбор тарифа</h2><p class="sub">Три вопроса — и покажем подходящий вариант.</p><div id="quizBody"></div></div></div>
+<button class="backtop" id="backtop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<div class="site-loader" id="siteLoader"><div class="loader-mark">PUSH <span>CLXN</span></div></div>
 <footer><div class="wrap foot"><span>© 2026 PUSH CLXN — рекламная площадка</span><span>Discord: discord.gg/6y5tMn5raX</span></div></footer>
 
 <div class="modal" id="orderModal"><div class="box">
@@ -508,19 +649,92 @@ async function loadReviews(){
  const grid=document.getElementById('reviewGrid'); if(!grid)return;
  try{const r=await fetch('/api/reviews'); const rows=await r.json();
   if(!rows.length){grid.innerHTML='<div class="review-empty">⭐ Пока отзывов нет. Стань первым покупателем, который оставит отзыв!</div>';return;}
-  grid.innerHTML=rows.map(x=>`<article class="review-card"><div class="review-stars">${stars(Number(x.rating)||5)}</div><div style="margin-top:8px" class="review-name">${escapeHtml(x.name)}</div><div class="review-date">Покупатель PUSH CLXN</div><p class="review-text">${escapeHtml(x.text)}</p></article>`).join('');
+  grid.innerHTML=rows.map(x=>`<article class="review-card"><div class="review-stars">${stars(Number(x.rating)||5)}</div><div style="margin-top:8px" class="review-name">${escapeHtml(x.name)}</div><div class="review-date">Покупатель PUSH CLXN</div><p class="review-text">${escapeHtml(x.text)}</p>${x.imageData?`<img src="${escapeHtml(x.imageData)}" alt="Скриншот результата отзыва" loading="lazy" style="width:100%;max-height:260px;object-fit:contain;border-radius:13px;margin-top:10px;background:#06090e">`:''}</article>`).join('');
  }catch{grid.innerHTML='<div class="review-empty">Не удалось загрузить отзывы. Попробуй обновить страницу.</div>'}
 }
 function escapeHtml(v){return String(v||'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
 async function submitReview(){
  const result=document.getElementById('reviewResult'); result.textContent='⏳ Публикуем отзыв…';
- try{const r=await fetch('/api/reviews',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:reviewCode.value,name:reviewName.value,text:reviewText.value,rating:Number(reviewRating.value)})}); const j=await r.json(); result.textContent=j.message||'Готово'; if(j.ok){reviewText.value='';reviewName.value='';loadReviews();}}catch{result.textContent='⚠️ Не удалось отправить отзыв.'}
+ try{
+   let imageData=''; const file=document.getElementById('reviewImage')?.files?.[0];
+   if(file){ if(file.size>1200000){result.textContent='⚠️ Скриншот слишком большой. Максимум 1.2 МБ.';return;} imageData=await new Promise((resolve,reject)=>{const fr=new FileReader();fr.onload=()=>resolve(String(fr.result||''));fr.onerror=reject;fr.readAsDataURL(file);}); }
+   const r=await fetch('/api/reviews',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:reviewCode.value,name:reviewName.value,text:reviewText.value,rating:Number(reviewRating.value),imageData})}); const j=await r.json(); result.textContent=j.message||'Готово'; if(j.ok){reviewText.value='';reviewName.value='';document.getElementById('reviewImage').value='';loadReviews();loadRealStats();}
+ }catch{result.textContent='⚠️ Не удалось отправить отзыв.'}
 }
 loadRecentPurchases();
 loadActiveAds();
 restorePaymentResult(); loadReviews(); setInterval(loadRecentPurchases,15000); setInterval(loadActiveAds,15000);
 </script>
 
+
+<script>
+// Sales UX: search, filters, favorites, quiz, real stats, theme and back-to-top.
+(function(){
+ const cards=[...document.querySelectorAll('#prices .grid .card')];
+ cards.forEach((card,i)=>{
+   card.classList.add('catalog-item');
+   const btn=card.querySelector('button[onclick*="openOrder"]');
+   if(btn){
+     const m=btn.getAttribute('onclick').match(/openOrder\('([^']+)'/);
+     if(m) card.dataset.productId=m[1];
+   }
+   const fav=document.createElement('button'); fav.className='fav-btn'; fav.type='button'; fav.title='Добавить в избранное'; fav.textContent='♡';
+   fav.onclick=(e)=>{e.stopPropagation(); toggleFavorite(card.dataset.productId,fav)}; card.appendChild(fav);
+   refreshFavoriteButton(card.dataset.productId,fav);
+ });
+ const search=document.getElementById('catalogSearch'), cat=document.getElementById('catalogCategory'), sort=document.getElementById('catalogSort'), favFilter=document.getElementById('favFilter');
+ function apply(){
+   const q=(search?.value||'').toLowerCase().trim(), c=cat?.value||'all', s=sort?.value||'default', favOnly=favFilter?.classList.contains('active');
+   const visible=cards.filter(card=>{
+     const text=card.innerText.toLowerCase();
+     const id=card.dataset.productId||'';
+     const category=id.startsWith('discord')||id.includes('bot')||id.includes('bundle-discord')?'discord':(['tg','tiktok'].includes(id)?'social':(['day','3days','week','month','forever','pin','vip'].includes(id)?'ads':'other'));
+     const okQ=!q||text.includes(q), okC=c==='all'||category===c, okF=!favOnly||getFavorites().includes(id);
+     card.style.display=(okQ&&okC&&okF)?'':'none'; return okQ&&okC&&okF;
+   });
+   const parent=cards[0]?.parentElement;
+   if(parent && s!=='default'){
+     [...visible].sort((a,b)=>{
+       const pa=parseFloat((a.querySelector('.price')?.innerText||'').replace(/[^0-9.]/g,''))||0, pb=parseFloat((b.querySelector('.price')?.innerText||'').replace(/[^0-9.]/g,''))||0;
+       if(s==='price-up') return pa-pb; if(s==='price-down') return pb-pa; return a.innerText.localeCompare(b.innerText,'ru');
+     }).forEach(x=>parent.appendChild(x));
+   }
+ }
+ [search,cat,sort].forEach(x=>x&&x.addEventListener('input',apply)); [search,cat,sort].forEach(x=>x&&x.addEventListener('change',apply));
+ favFilter?.addEventListener('click',()=>{favFilter.classList.toggle('active');apply()});
+ window.toggleFavorite=toggleFavorite; window.refreshFavoriteButton=refreshFavoriteButton;
+ loadRealStats(); loadRealBuyers();
+ function getFavorites(){try{return JSON.parse(localStorage.getItem('pushclxn_favorites')||'[]')}catch{return[]}}
+ function saveFavorites(v){localStorage.setItem('pushclxn_favorites',JSON.stringify([...new Set(v)]))}
+ function toggleFavorite(id,el){if(!id)return;let a=getFavorites();a=a.includes(id)?a.filter(x=>x!==id):a.concat(id);saveFavorites(a);refreshFavoriteButton(id,el);toast(a.includes(id)?'❤️ Добавлено в избранное':'Избранное удалено');apply()}
+ function refreshFavoriteButton(id,el){const active=getFavorites().includes(id);el.classList.toggle('active',active);el.textContent=active?'♥':'♡'}
+ async function loadRealStats(){
+   const box=document.getElementById('realStats'); if(!box)return;
+   try{const r=await fetch('/api/site-stats',{cache:'no-store'});const d=await r.json();
+     box.innerHTML=`<div class="real-stat"><b>${Number(d.paidOrders||0)}</b><span>оплаченных заказов</span></div><div class="real-stat"><b>${Number(d.activeAds||0)}</b><span>активных реклам</span></div><div class="real-stat"><b>${Number(d.reviews||0)}</b><span>реальных отзывов</span></div><div class="real-stat"><b>${d.averageRating?Number(d.averageRating).toFixed(1)+'/5':'—'}</b><span>средняя оценка</span></div>`;
+     const pop=document.getElementById('popularLive'); if(pop){ if(d.popularProduct){ pop.innerHTML='<div><strong>🔥 Популярный тариф по реальным оплатам</strong><p>'+escapeHtml(d.popularProduct.title)+' — '+Number(d.popularProduct.count)+' подтверждённых покупок.</p></div><span class="popular-live" style="padding:9px 12px;border:1px solid rgba(255,33,71,.3);border-radius:999px;color:#ff2147;white-space:nowrap">Реальная статистика</span>'; } }
+   }catch{}
+ }
+ async function loadRealBuyers(){
+   const box=document.getElementById('realBuyerList'); if(!box)return;
+   try{const r=await fetch('/api/recent-purchases',{cache:'no-store'});const rows=await r.json(); if(!rows.length){box.innerHTML='<span class="pc-buyer">Пока нет подтверждённых покупок</span>';return;}
+     box.innerHTML=rows.slice(0,8).map(x=>`<span class="pc-buyer">🟢 <i>${escapeHtml(x.code)}</i> · ${Number(x.amount)}₽</span>`).join('');
+   }catch{box.innerHTML='<span class="pc-buyer">Покупки появятся здесь после первой подтверждённой оплаты</span>'}
+ }
+ function escapeHtml(v){return String(v||'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
+ setInterval(loadRealStats,15000); setInterval(loadRealBuyers,15000);
+})();
+
+function openQuiz(){document.getElementById('quizModal').classList.add('open');renderQuiz(1,{})}
+function closeQuiz(){document.getElementById('quizModal').classList.remove('open')}
+function renderQuiz(step,a){const b=document.getElementById('quizBody'); if(step===1){b.innerHTML='<div class="quiz-q">1. На какой срок нужна реклама?</div><button class="quiz-opt" onclick="renderQuiz(2,{duration:\'short\'})">⚡ 24 часа</button><button class="quiz-opt" onclick="renderQuiz(2,{duration:\'medium\'})">🔥 3–7 дней</button><button class="quiz-opt" onclick="renderQuiz(2,{duration:\'long\'})">💎 30 дней и дольше</button>';return} if(step===2){b.innerHTML='<div class="quiz-q">2. Что важнее?</div><button class="quiz-opt" onclick="renderQuiz(3,Object.assign({},'+JSON.stringify(a)+',{goal:\'test\'}))">🧪 Проверить спрос</button><button class="quiz-opt" onclick="renderQuiz(3,Object.assign({},'+JSON.stringify(a)+',{goal:\'steady\'}))">📈 Стабильное размещение</button><button class="quiz-opt" onclick="renderQuiz(3,Object.assign({},'+JSON.stringify(a)+',{goal:\'brand\'}))">👑 Максимальная заметность</button>';return} b.innerHTML='<div class="quiz-q">3. Какой вариант тебе ближе?</div><button class="quiz-opt" onclick="quizFinish(Object.assign({},'+JSON.stringify(a)+',{type:\'ads\'}))">📢 Только реклама</button><button class="quiz-opt" onclick="quizFinish(Object.assign({},'+JSON.stringify(a)+',{type:\'discord\'}))">🤖 Реклама + Discord</button><button class="quiz-opt" onclick="quizFinish(Object.assign({},'+JSON.stringify(a)+',{type:\'premium\'}))">💎 Премиум-размещение</button>'}
+function quizFinish(a){let id='week',title='7 дней',reason='Хороший вариант, чтобы спокойно проверить рекламу несколько дней.';if(a.duration==='short'){id='day';title='24 часа';reason='Подходит для быстрого теста.'}else if(a.duration==='long'){id='month';title='30 дней';reason='Подходит для длительного размещения.'}if(a.type==='premium'){id='vip';title='VIP витрина • 30 дней';reason='Премиальный вариант с максимальным выделением.'}document.getElementById('quizBody').innerHTML='<div class="quiz-result"><b>🎯 Рекомендуем: '+title+'</b><p>'+reason+'</p><button class="btn primary" onclick="closeQuiz();openOrder(\''+id+'\','+(id==='day'?120:id==='week'?350:id==='month'?650:1200)+',\''+title+'\')">Купить '+title+' →</button></div>'}
+async function lookupOrder(){const code=(document.getElementById('orderLookupCode')?.value||'').trim();const box=document.getElementById('orderLookupResult');if(!code){box.innerHTML='<div class="notice">Укажи код заказа.</div>';return;}box.innerHTML='<div class="notice">🔄 Проверяем статус…</div>';try{const r=await fetch('/api/order/'+encodeURIComponent(code),{cache:'no-store'});const d=await r.json();if(!r.ok||!d.ok){box.innerHTML='<div class="notice">❌ Заказ с таким кодом не найден.</div>';return;}const status=d.paid?'Оплачен':'Ожидает оплаты';const cls=d.paid?'ok':'notice';box.innerHTML='<div class="'+cls+'" style="margin-top:12px"><b>Заказ '+escapeHtml(d.code)+'</b><br>'+escapeHtml(d.title)+' · '+Number(d.amount)+'₽<br>Статус: <b>'+status+'</b></div>';}catch{box.innerHTML='<div class="notice">⚠️ Не удалось проверить заказ. Попробуй ещё раз.</div>';}}
+function toggleTheme(){document.body.classList.toggle('theme-light');localStorage.setItem('pushclxn_theme',document.body.classList.contains('theme-light')?'light':'dark')}
+if(localStorage.getItem('pushclxn_theme')==='light')document.body.classList.add('theme-light');
+window.addEventListener('scroll',()=>document.getElementById('backtop')?.classList.toggle('show',window.scrollY>500));
+window.addEventListener('load',()=>setTimeout(()=>document.getElementById('siteLoader')?.classList.add('hide'),250));
+</script>
 <script>
 // Aurora interactions: reveal-on-scroll and cursor glow.
 (function(){
@@ -539,15 +753,9 @@ restorePaymentResult(); loadReviews(); setInterval(loadRecentPurchases,15000); s
 </section>
 
 <section class="pc-buyers pc-reveal" style="max-width:1100px;margin-left:auto;margin-right:auto">
-  <h2 style="color:#fff;margin:0">🛍️ Последние покупатели</h2>
-  <p style="color:#8f9bad;margin:7px 0 0">Показываем недавние заказы без личных данных.</p>
-  <div class="pc-buyer-list">
-    <span class="pc-buyer">🟢 <i>alex***</i> — 7 дней</span>
-    <span class="pc-buyer">🟢 <i>max***</i> — 24 часа</span>
-    <span class="pc-buyer">🟢 <i>dan***</i> — 30 дней</span>
-    <span class="pc-buyer">🟢 <i>nik***</i> — Discord Bot</span>
-    <span class="pc-buyer">🟢 <i>art***</i> — 7 дней</span>
-  </div>
+  <h2 style="color:#fff;margin:0">🛍️ Последние подтверждённые покупки</h2>
+  <p style="color:#8f9bad;margin:7px 0 0">Показываем только реальные оплаченные заказы, без личных данных.</p>
+  <div class="pc-buyer-list" id="realBuyerList"><span class="pc-buyer">Загрузка подтверждённых заказов…</span></div>
 </section>
 
 <div class="pc-buy-modal" id="pcBuyModal">
@@ -643,7 +851,7 @@ restorePaymentResult(); loadReviews(); setInterval(loadRecentPurchases,15000); s
     <div class="pc-summary">
       <div>Товар: <b id="pcProduct">—</b></div>
       <div>Цена: <b id="pcCost">—</b></div>
-      <div style="margin-top:6px">Статус: <b style="color:#55f2a3">готов к оформлению</b></div>
+      <div style="margin-top:6px">Статус: <b style="color:#ff2147">готов к оформлению</b></div>
     </div>
     <div id="pcStepContent"></div>
     <div class="pc-actions">
@@ -741,5 +949,43 @@ restorePaymentResult(); loadReviews(); setInterval(loadRecentPurchases,15000); s
  setTimeout(function tick(){let h=hints[i++%hints.length];showToast('<b>'+h[0]+'</b><small>'+h[1]+'</small>');setTimeout(tick,12000)},7000);
 })();
 </script>
+
+<button id="pushMusicOpen" type="button" style="display:none">🔊 Макс Корж • Музыка</button>
+<div class="push-music" id="pushMusicBar">
+  <div class="push-music-inner">
+    <div class="push-music-cover">🎵</div>
+    <div class="push-music-info"><b id="pushTrackTitle">Макс Корж — Жить в кайф</b><span>Официальный YouTube • автозапуск при возможности</span></div>
+    <button class="push-music-btn" id="pushPrev" type="button">⏮</button>
+    <button class="push-music-btn" id="pushPlay" type="button">▶</button>
+    <button class="push-music-btn" id="pushNext" type="button">⏭</button>
+    <input class="push-volume" id="pushVolume" type="range" min="0" max="100" step="5" value="65" aria-label="Громкость">
+    <a class="push-playlist" href="https://www.youtube.com/results?search_query=%D0%9C%D0%B0%D0%BA%D1%81+%D0%9A%D0%BE%D1%80%D0%B6+%D0%BE%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5+%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE" target="_blank" rel="noopener">Официальные видео ↗</a>
+  </div>
+</div>
+<iframe id="maxKorzhPlayer" title="Макс Корж — официальный YouTube" src="https://www.youtube.com/embed/GoJcus6eD0U?enablejsapi=1&autoplay=1&mute=1&playsinline=1&controls=0&loop=1&playlist=GoJcus6eD0U&rel=0" allow="autoplay; encrypted-media; picture-in-picture" style="position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;left:-10px;bottom:-10px;border:0"></iframe>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+(function(){
+  let yt=null, ready=false, started=false, muted=true;
+  const play=document.getElementById('pushPlay');
+  const vol=document.getElementById('pushVolume');
+  const title=document.getElementById('pushTrackTitle');
+  function setPlayIcon(){ if(play) play.textContent=started?'⏸':'▶'; }
+  window.onYouTubeIframeAPIReady=function(){
+    yt=new YT.Player('maxKorzhPlayer',{events:{onReady:function(e){ready=true;e.target.setVolume(65);e.target.mute();e.target.playVideo();started=true;setPlayIcon();},onStateChange:function(e){if(e.data===YT.PlayerState.PLAYING){started=true;setPlayIcon();}if(e.data===YT.PlayerState.PAUSED){started=false;setPlayIcon();}}}});
+  };
+  window.pushStartMusic=function(){
+    if(!ready||!yt)return;
+    try{yt.unMute();yt.setVolume(Number(vol&&vol.value||65));yt.playVideo();muted=false;started=true;setPlayIcon();if(title)title.textContent='Макс Корж — Жить в кайф';}catch(e){}
+  };
+  if(play) play.onclick=function(){if(!ready)return; if(started){yt.pauseVideo();started=false;}else{window.pushStartMusic();}setPlayIcon();};
+  if(vol) vol.oninput=function(){if(ready)yt.setVolume(Number(this.value));};
+  const unlock=function(){window.pushStartMusic();document.removeEventListener('pointerdown',unlock);document.removeEventListener('keydown',unlock);};
+  document.addEventListener('pointerdown',unlock,{once:true});
+  document.addEventListener('keydown',unlock,{once:true});
+  setTimeout(function(){if(ready){yt.mute();yt.playVideo();started=true;setPlayIcon();}},1200);
+})();
+</script>
+
 </body>
 </html>

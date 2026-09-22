@@ -390,13 +390,37 @@ app.get("/api/recent-purchases", (req,res)=>{
   res.json(rows);
 });
 
+app.get("/api/site-stats", (req,res)=>{
+  const db = load();
+  const paid = Object.values(db.orders || {}).filter(o => o && o.paid);
+  const activeAds = (db.ads || []).filter(a => a && a.active && (!a.expiresAt || new Date(a.expiresAt).getTime() > Date.now())).length;
+  const reviews = (db.reviews || []).filter(r => r && r.approved !== false);
+  const averageRating = reviews.length ? reviews.reduce((sum,r)=>sum + Number(r.rating || 0),0) / reviews.length : 0;
+  const counts = {};
+  for (const order of paid) counts[order.productId] = (counts[order.productId] || 0) + 1;
+  let popularProduct = null;
+  for (const [productId,count] of Object.entries(counts)) {
+    const p = PRODUCTS[productId];
+    if (!p) continue;
+    if (!popularProduct || count > popularProduct.count) popularProduct = {productId,title:p.title,count};
+  }
+  res.json({
+    ok:true,
+    paidOrders:paid.length,
+    activeAds,
+    reviews:reviews.length,
+    averageRating:averageRating ? Number(averageRating.toFixed(2)) : 0,
+    popularProduct
+  });
+});
+
 app.get("/api/reviews", (req,res)=>{
   const db = load();
   res.json((db.reviews || []).filter(x => x.approved !== false).slice(-30).reverse());
 });
 
 app.post("/api/reviews", (req,res)=>{
-  const {code,name,text,rating} = req.body || {};
+  const {code,name,text,rating,imageData=""} = req.body || {};
   const db = load();
   const order = db.orders[String(code || "").trim()];
   const cleanName = String(name || "").trim().slice(0,30);
@@ -404,9 +428,15 @@ app.post("/api/reviews", (req,res)=>{
   const stars = Number(rating);
   if(!order?.paid) return res.status(403).json({ok:false,message:"Отзыв можно оставить только после подтверждённой оплаты."});
   if(!cleanName || !cleanText || !Number.isInteger(stars) || stars<1 || stars>5) return res.status(400).json({ok:false,message:"Заполни имя, текст и оценку от 1 до 5."});
+  let safeImage="";
+  if(imageData){
+    const raw=String(imageData);
+    if(raw.length>1600000 || !/^data:image\/(png|jpeg|webp);base64,[A-Za-z0-9+/=]+$/.test(raw)) return res.status(400).json({ok:false,message:"Скриншот должен быть PNG, JPG или WebP и не больше 1.2 МБ."});
+    safeImage=raw;
+  }
   db.reviews = db.reviews || [];
   if(db.reviews.some(x=>x.code===String(code).trim())) return res.status(409).json({ok:false,message:"Для этого заказа отзыв уже оставлен."});
-  db.reviews.push({id:"rev_"+Date.now(),code:String(code).trim(),name:cleanName,text:cleanText,rating:stars,createdAt:new Date().toISOString(),approved:true});
+  db.reviews.push({id:"rev_"+Date.now(),code:String(code).trim(),name:cleanName,text:cleanText,rating:stars,imageData:safeImage,createdAt:new Date().toISOString(),approved:true});
   save(db);
   res.json({ok:true,message:"Спасибо! Отзыв опубликован."});
 });
