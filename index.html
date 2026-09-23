@@ -289,8 +289,8 @@ header{background:rgba(5,3,6,.72)!important;border-bottom-color:rgba(255,33,71,.
   </div>
   <aside class="reference-player">
     <div class="ref-player-top"><b>♫ Музыка</b><span>Макс Корж</span></div>
-    <div class="ref-now"><div class="ref-cover">♫</div><div><b>Макс Корж — Жить в кайф</b><span>Официальный источник</span></div></div>
-    <div class="ref-list"><div class="ref-song active">1. Макс Корж — Жить в кайф</div><div class="ref-song">2. Макс Корж — Эндорфин</div><div class="ref-song">3. Макс Корж — Малый повзрослел</div><div class="ref-song">4. Макс Корж — Не выдумывай</div><div class="ref-song">5. Макс Корж — Пьяный дождь</div></div>
+    <div class="ref-now"><div class="ref-cover">♫</div><div><b>Макс Корж — официальный источник</b><span>Официальный источник</span></div></div>
+    <div class="ref-list"><div class="ref-song active">1. Макс Корж — официальный плейлист</div><div class="ref-song">2. Макс Корж — Эндорфин</div><div class="ref-song">3. Макс Корж — Малый повзрослел</div><div class="ref-song">4. Макс Корж — Не выдумывай</div><div class="ref-song">5. Макс Корж — Пьяный дождь</div></div>
     <a class="ref-open" href="https://www.youtube.com/results?search_query=%D0%9C%D0%B0%D0%BA%D1%81+%D0%9A%D0%BE%D1%80%D0%B6+%D0%BE%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5+%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE" target="_blank" rel="noopener">Открыть официальные видео ↗</a>
   </aside>
 </div>
@@ -950,42 +950,62 @@ window.addEventListener('load',()=>setTimeout(()=>document.getElementById('siteL
 })();
 </script>
 
-<button id="pushMusicOpen" type="button" style="display:none">🔊 Макс Корж • Музыка</button>
+<button id="pushMusicOpen" type="button" style="display:none">🔊 Музыка</button>
 <div class="push-music" id="pushMusicBar">
-  <div class="push-music-inner">
+  <div class="push-music-inner" style="flex-wrap:wrap">
     <div class="push-music-cover">🎵</div>
-    <div class="push-music-info"><b id="pushTrackTitle">Макс Корж — Жить в кайф</b><span>Официальный YouTube • автозапуск при возможности</span></div>
-    <button class="push-music-btn" id="pushPrev" type="button">⏮</button>
-    <button class="push-music-btn" id="pushPlay" type="button">▶</button>
-    <button class="push-music-btn" id="pushNext" type="button">⏭</button>
+    <div class="push-music-info"><b id="pushTrackTitle">Макс Корж — официальный источник</b><span id="pushMusicSub">Без «Жить в кайф» • перемотка доступна</span></div>
+    <button class="push-music-btn" id="pushPrev" type="button" title="Предыдущая">⏮</button>
+    <button class="push-music-btn" id="pushPlay" type="button" title="Пауза / играть">▶</button>
+    <button class="push-music-btn" id="pushNext" type="button" title="Следующая">⏭</button>
     <input class="push-volume" id="pushVolume" type="range" min="0" max="100" step="5" value="65" aria-label="Громкость">
-    <a class="push-playlist" href="https://www.youtube.com/results?search_query=%D0%9C%D0%B0%D0%BA%D1%81+%D0%9A%D0%BE%D1%80%D0%B6+%D0%BE%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5+%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE" target="_blank" rel="noopener">Официальные видео ↗</a>
+    <button class="push-playlist" id="pushMax" type="button">Макс Корж • плейлист</button>
+    <button class="push-playlist" id="pushBasta" type="button">Баста • плейлист</button>
+    <a class="push-playlist" href="https://www.youtube.com/results?search_query=%D0%9C%D0%B0%D0%BA%D1%81+%D0%9A%D0%BE%D1%80%D0%B6+%D0%BF%D0%BB%D0%B5%D0%B9%D0%BB%D0%B8%D1%81%D1%82" target="_blank" rel="noopener">Открыть плейлист ↗</a>
+  </div>
+  <div id="pushYouTubeMini" style="max-width:720px;margin:8px auto 0;border:1px solid rgba(255,33,71,.25);border-radius:14px;overflow:hidden;background:#05070b">
+    <iframe id="maxKorzhPlayer" title="Музыкальный плеер YouTube" src="https://www.youtube.com/embed/GoJcus6eD0U?enablejsapi=1&autoplay=1&mute=1&playsinline=1&controls=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" style="display:block;width:100%;height:105px;border:0"></iframe>
   </div>
 </div>
-<iframe id="maxKorzhPlayer" title="Макс Корж — официальный YouTube" src="https://www.youtube.com/embed/GoJcus6eD0U?enablejsapi=1&autoplay=1&mute=1&playsinline=1&controls=0&loop=1&playlist=GoJcus6eD0U&rel=0" allow="autoplay; encrypted-media; picture-in-picture" style="position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;left:-10px;bottom:-10px;border:0"></iframe>
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
 (function(){
-  let yt=null, ready=false, started=false, muted=true;
+  let yt=null, ready=false, started=false;
   const play=document.getElementById('pushPlay');
   const vol=document.getElementById('pushVolume');
   const title=document.getElementById('pushTrackTitle');
-  function setPlayIcon(){ if(play) play.textContent=started?'⏸':'▶'; }
+  const sub=document.getElementById('pushMusicSub');
+  const maxBtn=document.getElementById('pushMax');
+  const bastaBtn=document.getElementById('pushBasta');
+  const iframe=document.getElementById('maxKorzhPlayer');
+  const MAX_VIDEO='GoJcus6eD0U';
+  const BASTA_SEARCH='https://www.youtube.com/results?search_query=%D0%91%D0%B0%D1%81%D1%82%D0%B0+%D0%BE%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5+%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE';
+  function setPlayIcon(){if(play)play.textContent=started?'⏸':'▶';}
   window.onYouTubeIframeAPIReady=function(){
-    yt=new YT.Player('maxKorzhPlayer',{events:{onReady:function(e){ready=true;e.target.setVolume(65);e.target.mute();e.target.playVideo();started=true;setPlayIcon();},onStateChange:function(e){if(e.data===YT.PlayerState.PLAYING){started=true;setPlayIcon();}if(e.data===YT.PlayerState.PAUSED){started=false;setPlayIcon();}}}});
+    yt=new YT.Player('maxKorzhPlayer',{events:{onReady:function(e){ready=true;e.target.setVolume(65);e.target.mute();e.target.playVideo();started=true;setPlayIcon();}}});
   };
   window.pushStartMusic=function(){
     if(!ready||!yt)return;
-    try{yt.unMute();yt.setVolume(Number(vol&&vol.value||65));yt.playVideo();muted=false;started=true;setPlayIcon();if(title)title.textContent='Макс Корж — Жить в кайф';}catch(e){}
+    try{yt.unMute();yt.setVolume(Number(vol&&vol.value||65));yt.playVideo();started=true;setPlayIcon();}catch(e){}
   };
-  if(play) play.onclick=function(){if(!ready)return; if(started){yt.pauseVideo();started=false;}else{window.pushStartMusic();}setPlayIcon();};
-  if(vol) vol.oninput=function(){if(ready)yt.setVolume(Number(this.value));};
+  if(play)play.onclick=function(){if(!ready)return;if(started){yt.pauseVideo();started=false;}else{window.pushStartMusic();}setPlayIcon();};
+  if(vol)vol.oninput=function(){if(ready)yt.setVolume(Number(this.value));};
+  if(maxBtn)maxBtn.onclick=function(){
+    if(iframe)iframe.src='https://www.youtube.com/embed/'+MAX_VIDEO+'?enablejsapi=1&autoplay=1&mute=1&playsinline=1&controls=1&rel=0';
+    if(title)title.textContent='Макс Корж — официальный плейлист';
+    if(sub)sub.textContent='Без «Жить в кайф» • перемотка доступна';
+    window.open('https://www.youtube.com/results?search_query=%D0%9C%D0%B0%D0%BA%D1%81+%D0%9A%D0%BE%D1%80%D0%B6+%D0%BF%D0%BB%D0%B5%D0%B9%D0%BB%D0%B8%D1%81%D1%82','_blank','noopener');
+  };
+  if(bastaBtn)bastaBtn.onclick=function(){
+    if(title)title.textContent='Баста — официальный плейлист';
+    if(sub)sub.textContent='Официальные видео Басты • перемотка доступна';
+    window.open(BASTA_SEARCH,'_blank','noopener');
+  };
   const unlock=function(){window.pushStartMusic();document.removeEventListener('pointerdown',unlock);document.removeEventListener('keydown',unlock);};
   document.addEventListener('pointerdown',unlock,{once:true});
   document.addEventListener('keydown',unlock,{once:true});
   setTimeout(function(){if(ready){yt.mute();yt.playVideo();started=true;setPlayIcon();}},1200);
 })();
 </script>
-
 </body>
 </html>
